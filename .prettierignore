@@ -1,0 +1,15 @@
+# Build outputs
+.next/
+out/
+dist/
+build/
+coverage/
+.vercel/
+.turbo/
+
+# Dependencies
+node_modules/
+
+# Misc cache
+*.log
+*.lock
