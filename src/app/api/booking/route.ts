@@ -1,9 +1,11 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+
 // Lazy import nodemailer only when needed to avoid SSR issues
 async function getTransport() {
-  const nodemailer = await import('nodemailer');
+  const nodemailer = (await import('nodemailer')).default;
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT || 587);
   const user = process.env.SMTP_USER;
