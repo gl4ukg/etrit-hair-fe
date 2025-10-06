@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { Link } from '../../i18n/navigation';
 
-export default function Home({ params }: { params: { locale: 'en' | 'sq' } }) {
+export default async function Home({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
+  const { locale } = await params;
+
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <video
@@ -23,7 +25,7 @@ export default function Home({ params }: { params: { locale: 'en' | 'sq' } }) {
                   href="/"
                   locale="en"
                   className={`text-[12px] uppercase no-underline hover:no-underline ${
-                    params.locale === 'en' ? 'text-white' : 'text-white/30 hover:text-white'
+                    locale === 'en' ? 'text-white' : 'text-white/30 hover:text-white'
                   }`}
                 >
                   EN
@@ -32,7 +34,7 @@ export default function Home({ params }: { params: { locale: 'en' | 'sq' } }) {
                   href="/"
                   locale="sq"
                   className={`text-[12px] uppercase no-underline hover:no-underline ${
-                    params.locale === 'sq' ? 'text-white' : 'text-white/30 hover:text-white'
+                    locale === 'sq' ? 'text-white' : 'text-white/30 hover:text-white'
                   }`}
                 >
                   SQ

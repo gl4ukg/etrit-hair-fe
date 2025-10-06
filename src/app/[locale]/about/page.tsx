@@ -4,10 +4,12 @@ import SiteNavbar from '../../../components/SiteNavbar';
 import SiteFooter from '../../../components/SiteFooter';
 import { Link } from '@/i18n/navigation';
 
-export default function AboutPage({ params }: { params: { locale: 'en' | 'sq' } }) {
+export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
+  const { locale } = await params;
+
   return (
     <main className="bg-background text-foreground min-h-screen w-full">
-      <SiteNavbar locale={params.locale} />
+      <SiteNavbar locale={locale} />
 
       <section className="mx-auto max-w-3xl px-6 pt-10 text-center">
         <div className="flex items-center justify-center">

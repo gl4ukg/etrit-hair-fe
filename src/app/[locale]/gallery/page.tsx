@@ -2,7 +2,13 @@ import Image from 'next/image';
 import SiteNavbar from '../../../components/SiteNavbar';
 import SiteFooter from '../../../components/SiteFooter';
 
-export default function GalleryPage({ params }: { params: { locale: 'en' | 'sq' } }) {
+export default async function GalleryPage({
+  params,
+}: {
+  params: Promise<{ locale: 'en' | 'sq' }>;
+}) {
+  const { locale } = await params;
+
   const sources = [
     '/about/IMG_5071.jpeg',
     '/about/IMG_5073.jpeg',
@@ -18,7 +24,7 @@ export default function GalleryPage({ params }: { params: { locale: 'en' | 'sq' 
 
   return (
     <main className="bg-background text-foreground min-h-screen w-full">
-      <SiteNavbar locale={params.locale} />
+      <SiteNavbar locale={locale} />
 
       <section className="mx-auto w-full max-w-7xl px-6 py-8 lg:px-8">
         <div className="columns-1 gap-6 [column-fill:_balance] sm:columns-2 lg:columns-3">

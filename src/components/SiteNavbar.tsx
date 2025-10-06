@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '../i18n/navigation';
 
 type Props = {
@@ -6,17 +8,44 @@ type Props = {
 };
 
 export default function SiteNavbar({ locale }: Props) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node | null;
+      if (!target) return;
+      if (panelRef.current && panelRef.current.contains(target)) return;
+      if (buttonRef.current && buttonRef.current.contains(target)) return;
+      setMobileOpen(false);
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('touchstart', onPointerDown, { passive: true });
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('touchstart', onPointerDown as any);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur">
       <nav className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-6 text-white lg:px-8">
-        {/* Left: Logo + Language switcher */}
         <div className="flex items-center gap-6">
           <Link href="/">
             <Image src="/logo_white.svg" alt="Logo" width={120} height={32} priority />
           </Link>
 
-          {/* Language switcher */}
-          <div className="flex items-center gap-4 text-sm uppercase tracking-widest">
+          <div className="flex items-center gap-4 text-sm tracking-widest uppercase">
             <Link
               href="/"
               locale="en"
@@ -38,14 +67,91 @@ export default function SiteNavbar({ locale }: Props) {
           </div>
         </div>
 
-        {/* Center/Right: main nav */}
-        <div className="flex items-center gap-6 text-[12px] uppercase tracking-[0.2em]">
-          <Link href="/about" className="no-underline text-white/70 hover:text-white">About</Link>
-          <Link href="/services" className="no-underline text-white/70 hover:text-white">Services</Link>
-          <Link href="/gallery" className="no-underline text-white/70 hover:text-white">Gallery</Link>
-          <Link href="/shop" className="no-underline text-white/70 hover:text-white">Shop</Link>
+        <div className="hidden items-center gap-6 text-[12px] tracking-[0.2em] uppercase md:flex">
+          <Link href="/about" className="text-white/70 no-underline hover:text-white">
+            About
+          </Link>
+          <Link href="/services" className="text-white/70 no-underline hover:text-white">
+            Services
+          </Link>
+          <Link href="/gallery" className="text-white/70 no-underline hover:text-white">
+            Gallery
+          </Link>
+          <Link href="/shop" className="text-white/70 no-underline hover:text-white">
+            Shop
+          </Link>
         </div>
+
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMobileOpen((o) => !o)}
+          ref={buttonRef}
+          className="inline-flex items-center gap-2 rounded px-2 py-1 text-[12px] tracking-[0.2em] text-white/80 uppercase hover:text-white focus:ring-2 focus:ring-white/30 focus:outline-none md:hidden"
+        >
+          <span className="relative block h-4 w-5">
+            {mobileOpen ? (
+              <>
+                <span className="absolute top-1.5 left-0 h-0.5 w-5 rotate-45 bg-white"></span>
+                <span className="absolute top-1.5 left-0 h-0.5 w-5 -rotate-45 bg-white"></span>
+              </>
+            ) : (
+              <>
+                <span className="absolute top-0 left-0 h-0.5 w-5 bg-white"></span>
+                <span className="absolute top-1.5 left-0 h-0.5 w-5 bg-white"></span>
+                <span className="absolute top-3 left-0 h-0.5 w-5 bg-white"></span>
+              </>
+            )}
+          </span>
+        </button>
       </nav>
+
+      {mobileOpen && (
+        <div className="md:hidden">
+          <div
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+            onClick={() => setMobileOpen(false)}
+          />
+          <div
+            id="mobile-menu"
+            ref={panelRef}
+            className="fixed top-14 right-0 left-0 z-50 mx-4 rounded-md border border-white/10 bg-black/90 p-4 shadow-xl ring-1 ring-white/10"
+          >
+            <nav className="flex flex-col gap-4 text-[12px] tracking-[0.2em] uppercase">
+              <Link
+                href="/about"
+                className="text-white/90 no-underline hover:text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/services"
+                className="text-white/90 no-underline hover:text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                Services
+              </Link>
+              <Link
+                href="/gallery"
+                className="text-white/90 no-underline hover:text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
+                href="/shop"
+                className="text-white/90 no-underline hover:text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                Shop
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

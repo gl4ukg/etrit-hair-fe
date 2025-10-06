@@ -1,9 +1,14 @@
-"use client";
+'use client';
 import { useState } from 'react';
 import SiteNavbar from '../../../components/SiteNavbar';
 import SiteFooter from '../../../components/SiteFooter';
 
-export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' } }) {
+export default async function BookingPage({
+  params,
+}: {
+  params: Promise<{ locale: 'en' | 'sq' }>;
+}) {
+  const { locale } = await params;
   const [status, setStatus] = useState<null | { ok: boolean; message: string }>(null);
   const [loading, setLoading] = useState(false);
 
@@ -34,8 +39,8 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
   }
 
   return (
-    <main className="min-h-screen w-full bg-background text-foreground">
-      <SiteNavbar locale={params.locale} />
+    <main className="bg-background text-foreground min-h-screen w-full">
+      <SiteNavbar locale={locale} />
 
       <section className="mx-auto w-full max-w-3xl px-6 py-10 lg:px-8">
         <h1 className="text-3xl font-light text-white">Book an appointment</h1>
@@ -46,7 +51,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
         <form onSubmit={onSubmit} className="mt-8 grid grid-cols-1 gap-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+              <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
                 Full name
               </label>
               <input
@@ -57,7 +62,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+              <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
                 Email
               </label>
               <input
@@ -72,7 +77,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+              <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
                 Phone
               </label>
               <input
@@ -82,7 +87,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
               />
             </div>
             <div>
-              <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+              <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
                 Preferred date
               </label>
               <input
@@ -95,7 +100,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+              <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
                 Service
               </label>
               <select
@@ -116,7 +121,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
               </select>
             </div>
             <div>
-              <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+              <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
                 Preferred time
               </label>
               <input
@@ -128,7 +133,7 @@ export default function BookingPage({ params }: { params: { locale: 'en' | 'sq' 
           </div>
 
           <div>
-            <label className="mb-1 block text-xs uppercase tracking-[0.2em] text-white/60">
+            <label className="mb-1 block text-xs tracking-[0.2em] text-white/60 uppercase">
               Message
             </label>
             <textarea
