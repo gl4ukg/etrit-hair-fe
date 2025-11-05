@@ -82,7 +82,7 @@ export default async function Home({ params }: { params: Promise<{ locale: 'en' 
             </div>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 z-30 -translate-x-1/2 -translate-y-1/2 md:left-[40%] lg:left-[34%] xl:left-[45%]">
+          <div className="absolute top-1/2 left-1/2 z-30 -translate-x-1/2 -translate-y-1/2 md:left-[40%] lg:left-[34%] xl:left-[41%]">
             <div className="relative hidden opacity-80 md:scale-50 lg:block lg:scale-75 xl:scale-90 2xl:scale-100">
               <Image src="/logo_two.png" alt="Logo" width={450} height={450} priority />
               <Image
