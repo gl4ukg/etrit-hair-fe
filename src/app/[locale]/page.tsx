@@ -4,12 +4,14 @@ import Image from 'next/image';
 import { Link } from '../../i18n/navigation';
 import HeroSlider from '@/components/HeroSlider';
 import { useTranslations } from 'next-intl';
+import PageLoader from '@/components/PageLoader';
 
 export default function Home() {
   const t = useTranslations('HomePage');
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-[#181818]">
+    <PageLoader>
+      <div className="relative h-screen w-full overflow-hidden bg-[#181818]">
       <div className="absolute inset-0 opacity-20">
         <div
           className="absolute inset-0"
@@ -119,5 +121,6 @@ export default function Home() {
         </div>
       </main>
     </div>
+    </PageLoader>
   );
 }
