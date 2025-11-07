@@ -1,9 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import { Link } from '../../i18n/navigation';
 import HeroSlider from '@/components/HeroSlider';
+import { useTranslations } from 'next-intl';
 
-export default async function Home({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
-  const { locale } = await params;
+export default function Home() {
+  const t = useTranslations('HomePage');
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-[#181818]">
@@ -19,51 +22,63 @@ export default async function Home({ params }: { params: Promise<{ locale: 'en' 
 
       <aside className="fixed top-0 left-0 z-50 flex h-screen flex-col p-8 text-white">
         <div className="mb-12 flex justify-center lg:hidden">
-          <Image src="/logo_white.svg" alt="Logo" width={240} height={240} priority />
+          <Image src="/logo_white.svg" alt="Logo" width={210} height={210} priority />
         </div>
 
         <nav className="mt-[-80px] flex flex-1 flex-col items-start justify-center space-y-12 text-sm">
           <div className="flex flex-col items-start">
-            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">About</span>
+            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">
+              {t('nav.about.label')}
+            </span>
             <Link
               href="/about"
               className="mt-1 block text-5xl font-[100] transition-colors hover:text-gray-300"
             >
-              Salon
+              {t('nav.about.title')}
             </Link>
           </div>
           <div className="flex flex-col items-start">
-            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">What I Do</span>
+            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">
+              {t('nav.services.label')}
+            </span>
             <Link
               href="/services"
               className="mt-1 block text-5xl font-[100] transition-colors hover:text-gray-300"
             >
-              Services
+              {t('nav.services.title')}
             </Link>
           </div>
           <div className="flex flex-col items-start">
-            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">Portfolio</span>
+            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">
+              {t('nav.gallery.label')}
+            </span>
             <Link
               href="/gallery"
               className="mt-1 block text-5xl font-[100] transition-colors hover:text-gray-300"
             >
-              Gallery
+              {t('nav.gallery.title')}
             </Link>
           </div>
           <div className="flex flex-col items-start">
-            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">Products</span>
+            <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">
+              {t('nav.shop.label')}
+            </span>
             <Link
               href="/shop"
               className="mt-1 block text-5xl font-[100] transition-colors hover:text-gray-300"
             >
-              Haircare
+              {t('nav.shop.title')}
             </Link>
           </div>
         </nav>
 
         <ul className="font- flex space-x-4">
-          <li>EN</li>
-          <li>SQ</li>
+          <li>
+            <Link href="en">{t('language.en')}</Link>
+          </li>
+          <li>
+            <Link href="sq">{t('language.sq')}</Link>
+          </li>
         </ul>
       </aside>
 
@@ -96,7 +111,7 @@ export default async function Home({ params }: { params: Promise<{ locale: 'en' 
             </div>
           </div>
 
-          <div className="relative flex h-full flex-1 items-center justify-end lg:w-[60%]">
+          <div className="relative flex h-full w-full flex-1 items-center justify-end lg:w-[60%]">
             <div className="relative h-[100vh] w-full max-w-2xl min-w-full">
               <HeroSlider />
             </div>

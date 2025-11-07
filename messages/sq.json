@@ -1,5 +1,27 @@
 {
-    "HomePage": {
-      "title": "Hello world!"
+  "HomePage": {
+    "title": "Përshëndetje botë!",
+    "nav": {
+      "about": {
+        "label": "Rreth",
+        "title": "Salloni"
+      },
+      "services": {
+        "label": "Çfarë Bëj",
+        "title": "Shërbimet"
+      },
+      "gallery": {
+        "label": "Portofoli",
+        "title": "Galeria"
+      },
+      "shop": {
+        "label": "Produktet",
+        "title": "Kujdesi për Flokët"
+      }
+    },
+    "language": {
+      "en": "EN",
+      "sq": "SQ"
     }
+  }
 }

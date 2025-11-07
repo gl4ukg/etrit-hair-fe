@@ -22,7 +22,7 @@ export default function HeroSlider() {
       modules={[Autoplay, EffectFade]}
       effect="fade"
       autoplay={{
-        delay: 5000,
+        delay: 2000,
         disableOnInteraction: false,
       }}
       loop={true}

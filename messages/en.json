@@ -1,5 +1,27 @@
 {
-    "HomePage": {
-      "title": "Hello world!"
+  "HomePage": {
+    "title": "Hello world!",
+    "nav": {
+      "about": {
+        "label": "About",
+        "title": "Salon"
+      },
+      "services": {
+        "label": "What I Do",
+        "title": "Services"
+      },
+      "gallery": {
+        "label": "Portfolio",
+        "title": "Gallery"
+      },
+      "shop": {
+        "label": "Products",
+        "title": "Haircare"
+      }
+    },
+    "language": {
+      "en": "EN",
+      "sq": "SQ"
     }
+  }
 }

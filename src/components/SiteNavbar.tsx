@@ -68,6 +68,9 @@ export default function SiteNavbar({ locale }: Props) {
         </div>
 
         <div className="hidden items-center gap-6 text-[12px] tracking-[0.2em] uppercase md:flex">
+          <Link href="/" className="text-white/70 no-underline hover:text-white">
+            Home
+          </Link>
           <Link href="/about" className="text-white/70 no-underline hover:text-white">
             About
           </Link>
