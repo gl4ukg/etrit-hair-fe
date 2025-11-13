@@ -38,11 +38,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'hair salon, hair styling, hair coloring, hair treatment, professional hairstylist, beauty salon, hair salon in prishtina, top rated hair in prishtina, hairdresser in prishtina',
     },
     sq: {
-      title: 'Etrit Hair - Salon Profesional Flokësh & Shërbime Stilizimi',
+      title: 'Etrit Hair - Premium Hair Salon & Styling Services',
       description:
-        'Përjetoni kujdesin luksoz të flokëve në Etrit Hair. Stilizim profesional, ngjyrosje dhe trajtim nga stilistë ekspertë. Rezervoni takimin tuaj sot.',
+        'Experience luxury hair care at Etrit Hair. Professional styling, coloring, and treatments by expert stylists. Book your appointment today.',
       keywords:
-        'salon flokësh, stilizim flokësh, ngjyrosje flokësh, trajtim flokësh, stilist profesional, salon bukurie, sallon per floke prishtine, sallon per floke, frizer ne prishtine',
+        'hair salon, hair styling, hair coloring, hair treatment, professional hairstylist, beauty salon, hair salon in prishtina, top rated hair in prishtina, hairdresser in prishtina',
+      // title: 'Etrit Hair - Salon Profesional Flokësh & Shërbime Stilizimi',
+      // description:
+      //   'Përjetoni kujdesin luksoz të flokëve në Etrit Hair. Stilizim profesional, ngjyrosje dhe trajtim nga stilistë ekspertë. Rezervoni takimin tuaj sot.',
+      // keywords:
+      //   'salon flokësh, stilizim flokësh, ngjyrosje flokësh, trajtim flokësh, stilist profesional, salon bukurie, sallon per floke prishtine, sallon per floke, frizer ne prishtine',
     },
   };
 
