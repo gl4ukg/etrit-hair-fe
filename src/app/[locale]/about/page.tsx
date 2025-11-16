@@ -1,100 +1,219 @@
+'use client';
+
 import Image from 'next/image';
-import type { ReactNode } from 'react';
-import SiteNavbar from '../../../components/SiteNavbar';
-import SiteFooter from '../../../components/SiteFooter';
-import { Link } from '@/i18n/navigation';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { ParallaxImage } from '@/components/ParallaxImage';
+import SiteNavbar from '@/components/SiteNavbar';
+import SiteFooter from '@/components/SiteFooter';
 
-export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
-  const { locale } = await params;
-
+export default function AboutPage({ locale }: { locale: 'en' | 'sq' }) {
   return (
-    <main className="bg-background text-foreground min-h-screen w-full">
+    <main className="min-h-screen bg-zinc-950 text-white">
       <SiteNavbar locale={locale} />
 
-      <section className="mx-auto max-w-3xl px-6 pt-10 text-center">
-        <div className="flex items-center justify-center">
-          <Image
-            src="/logo_white.svg"
-            alt="Brand"
-            width={120}
-            height={120}
-            className="opacity-90"
-          />
-        </div>
+      <section className="relative">
+        <div className="relative h-[80vh] overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950">
+          <ParallaxImage src="/about/IMG_5071.jpeg" alt="Founders" speed={0.2} />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
 
-        <p className="mt-8 text-sm/6 text-white/70">
-          The salon is a space where each stylist shares our principles and approach to the author’s
-          vision of haircuts, colouring and style through the search for individuality in each
-          client. Our team personally trains members and hones their haircutting techniques.
-        </p>
-
-        <div className="mt-6 space-y-1 text-white/80">
-          <p>Nura Group, Rruga B, Prishtina, Kosovo</p>
-          <p>Opening hours: Mon–Sat from 10:00 to 18:00</p>
-          <p>+383 45 680 679</p>
-        </div>
-
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            className="rounded-full bg-white px-8 py-3 text-sm font-medium text-black no-underline hover:bg-white/90"
-            href="booking"
-          >
-            Booking
-          </Link>
+          <div className="absolute bottom-0 z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-16">
+            <span className="mb-4 text-sm text-zinc-300">©2025</span>
+            <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">About Etrit Hair*</h1>
+            <p className="mt-6 max-w-xl text-sm text-zinc-300">
+              A cozy and minimal salon in Prishtina, where every client feels confident, cared for,
+              and truly seen.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto mt-12 max-w-6xl px-6">
-        {(() => {
-          const images = [
-            '/about/IMG_5071.jpeg',
-            '/about/IMG_5073.jpeg',
-            '/about/IMG_5074.jpeg',
-            '/about/IMG_5804.jpeg',
-            '/about/IMG_5805.jpeg',
-            '/about/IMG_5805.jpeg',
-            '/about/IMG_5805.jpeg',
-          ];
-          const pattern = [1, 2, 1, 2];
-          const rows: ReactNode[] = [];
-          let i = 0;
+      <section className="relative bg-zinc-950 py-24">
+        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:flex-row">
+          <div className="md:w-1/4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-200">
+              <span className="h-2 w-2 rounded-full bg-purple-500" />
+              Since 2019
+            </div>
+          </div>
 
-          for (let p = 0; i < images.length; p++) {
-            const count = pattern[p % pattern.length];
-            const take = Math.min(count, images.length - i);
-            const slice = images.slice(i, i + take);
-            i += take;
+          <div className="space-y-12 md:w-3/4">
+            <h2 className="text-3xl leading-tight font-semibold md:text-4xl">
+              Built on a passion for creativity and connection. Here, it&apos;s not just about your
+              hair—it&apos;s about how you feel when you walk out the door.®
+            </h2>
 
-            if (take === 1) {
-              const src = slice[0];
-              rows.push(
-                <div key={`row-${p}`} className="mb-6">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-black/20">
-                    <Image src={src} alt="Salon photo" fill className="object-cover" />
+            <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
+              <p className="text-sm font-semibold text-zinc-200">Our Story</p>
+              <p className="text-sm leading-relaxed text-zinc-300">
+                Etrit Hair was founded after years of experience working in the beauty industry.
+                With over a decade of professional hairstyling experience, I wanted to create a
+                salon where every detail—from color to cut—reflects intention, quality, and genuine
+                care. We opened our doors in 2019 with a vision to blend creativity with purpose,
+                building a space where my passion for beauty could come to life.
+              </p>
+            </div>
+
+            <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
+              <p className="text-sm font-semibold text-zinc-200">What We Do</p>
+              <p className="text-sm leading-relaxed text-zinc-300">
+                We offer a refined range of services designed exclusively for female clients,
+                including balayage, ombre, bleach and lightening services, expert hair coloring,
+                precision haircuts, and signature blow-dry styling. Every service is tailored with
+                attention to detail, ensuring results that feel natural, fresh, and uniquely yours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-zinc-950">
+        <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
+      </section>
+
+      <section className="bg-zinc-950 py-24">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-4 flex items-center gap-2 text-xs text-zinc-300">
+            <span className="h-2 w-2 rounded-full bg-purple-500" />
+            Our Philosophy & Team
+          </div>
+
+          <div className="rounded-3xl bg-zinc-900/70 px-6 py-12 md:px-10">
+            <div className="mb-12 text-center">
+              <p className="text-right text-xs text-zinc-400">©2025</p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight">OUR APPROACH</h2>
+              <p className="mx-auto mt-4 max-w-xl text-sm text-zinc-300">
+                Hair is personal. That&apos;s why we take time to listen, understand your vision,
+                and create a look that complements your style and personality. For us, beauty is a
+                balance of technique, creativity, and trust.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
+                <div className="mb-4 flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-purple-500" />
+                    <span className="font-semibold tracking-wide">OUR PHILOSOPHY</span>
                   </div>
-                </div>,
-              );
-            } else if (take === 2) {
-              rows.push(
-                <div key={`row-${p}`} className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  {slice.map((src, idx) => (
-                    <div
-                      key={idx}
-                      className="relative aspect-[4/3] overflow-hidden rounded-lg bg-black/20"
-                    >
-                      <Image src={src} alt="Salon photo" fill className="object-cover" />
-                    </div>
-                  ))}
-                </div>,
-              );
-            }
-          }
+                </div>
+                <p>
+                  What I love most about this work is the combination of creativity and connection.
+                  There&apos;s something special about helping clients see themselves in a new
+                  light—about turning ideas into color, shape, and style. Hair is personal, and
+                  every appointment is an opportunity to create something unique. I enjoy listening,
+                  understanding your vision, and crafting a look that feels authentically you.
+                </p>
+              </article>
 
-          return rows;
-        })()}
+              <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
+                <div className="mb-4 flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-purple-500" />
+                    <span className="font-semibold tracking-wide">WHY CHOOSE US</span>
+                  </div>
+                </div>
+                <p>
+                  Clients choose Etrit Hair for our comfortable atmosphere, high-level expertise,
+                  personalized service, and the genuine warmth we bring to every appointment. We
+                  believe your salon visit should feel like a break from the outside world—a cozy,
+                  minimal, and inviting space that&apos;s warm, friendly, and full of good energy.
+                  Behind every great result is a supportive and dedicated team that shares the same
+                  passion for quality, professionalism, and hospitality.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <div className="h-16" />
+      <section className="bg-zinc-950">
+        <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
+      </section>
+
+      <section className="bg-zinc-950 py-24">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-12 flex items-center gap-2 text-xs text-zinc-300">
+            <span className="h-2 w-2 rounded-full bg-purple-500" />
+            Meet Our Team
+          </div>
+
+          <div className="mb-16">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              The People Behind Your Experience
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm text-zinc-300">
+              Our dedicated team shares the same passion for quality, professionalism, and
+              hospitality—ensuring you&apos;re in the best hands.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
+              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
+                <Image
+                  src="/staff/member-1.jpg"
+                  alt="Staff member"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+                  <span className="text-xs font-medium text-zinc-400">Senior Stylist</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white">Name Surname</h3>
+                <p className="mt-2 text-sm text-zinc-400">
+                  Specializing in color techniques and transformations
+                </p>
+              </div>
+            </div>
+
+            {/* Staff Member 2 */}
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
+              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
+                <Image
+                  src="/staff/member-2.jpg"
+                  alt="Staff member"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+                  <span className="text-xs font-medium text-zinc-400">Hair Stylist</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white">Name Surname</h3>
+                <p className="mt-2 text-sm text-zinc-400">Expert in precision cuts and styling</p>
+              </div>
+            </div>
+
+            {/* Staff Member 3 */}
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
+              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
+                <Image
+                  src="/staff/member-3.jpg"
+                  alt="Staff member"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+                  <span className="text-xs font-medium text-zinc-400">Colorist</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white">Name Surname</h3>
+                <p className="mt-2 text-sm text-zinc-400">
+                  Passionate about balayage and ombre techniques
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <SiteFooter />
     </main>
