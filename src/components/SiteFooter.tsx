@@ -71,7 +71,13 @@ export default function SiteFooter() {
           </div>
         </div> */}
 
-        <div className="mt-6 text-xs text-white/40">© 2025</div>
+        <div className="mt-6 text-xs text-white/40">
+          © 2025{' '}
+          <Link href="https://codespherellc.com/" className="no-underline hover:text-white/80">
+            CodeSphere LLC
+          </Link>
+          . All rights reserved.
+        </div>
       </div>
     </footer>
   );
