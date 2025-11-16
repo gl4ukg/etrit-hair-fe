@@ -7,7 +7,9 @@ import { ParallaxImage } from '@/components/ParallaxImage';
 import SiteNavbar from '@/components/SiteNavbar';
 import SiteFooter from '@/components/SiteFooter';
 
-export default function AboutPage({ locale }: { locale: 'en' | 'sq' }) {
+export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
+  const { locale } = await params;
+
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
       <SiteNavbar locale={locale} />
