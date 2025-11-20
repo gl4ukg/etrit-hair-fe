@@ -1,14 +1,50 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import { ParallaxImage } from '@/components/ParallaxImage';
 import SiteNavbar from '@/components/SiteNavbar';
 import SiteFooter from '@/components/SiteFooter';
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
   const { locale } = await params;
+
+  const staff = [
+    {
+      name: 'Etrit Tullumi',
+      position: 'Founder & Creative Director',
+      description:
+        'Leads the salon with a sharp eye for detail and a calm, structured approach. Dedicated to technique, consistency, and creating an elevated experience for every client.',
+      image: '/staff/member-1.jpg',
+    },
+    {
+      name: 'Ema',
+      position: 'Stylist',
+      description:
+        'Bright, fast, and effortlessly fun. She brings good energy to every client, keeps the mood light, and delivers clean, precise work every single time.',
+      image: '/staff/member-2.jpg',
+    },
+    {
+      name: 'Adea',
+      position: 'Stylist',
+      description:
+        'Warm, friendly, and always smiling. She brings a natural charm to the salon, keeps clients relaxed, and delivers clean, consistent work every time.',
+      image: '/staff/member-3.jpg',
+    },
+    {
+      name: 'Aida',
+      position: 'Stylist',
+      description:
+        'Steady, gentle, and detail-driven. She works with focus, brings a soft presence to the salon, and always delivers clean, polished results.',
+      image: '/staff/member-4.jpg',
+    },
+    {
+      name: 'Rrona',
+      position: 'Social Media & Appointments',
+      description:
+        "Organized, responsive, and creative. She manages bookings with ease and keeps the salon's online presence clean, clear, and up to date.",
+      image: '/staff/member-5.jpg',
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
@@ -151,68 +187,26 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
-              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
-                <Image
-                  src="/staff/member-1.jpg"
-                  alt="Staff member"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
-                  <span className="text-xs font-medium text-zinc-400">Senior Stylist</span>
+            {staff.map((item) => (
+              <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
+                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
+                  <Image
+                    src={item.image}
+                    alt="Staff member"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-white">Name Surname</h3>
-                <p className="mt-2 text-sm text-zinc-400">
-                  Specializing in color techniques and transformations
-                </p>
-              </div>
-            </div>
-
-            {/* Staff Member 2 */}
-            <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
-              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
-                <Image
-                  src="/staff/member-2.jpg"
-                  alt="Staff member"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
-                  <span className="text-xs font-medium text-zinc-400">Hair Stylist</span>
+                <div className="p-6">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+                    <span className="text-xs font-medium text-zinc-400">{item.position}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{item.name}</h3>
+                  <p className="mt-2 text-sm text-zinc-400">{item.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Name Surname</h3>
-                <p className="mt-2 text-sm text-zinc-400">Expert in precision cuts and styling</p>
               </div>
-            </div>
-
-            {/* Staff Member 3 */}
-            <div className="group relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700">
-              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
-                <Image
-                  src="/staff/member-3.jpg"
-                  alt="Staff member"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
-                  <span className="text-xs font-medium text-zinc-400">Colorist</span>
-                </div>
-                <h3 className="text-lg font-semibold text-white">Name Surname</h3>
-                <p className="mt-2 text-sm text-zinc-400">
-                  Passionate about balayage and ombre techniques
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
