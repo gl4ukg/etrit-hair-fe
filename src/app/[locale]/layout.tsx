@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import '../globals.css';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
 import type { Metadata } from 'next';
+import PageTransition from '@/components/PageTransition';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -110,8 +112,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon-16x16.png',
+      icon: [
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+        { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
+      ],
+      shortcut: '/favicon.ico',
       apple: '/apple-touch-icon.png',
     },
     manifest: '/site.webmanifest',
@@ -134,7 +141,8 @@ export default async function RootLayout({ children, params }: Props) {
     <html className={`${inter.variable} `}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <PageTransition>{children}</PageTransition>
+          <ScrollToTop />
         </NextIntlClientProvider>
       </body>
     </html>
