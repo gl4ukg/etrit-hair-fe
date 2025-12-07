@@ -18,7 +18,7 @@ export function ParallaxImage({ src, alt, speed = 0.25 }: ParallaxImageProps) {
     offset: ['start end', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [`${-speed * 100}%`, `${speed * 100}%`]);
+  const y = useTransform(scrollYProgress, [0, 1], [`${-speed * 200}%`, `${speed * 200}%`]);
 
   const scale = useTransform(scrollYProgress, [0, 1], [1.12, 1]);
 

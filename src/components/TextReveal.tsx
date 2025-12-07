@@ -17,7 +17,7 @@ export default function TextReveal({ children, className = '', delay = 0 }: Text
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: delay },
+      transition: { staggerChildren: 0.005, delayChildren: delay },
     }),
   };
 

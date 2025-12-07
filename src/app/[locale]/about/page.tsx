@@ -48,6 +48,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-purple-500 via-purple-300 to-transparent" />
       <SiteNavbar locale={locale} />
 
       <section className="relative">
@@ -56,27 +57,24 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
 
           <div className="absolute bottom-0 z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-16">
-            <TextReveal className="mb-4 text-sm text-zinc-300" delay={0}>
+            <TextReveal className="mb-4 text-sm text-zinc-300" delay={0.2}>
               &copy;2025
             </TextReveal>
-            <TextReveal
-              className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-purple-300 uppercase"
-              delay={0.05}
-            >
+
+            <div className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-purple-300 uppercase">
               <span className="h-[1px] w-10 bg-gradient-to-r from-purple-500/60 to-purple-300/60" />
-              About
-            </TextReveal>
-            <TextReveal
-              className="mt-2 text-5xl font-semibold tracking-tight sm:text-7xl"
-              delay={0.1}
-            >
-              <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-zinc-100 bg-clip-text text-transparent">
+              <TextReveal delay={0.25}>About</TextReveal>
+            </div>
+
+            <TextReveal className="mt-2" delay={0}>
+              <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-zinc-100 bg-clip-text text-5xl font-semibold tracking-tight text-transparent sm:text-7xl">
                 Etrit Hair*
               </span>
             </TextReveal>
-            <TextReveal className="mt-6 max-w-xl text-sm text-zinc-300" delay={0.1}>
-              A cozy and minimal salon in Prishtina, where every client feels confident, cared for,
-              and truly seen.
+
+            <TextReveal className="mt-6 max-w-xl text-sm text-zinc-300" delay={0.3}>
+              A focused, minimal salon in Prishtina dedicated to detail, calm, and making every
+              client feel seen.
             </TextReveal>
           </div>
         </div>
@@ -95,7 +93,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
           <div className="space-y-12 md:w-3/4">
             <FadeInLeft delay={0.1}>
-              <h2 className="text-3xl leading-tight font-semibold md:text-4xl">
+              <h2 className="text-center text-3xl leading-tight font-semibold md:text-left md:text-5xl">
                 Built on a passion for creativity and connection. Here, it&apos;s not just about
                 your hair—it&apos;s about how you feel when you walk out the door.®
               </h2>
@@ -140,6 +138,48 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
       </section>
 
+      <section className="bg-zinc-950 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <FadeInLeft delay={0}>
+            <div className="mb-8 flex items-center justify-between gap-4">
+              <p className="text-xs font-semibold tracking-[0.25em] text-purple-300 uppercase">
+                Highlights
+              </p>
+              <p className="hidden text-xs text-zinc-400 sm:block">
+                A few moments from inside the salon.
+              </p>
+            </div>
+          </FadeInLeft>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900">
+              <Image
+                src="/gallery/449532733_788644236714097_475633129053053685_n.jpg"
+                alt="Color work in the salon"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900">
+              <Image
+                src="/gallery/518797080_18523723021062559_5146039805755827029_n.jpg"
+                alt="Styling detail in the salon"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 sm:block">
+              <Image
+                src="/gallery/530908293_18529022932062559_3750644558349443916_n.jpg"
+                alt="Finished look at Etrit Hair"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-zinc-950 py-24">
         <div className="mx-auto max-w-6xl px-4">
           <FadeInLeft delay={0}>
@@ -155,7 +195,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <p className="text-right text-xs tracking-[0.25em] text-purple-300 uppercase">
                   ©2025 • Etrit Hair Studio
                 </p>
-                <h2 className="mt-3 text-4xl font-semibold tracking-tight">OUR APPROACH</h2>
+                <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
+                  OUR APPROACH
+                </h2>
                 <p className="mx-auto mt-4 max-w-xl text-sm text-zinc-300">
                   Hair is personal. That&apos;s why we take time to listen, understand your vision,
                   and create a look that complements your style and personality. For us, beauty is a
@@ -202,6 +244,21 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   </p>
                 </article>
               </FadeInLeft>
+              {/* <FadeInLeft delay={0.4}>
+                <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
+                  <div className="mb-4 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-purple-500" />
+                      <span className="font-semibold tracking-wide">OUR VALUES</span>
+                    </div>
+                  </div>
+                  <p>
+                    "Clients often tell me they feel calmer the moment they sit in the chair. For
+                    me, that&apos;s the most important part—creating a space where you feel listened
+                    to, understood, and confident in the result."
+                  </p>
+                </article>
+              </FadeInLeft> */}
             </div>
           </div>
         </div>
@@ -213,7 +270,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <section className="bg-zinc-950 py-24">
         <div className="mx-auto max-w-6xl px-4">
-          <FadeInLeft delay={0}>
+          <FadeInLeft delay={0.1}>
             <div className="mb-12 flex items-center gap-2 text-xs text-zinc-300">
               <span className="h-2 w-2 rounded-full bg-purple-500" />
               Meet Our Team
@@ -221,11 +278,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </FadeInLeft>
 
           <FadeInLeft delay={0.1}>
-            <div className="mb-16">
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            <div className="mb-16 text-center md:text-left">
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
                 The People Behind Your Experience
               </h2>
-              <p className="mt-4 max-w-2xl text-sm text-zinc-300">
+              <p className="mt-4 max-w-2xl text-sm text-zinc-300 md:text-base">
                 Our dedicated team shares the same passion for quality, professionalism, and
                 hospitality—ensuring you&apos;re in the best hands.
               </p>
