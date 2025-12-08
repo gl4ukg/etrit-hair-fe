@@ -48,34 +48,39 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-purple-500 via-purple-300 to-transparent" />
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500" />
       <SiteNavbar locale={locale} />
 
       <section className="relative">
-        <div className="relative h-[80vh] overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950">
-          <ParallaxImage src="/about/IMG_5071.jpeg" alt="Founders" speed={0.2} />
+        <div className="relative h-[60vh] overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950">
+          <div className="min-h-screen bg-gradient-to-br from-black via-gray-500/50 to-black"></div>
+
+          {/* <ParallaxImage src="/purple-bg.webp" alt="Founders" speed={0.2} /> */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
 
-          <div className="absolute bottom-0 z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-4 pb-16">
-            <TextReveal className="mb-4 text-sm text-zinc-300" delay={0.2}>
+          <div className="absolute bottom-0 left-1/2 z-10 flex h-full w-full max-w-6xl -translate-x-1/2 flex-col justify-end px-4 pb-16">
+            {/* <TextReveal className="mb-4 text-sm text-zinc-300" delay={0.2}>
               &copy;2025
-            </TextReveal>
+            </TextReveal> */}
 
-            <div className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-purple-300 uppercase">
+            <div className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-white uppercase">
               <span className="h-[1px] w-10 bg-gradient-to-r from-purple-500/60 to-purple-300/60" />
               <TextReveal delay={0.25}>About</TextReveal>
             </div>
 
-            <TextReveal className="mt-2" delay={0}>
-              <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-zinc-100 bg-clip-text text-5xl font-semibold tracking-tight text-transparent sm:text-7xl">
-                Etrit Hair*
-              </span>
-            </TextReveal>
+            <div className="flex items-end justify-between">
+              <TextReveal
+                className="mt-2 text-[80px] font-semibold tracking-tight text-white"
+                delay={0.1}
+              >
+                Etrit Hair
+              </TextReveal>
 
-            <TextReveal className="mt-6 max-w-xl text-sm text-zinc-300" delay={0.3}>
-              A focused, minimal salon in Prishtina dedicated to detail, calm, and making every
-              client feel seen.
-            </TextReveal>
+              {/* <TextReveal className="mt-6 max-w-xl text-sm text-zinc-300" delay={0.3}>
+                A focused, minimal salon in Prishtina dedicated to detail, calm, and making every
+                client feel seen.
+              </TextReveal> */}
+            </div>
           </div>
         </div>
       </section>

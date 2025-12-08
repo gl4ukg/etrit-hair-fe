@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpIcon } from '@heroicons/react/24/outline';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,10 +39,13 @@ export default function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white shadow-lg transition-all hover:bg-white/20 hover:scale-110"
+          className="fixed right-8 bottom-8 z-50 flex cursor-pointer flex-row items-center justify-center rounded-full text-white backdrop-blur-sm transition-all hover:scale-110"
           aria-label="Scroll to top"
         >
-          <svg
+          <p className="flex flex-row items-center gap-2 text-xs font-medium text-white">
+            Back to top <ArrowUpIcon className="h-3 w-3" />
+          </p>
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -54,7 +58,7 @@ export default function ScrollToTop() {
               strokeLinejoin="round"
               d="M4.5 15.75l7.5-7.5 7.5 7.5"
             />
-          </svg>
+          </svg> */}
         </motion.button>
       )}
     </AnimatePresence>

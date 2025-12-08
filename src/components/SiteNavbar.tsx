@@ -39,15 +39,15 @@ export default function SiteNavbar({ locale }: Props) {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur">
-      <nav className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-6 text-white lg:px-8">
+      <nav className="max-w-10xl mx-auto flex h-14 w-full items-center justify-between px-6 text-white lg:px-8 2xl:max-w-7xl">
         <div className="flex items-center gap-6">
           <Link href="/">
             <Image
               src="/logo_white.svg"
               alt="Logo"
-              height={32}
+              height={28}
               width={0}
-              style={{ width: 'auto', height: 32 }}
+              style={{ width: 'auto', height: 28 }}
               priority
             />
           </Link>
@@ -75,19 +75,22 @@ export default function SiteNavbar({ locale }: Props) {
         </div>
 
         <div className="hidden items-center gap-10 text-[12px] tracking-[0.2em] uppercase md:flex">
-          <Link href="/" className="text-white/70 no-underline hover:text-white">
+          <Link href="/" className="nav-link-3d text-white/70 no-underline hover:text-white">
             Home
           </Link>
-          <Link href="/about" className="text-white/70 no-underline hover:text-white">
+          <Link href="/about" className="nav-link-3d text-white/70 no-underline hover:text-white">
             About
           </Link>
-          <Link href="/services" className="text-white/70 no-underline hover:text-white">
+          <Link
+            href="/services"
+            className="nav-link-3d text-white/70 no-underline hover:text-white"
+          >
             Services
           </Link>
-          <Link href="/gallery" className="text-white/70 no-underline hover:text-white">
+          <Link href="/gallery" className="nav-link-3d text-white/70 no-underline hover:text-white">
             Gallery
           </Link>
-          <Link href="/shop" className="text-white/70 no-underline hover:text-white">
+          <Link href="/shop" className="nav-link-3d text-white/70 no-underline hover:text-white">
             Shop
           </Link>
         </div>

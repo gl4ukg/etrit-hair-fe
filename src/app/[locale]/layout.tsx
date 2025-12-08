@@ -142,7 +142,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <PageTransition>{children}</PageTransition>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
         </NextIntlClientProvider>
       </body>
     </html>

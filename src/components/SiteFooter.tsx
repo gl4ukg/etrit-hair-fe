@@ -29,10 +29,6 @@ export default function SiteFooter() {
                 a question, or just say hello.
               </p>
             </div>
-
-            <p className="hidden text-xs text-white/40 sm:block">
-              Copyright 2025 Etrit Hair. All rights reserved.
-            </p>
           </div>
 
           {/* Right: simple navigation list */}
@@ -57,9 +53,8 @@ export default function SiteFooter() {
 
         {/* Bottom row */}
         <div className="mt-8 flex flex-col items-start justify-between gap-2 text-xs text-white/40 sm:flex-row sm:items-center sm:gap-4">
-          <p className="sm:hidden">Copyright © 2025 Etrit Hair. All rights reserved.</p>
           <div className="flex w-full flex-col justify-between sm:flex-row sm:items-center">
-            <p className="hidden sm:block">Designed for Etrit Hair Studio • Prishtina •</p>
+            <p className="hidden sm:block">Copyright © 2025 Etrit Hair. All rights reserved.</p>
             <p className="sm:ml-1">
               Designed &amp; built by{' '}
               <Link
