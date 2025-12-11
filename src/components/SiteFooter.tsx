@@ -16,11 +16,11 @@ export default function SiteFooter() {
           {/* Left: Stay connected */}
           <div className="flex flex-col justify-between gap-6">
             <div>
-              <p className="text-sm font-semibold tracking-[0.25em] text-white/40 uppercase">
+              <p className="text-lg font-semibold tracking-[0.25em] text-white/40 uppercase">
                 Stay connected®
               </p>
-              <p className="mt-3 text-2xl font-semibold text-purple-300 sm:text-3xl">
-                <a href="mailto:info@etrithair.com" className="no-underline hover:text-purple-200">
+              <p className="mt-3 text-2xl font-semibold text-emerald-600 sm:text-4xl">
+                <a href="mailto:info@etrithair.com" className="no-underline hover:text-emerald-400">
                   info@etrithair.com
                 </a>
               </p>

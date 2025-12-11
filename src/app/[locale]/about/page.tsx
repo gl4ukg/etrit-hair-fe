@@ -4,9 +4,45 @@ import SiteNavbar from '@/components/SiteNavbar';
 import SiteFooter from '@/components/SiteFooter';
 import TextReveal from '@/components/TextReveal';
 import FadeInLeft from '@/components/FadeInLeft';
+import HighlightsCarousel from '@/components/HighlightsCarousel';
+import TestimonialsSection, { Testimonial } from '@/components/TestimonialsSection';
+
+async function fetchGoogleReviews(): Promise<Testimonial[]> {
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  const placeId = process.env.GOOGLE_PLACE_ID_ETRIT_HAIR;
+
+  if (!apiKey || !placeId) {
+    return [];
+  }
+
+  try {
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}`;
+    const res = await fetch(url, {
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      console.log('Google Places error HTTP:', res.status, res.statusText);
+      return [];
+    }
+
+    const data = await res.json();
+    console.log(JSON.stringify(data, null, 2), 'google place details');
+
+    if (!data?.result?.reviews) {
+      return [];
+    }
+
+    return data.result.reviews as Testimonial[];
+  } catch {
+    return [];
+  }
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
   const { locale } = await params;
+  const googleReviews = await fetchGoogleReviews();
+  console.log(googleReviews, 'googleReviews');
 
   const staff = [
     {
@@ -48,7 +84,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500" />
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-emerald-700 via-emerald-500 to-emerald-700" />
       <SiteNavbar locale={locale} />
 
       <section className="relative">
@@ -64,7 +100,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </TextReveal> */}
 
             <div className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-white uppercase">
-              <span className="h-[1px] w-10 bg-gradient-to-r from-purple-500/60 to-purple-300/60" />
+              <span className="h-[1px] w-10 bg-gradient-to-r from-emerald-700/60 to-emerald-500/60" />
               <TextReveal delay={0.25}>About</TextReveal>
             </div>
 
@@ -90,7 +126,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="md:w-1/4">
             <FadeInLeft delay={0}>
               <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-200">
-                <span className="h-2 w-2 rounded-full bg-purple-500" />
+                <span className="h-2 w-2 rounded-full bg-emerald-700" />
                 Since 2019
               </div>
             </FadeInLeft>
@@ -107,7 +143,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <FadeInLeft delay={0.2}>
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
                 <p className="text-sm font-semibold text-zinc-200">
-                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-purple-500 to-purple-300" />
+                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-emerald-700 to-emerald-500" />
                   Our Story
                 </p>
                 <p className="text-sm leading-relaxed text-zinc-300">
@@ -123,7 +159,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <FadeInLeft delay={0.3}>
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
                 <p className="text-sm font-semibold text-zinc-200">
-                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-purple-500 to-purple-300" />
+                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-400" />
                   What We Do
                 </p>
                 <p className="text-sm leading-relaxed text-zinc-300">
@@ -138,50 +174,23 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
         </div>
       </section>
-
+      {/* 
       <section className="bg-zinc-950">
         <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
-      </section>
+      </section> */}
 
       <section className="bg-zinc-950 py-16">
         <div className="mx-auto max-w-6xl px-4">
           <FadeInLeft delay={0}>
-            <div className="mb-8 flex items-center justify-between gap-4">
-              <p className="text-xs font-semibold tracking-[0.25em] text-purple-300 uppercase">
+            <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+              <p className="text-xs font-semibold tracking-[0.25em] text-emerald-600 uppercase">
                 Highlights
               </p>
-              <p className="hidden text-xs text-zinc-400 sm:block">
-                A few moments from inside the salon.
-              </p>
+              <p className="text-xs text-zinc-400">A few moments from inside the salon.</p>
             </div>
           </FadeInLeft>
 
-          <div className="grid gap-3 sm:grid-cols-3">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900">
-              <Image
-                src="/gallery/449532733_788644236714097_475633129053053685_n.jpg"
-                alt="Color work in the salon"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900">
-              <Image
-                src="/gallery/518797080_18523723021062559_5146039805755827029_n.jpg"
-                alt="Styling detail in the salon"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 sm:block">
-              <Image
-                src="/gallery/530908293_18529022932062559_3750644558349443916_n.jpg"
-                alt="Finished look at Etrit Hair"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <HighlightsCarousel />
         </div>
       </section>
 
@@ -189,15 +198,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-6xl px-4">
           <FadeInLeft delay={0}>
             <div className="mb-4 flex items-center gap-2 text-xs text-zinc-300">
-              <span className="h-2 w-2 rounded-full bg-purple-500" />
+              <span className="h-2 w-2 rounded-full bg-emerald-700" />
               Our Philosophy & Team
             </div>
           </FadeInLeft>
 
-          <div className="rounded-3xl border border-purple-500/10 bg-zinc-900/70 px-6 py-12 md:px-10">
+          <div className="rounded-3xl border border-emerald-700/10 bg-zinc-900/70 px-6 py-12 md:px-10">
             <FadeInLeft delay={0.1}>
               <div className="mb-12 text-center">
-                <p className="text-right text-xs tracking-[0.25em] text-purple-300 uppercase">
+                <p className="text-right text-xs tracking-[0.25em] text-emerald-600 uppercase">
                   ©2025 • Etrit Hair Studio
                 </p>
                 <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
@@ -216,7 +225,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
                   <div className="mb-4 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-purple-500" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-700" />
                       <span className="font-semibold tracking-wide">OUR PHILOSOPHY</span>
                     </div>
                   </div>
@@ -235,7 +244,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
                   <div className="mb-4 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-purple-500" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-600" />
                       <span className="font-semibold tracking-wide">WHY CHOOSE US</span>
                     </div>
                   </div>
@@ -269,6 +278,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
+      <TestimonialsSection reviews={googleReviews} />
+
       <section className="bg-zinc-950">
         <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
       </section>
@@ -277,7 +288,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-6xl px-4">
           <FadeInLeft delay={0.1}>
             <div className="mb-12 flex items-center gap-2 text-xs text-zinc-300">
-              <span className="h-2 w-2 rounded-full bg-purple-500" />
+              <span className="h-2 w-2 rounded-full bg-emerald-700" />
               Meet Our Team
             </div>
           </FadeInLeft>
@@ -308,7 +319,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   </div>
                   <div className="p-4 md:p-6">
                     <div className="mb-2 flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-700" />
                       <span className="text-xs font-medium text-zinc-400">{item.position}</span>
                     </div>
                     <h3 className="text-base font-semibold text-white md:text-lg">{item.name}</h3>
