@@ -278,8 +278,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <TestimonialsSection reviews={googleReviews} />
-
       <section className="bg-zinc-950">
         <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
       </section>
@@ -331,6 +329,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
         </div>
       </section>
+
+      <TestimonialsSection reviews={googleReviews} />
 
       <SiteFooter />
     </main>
