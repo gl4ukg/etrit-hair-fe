@@ -24,10 +24,7 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
         className={
           'relative h-40 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white ' +
           'shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-all duration-700' +
-          'ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] sm:h-44' +
-          (flipped
-            ? '-translate-y-1 [transform:rotateY(180deg)] shadow-[0_22px_55px_rgba(0,0,0,0.9)]'
-            : '')
+          'ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] sm:h-44'
         }
       >
         {/* Front */}
