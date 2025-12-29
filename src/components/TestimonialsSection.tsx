@@ -10,9 +10,9 @@ export type Testimonial = {
 };
 
 export default function TestimonialsSection({ reviews }: { reviews: Testimonial[] }) {
-  // if (!reviews || reviews.length === 0) {
-  //   return null;
-  // }
+  if (!reviews || reviews.length === 0) {
+    return null;
+  }
 
   return (
     <section className="bg-zinc-950 py-24">

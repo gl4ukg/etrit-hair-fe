@@ -84,10 +84,10 @@ export default async function ServicesPage({
                 const Icon = tab.icon;
                 return (
                   <div key={tab.key} className="group [perspective:1400px]">
-                    <div className="relative h-40 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:-translate-y-1 group-hover:[transform:rotateY(180deg)] group-hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] sm:h-44">
+                    <div className="relative h-40 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] hover:-translate-y-1 hover:[transform:rotateY(180deg)] hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] sm:h-44">
                       <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
                         <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
-                          <Icon className="h-5 w-5" />
+                          {/* <Icon className="h-5 w-5" /> */}
                           <span>{tab.label}</span>
                         </h3>
                         <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
@@ -96,7 +96,7 @@ export default async function ServicesPage({
 
                       <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs [backface-visibility:hidden]">
                         <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
-                          <Icon className="h-5 w-5" />
+                          {/* <Icon className="h-5 w-5" /> */}
                           <span>{tab.label}</span>
                         </h3>
                         <ul className="mt-3 space-y-2 text-zinc-200">
@@ -131,7 +131,7 @@ export default async function ServicesPage({
                       <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:-translate-y-1 group-hover:[transform:rotateY(180deg)] group-hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
                         <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
                           <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
-                            <Icon className="h-5 w-5" />
+                            {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
                           </h3>
                           <p className="text-md mt-4 text-zinc-300">{tab.description}</p>
@@ -140,7 +140,7 @@ export default async function ServicesPage({
 
                         <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs [backface-visibility:hidden]">
                           <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
-                            <Icon className="h-5 w-5" />
+                            {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
                           </h3>
                           <ul className="mt-4 space-y-2 text-zinc-200">
