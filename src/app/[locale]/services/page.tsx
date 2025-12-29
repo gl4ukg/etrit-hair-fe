@@ -6,6 +6,7 @@ import {
   SparklesIcon,
   ArrowRightCircleIcon,
 } from '@heroicons/react/24/outline';
+import { Link } from '@/i18n/navigation';
 
 const tabs = [
   {
@@ -54,33 +55,30 @@ export default async function ServicesPage({
     <main className="text-foreground min-h-screen w-full bg-black">
       <SiteNavbar locale={locale} />
       <div className="lg:max-w-8xl w-full px-4 pt-12 pb-10 lg:ml-auto">
-        {/* Hero section */}
-        <section className="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,2fr)] md:gap-18">
-          {/* Left: portrait image */}
+        <section className="grid gap-8 min-[769px]:grid-cols-[minmax(0,1.3fr)_minmax(0,2fr)] min-[769px]:gap-18">
           <div className="h-[360px] w-full bg-[url('/services.png')] bg-contain bg-center bg-no-repeat sm:h-[480px] lg:h-[700px]" />
 
-          {/* Right: copy + actions */}
-          <div className="mt-8 space-y-10 text-left text-white md:mt-0">
+          <div className="mt-8 space-y-10 text-left text-white min-[769px]:mt-0">
             <div className="space-y-3">
-              <h1 className="pt-6 text-[34px] leading-tight font-light text-white sm:pt-10 sm:text-[48px] lg:pt-16 lg:text-[72px]">
+              <h1 className="pt-6 text-[34px] leading-tight font-light text-white sm:pt-10 sm:text-[48px] lg:pt-16 lg:text-[68px]">
                 Precision. experience. <br />
                 results.
               </h1>
-              <p className="max-w-md text-sm font-light text-zinc-300 sm:text-base md:text-lg">
+              <p className="max-w-md text-sm font-light text-zinc-300 min-[769px]:text-lg sm:text-base">
                 Women&apos;s cuts and color focused on balance, shape, and longevity. Explore a
                 service menu designed to enhance your natural beauty and lifestyle.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3 sm:gap-4">
-              <button className="rounded-full bg-zinc-100 px-6 py-2 text-sm font-medium text-black shadow-sm transition-colors hover:bg-white">
-                Book Appointment
-              </button>
-              <button className="rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
-                View Full Services
-              </button>
+              {/* <button className="rounded-full bg-zinc-100 px-6 py-2 text-sm font-medium text-black shadow-sm transition-colors hover:bg-white">
+              </button> */}
+              <Link href="/booking">
+                <button className="cursor-pointer rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
+                  Book Appointment
+                </button>
+              </Link>
             </div>
-            {/* Mobile / tablet: one card per row */}
             <div className="mt-10 flex flex-col gap-8 lg:hidden">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
@@ -121,7 +119,7 @@ export default async function ServicesPage({
               })}
             </div>
 
-            <div className="mt-10 hidden justify-start lg:flex lg:justify-end">
+            <div className="mt-10 hidden justify-start lg:flex lg:justify-end 2xl:justify-start">
               <div className="flex h-[220px] max-w-full gap-4 overflow-x-auto pr-2 pb-2 [scrollbar-width:none] sm:gap-5 sm:pr-4 [&::-webkit-scrollbar]:hidden">
                 {tabs.map((tab) => {
                   const Icon = tab.icon;
@@ -136,7 +134,7 @@ export default async function ServicesPage({
                             <Icon className="h-5 w-5" />
                             <span>{tab.label}</span>
                           </h3>
-                          <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
+                          <p className="text-md mt-4 text-zinc-300">{tab.description}</p>
                           <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
                         </div>
 
@@ -145,7 +143,7 @@ export default async function ServicesPage({
                             <Icon className="h-5 w-5" />
                             <span>{tab.label}</span>
                           </h3>
-                          <ul className="mt-3 space-y-2 text-zinc-200">
+                          <ul className="mt-4 space-y-2 text-zinc-200">
                             {tab.items.map((item) => (
                               <li
                                 key={item.name}
@@ -153,7 +151,7 @@ export default async function ServicesPage({
                               >
                                 <span className="flex items-center gap-2">
                                   <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                                  <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
+                                  <span className="text-[14px] tracking-[0.16em] text-zinc-300 uppercase">
                                     {item.name}
                                   </span>
                                 </span>
