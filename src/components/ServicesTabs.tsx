@@ -1,10 +1,10 @@
-"use client";
+'use client';
 import { useState } from 'react';
 
 export type ServiceTab = {
   key: string;
   label: string;
-  items: { name: string; price: number }[];
+  items: { name: string; price: string }[];
   images: string[];
 };
 
@@ -26,7 +26,9 @@ export default function ServicesTabs({ tabs }: { tabs: ServiceTab[] }) {
             onClick={() => setActive(t.key)}
             className={
               'rounded-full px-4 py-1.5 text-sm transition-colors ' +
-              (active === t.key ? 'bg-white text-black' : 'bg-white/10 text-white hover:bg-white/20')
+              (active === t.key
+                ? 'bg-white text-black'
+                : 'bg-white/10 text-white hover:bg-white/20')
             }
             type="button"
           >
@@ -44,7 +46,7 @@ export default function ServicesTabs({ tabs }: { tabs: ServiceTab[] }) {
                 {current.items.map((it) => (
                   <tr key={it.name} className="border-b border-white/10 last:border-0">
                     <td className="px-4 py-3">{it.name}</td>
-                    <td className="px-4 py-3 text-right font-medium">${it.price.toFixed(2)}</td>
+                    <td className="px-4 py-3 text-right font-medium">€{it.price}</td>
                   </tr>
                 ))}
               </tbody>
@@ -56,14 +58,20 @@ export default function ServicesTabs({ tabs }: { tabs: ServiceTab[] }) {
         <div className="grid grid-cols-2 gap-6">
           {current.images.map((src) => (
             <div key={src} className="aspect-[4/5] overflow-hidden rounded-2xl bg-white/5">
-              <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${src})` }} />
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${src})` }}
+              />
             </div>
           ))}
         </div>
       </div>
 
       <div className="mt-8 flex justify-center">
-        <a href="#booking" className="rounded-full bg-white/90 px-8 py-3 text-sm font-medium text-black no-underline hover:bg-white">
+        <a
+          href="#booking"
+          className="rounded-full bg-white/90 px-8 py-3 text-sm font-medium text-black no-underline hover:bg-white"
+        >
           Book a call
         </a>
       </div>

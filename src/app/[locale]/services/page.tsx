@@ -1,137 +1,176 @@
-export const dynamic = 'force-dynamic';
 import SiteNavbar from '../../../components/SiteNavbar';
 import SiteFooter from '../../../components/SiteFooter';
-import Testimonials from '../../../components/Testimonials';
-import ServicesTabs, { type ServiceTab } from '../../../components/ServicesTabs';
+import {
+  ScissorsIcon,
+  PaintBrushIcon,
+  SparklesIcon,
+  ArrowRightCircleIcon,
+} from '@heroicons/react/24/outline';
 
-const tabs: ServiceTab[] = [
+const tabs = [
   {
     key: 'haircuts',
     label: 'Haircuts',
+    icon: ScissorsIcon,
+    description: 'Clean, structured cuts with movement and softness.',
     items: [
-      { name: 'Short Length', price: 40 },
-      { name: 'Medium Length', price: 55 },
-      { name: 'Long Length', price: 70 },
-      { name: 'Children cut', price: 35 },
-      { name: 'Men cut', price: 40 },
+      { name: 'Short Length', price: '20' },
+      { name: 'Medium Length', price: '20 - 25' },
+      { name: 'Long Length', price: '23 - 30' },
     ],
-    images: ['/about/IMG_5071.jpeg', '/about/IMG_5073.jpeg'],
   },
   {
-    key: 'hairstyling',
-    label: 'Hairstyling',
+    key: 'haircolor',
+    label: 'Hair Color',
+    icon: PaintBrushIcon,
+    description: 'Balayage, highlights, brunettes and blondes.',
     items: [
-      { name: 'Blowout & Style', price: 25 },
-      { name: 'Updo / Event', price: 45 },
-      { name: 'Waves / Texture', price: 30 },
+      { name: 'Short Length', price: '140 - 160' },
+      { name: 'Medium Length', price: '160 - 200' },
+      { name: 'Long Length', price: '200 - 300' },
     ],
-    images: ['/about/IMG_5074.jpeg', '/about/IMG_5804.jpeg'],
   },
   {
     key: 'haircare',
     label: 'Hair Care',
+    icon: SparklesIcon,
+    description: 'Treatments that restore strength, moisture and shine.',
     items: [
-      { name: 'Repair Treatment', price: 35 },
-      { name: 'Scalp Detox', price: 30 },
-      { name: 'Moisture Mask', price: 25 },
+      { name: 'Olaplex Treatment', price: '50' },
+      { name: 'K18 Repair Treatment', price: '55' },
+      { name: 'Nashi Argan Mast Treatment', price: '40' },
     ],
-    images: ['/about/IMG_5805.jpeg', '/about/IMG_5071.jpeg'],
   },
-];
+] as const;
 
-interface Props {
+export default async function ServicesPage({
+  params,
+}: {
   params: Promise<{ locale: 'en' | 'sq' }>;
-}
-
-export default async function ServicesPage({ params }: Props) {
+}) {
   const { locale } = await params;
 
   return (
-    <main className="bg-background text-foreground min-h-screen w-full">
+    <main className="text-foreground min-h-screen w-full bg-black">
       <SiteNavbar locale={locale} />
+      <div className="lg:max-w-8xl w-full px-4 pt-12 pb-10 lg:ml-auto">
+        {/* Hero section */}
+        <section className="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,2fr)] md:gap-18">
+          {/* Left: portrait image */}
+          <div className="h-[360px] w-full bg-[url('/services.png')] bg-contain bg-center bg-no-repeat sm:h-[480px] lg:h-[700px]" />
 
-      {/* Hero section */}
-      <section className="mx-auto w-full max-w-7xl px-6 pt-8 pb-10 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.1fr_1fr]">
-          {/* Left: headline */}
-          <div>
-            <h1 className="text-4xl leading-tight font-light text-white sm:text-5xl">
-              Let Your
-              <br />
-              Hair Shine
-            </h1>
-            <p className="mt-4 max-w-prose text-sm leading-6 text-white/70">
-              From cuts to care, we provide expert hair services designed just for you. Elevate your
-              look with our studio.
-            </p>
-            <div className="mt-6">
-              <a
-                href="#services"
-                className="rounded-full bg-white/90 px-6 py-2 text-sm font-medium text-black no-underline hover:bg-white"
-              >
-                View Services
-              </a>
+          {/* Right: copy + actions */}
+          <div className="mt-8 space-y-10 text-left text-white md:mt-0">
+            <div className="space-y-3">
+              <h1 className="pt-6 text-[34px] leading-tight font-light text-white sm:pt-10 sm:text-[48px] lg:pt-16 lg:text-[72px]">
+                Precision. experience. <br />
+                results.
+              </h1>
+              <p className="max-w-md text-sm font-light text-zinc-300 sm:text-base md:text-lg">
+                Women&apos;s cuts and color focused on balance, shape, and longevity. Explore a
+                service menu designed to enhance your natural beauty and lifestyle.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <button className="rounded-full bg-zinc-100 px-6 py-2 text-sm font-medium text-black shadow-sm transition-colors hover:bg-white">
+                Book Appointment
+              </button>
+              <button className="rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
+                View Full Services
+              </button>
+            </div>
+            {/* Mobile / tablet: one card per row */}
+            <div className="mt-10 flex flex-col gap-8 lg:hidden">
+              {tabs.map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <div key={tab.key} className="group [perspective:1400px]">
+                    <div className="relative h-40 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:-translate-y-1 group-hover:[transform:rotateY(180deg)] group-hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] sm:h-44">
+                      <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
+                        <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
+                          <Icon className="h-5 w-5" />
+                          <span>{tab.label}</span>
+                        </h3>
+                        <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
+                        <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
+                      </div>
+
+                      <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs [backface-visibility:hidden]">
+                        <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
+                          <Icon className="h-5 w-5" />
+                          <span>{tab.label}</span>
+                        </h3>
+                        <ul className="mt-3 space-y-2 text-zinc-200">
+                          {tab.items.map((item) => (
+                            <li key={item.name} className="flex items-center justify-between gap-2">
+                              <span className="flex items-center gap-2">
+                                <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                                <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
+                                  {item.name}
+                                </span>
+                              </span>
+                              <span className="text-xs text-zinc-100">€{item.price}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-10 hidden justify-start lg:flex lg:justify-end">
+              <div className="flex h-[220px] max-w-full gap-4 overflow-x-auto pr-2 pb-2 [scrollbar-width:none] sm:gap-5 sm:pr-4 [&::-webkit-scrollbar]:hidden">
+                {tabs.map((tab) => {
+                  const Icon = tab.icon;
+                  return (
+                    <div
+                      key={tab.key}
+                      className="group flex max-w-[360px] min-w-[320px] items-center [perspective:1400px] last:mr-10"
+                    >
+                      <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:-translate-y-1 group-hover:[transform:rotateY(180deg)] group-hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
+                        <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
+                          <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
+                            <Icon className="h-5 w-5" />
+                            <span>{tab.label}</span>
+                          </h3>
+                          <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
+                          <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
+                        </div>
+
+                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs [backface-visibility:hidden]">
+                          <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
+                            <Icon className="h-5 w-5" />
+                            <span>{tab.label}</span>
+                          </h3>
+                          <ul className="mt-3 space-y-2 text-zinc-200">
+                            {tab.items.map((item) => (
+                              <li
+                                key={item.name}
+                                className="flex items-center justify-between gap-2"
+                              >
+                                <span className="flex items-center gap-2">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                                  <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
+                                    {item.name}
+                                  </span>
+                                </span>
+                                <span className="text-xs text-zinc-100">€{item.price}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-
-          {/* Right: two feature images */}
-          <div className="grid grid-cols-2 items-start gap-6">
-            <div className="aspect-square rounded-3xl bg-white/5 p-2 backdrop-blur">
-              <div className="h-full w-full rounded-2xl bg-[url('/about/IMG_5073.jpeg')] bg-cover bg-center" />
-            </div>
-            <div className="aspect-[4/5] rounded-3xl bg-white/5 p-2 backdrop-blur">
-              <div className="h-full w-full rounded-2xl bg-[url('/about/IMG_5805.jpeg')] bg-cover bg-center" />
-            </div>
-          </div>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-4 text-white">
-            <div className="text-2xl font-semibold">10+</div>
-            <div className="text-xs text-white/70">Years of Excellence</div>
-          </div>
-          <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-4 text-white">
-            <div className="text-2xl font-semibold">500+</div>
-            <div className="text-xs text-white/70">Loyal Clients</div>
-          </div>
-          <div className="rounded-xl border border-white/10 bg-white/5 px-6 py-4 text-white">
-            <div className="text-2xl font-semibold">4.9/5</div>
-            <div className="text-xs text-white/70">Rating on Google</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tabs section (interactive, client component) */}
-      <ServicesTabs tabs={tabs} />
-
-      {/* Testimonials */}
-      <Testimonials
-        items={[
-          {
-            id: 't1',
-            name: 'Sophie M.',
-            date: '12.09.2024',
-            text: 'Amazing experience! The staff really listens to what you want and gives great advice on maintaining healthy hair. I will definitely be coming back.',
-            avatarUrl: '/about/IMG_5071.jpeg',
-          },
-          {
-            id: 't2',
-            name: 'Ann J.',
-            date: '08.08.2024',
-            text: 'I’m beyond happy with my new hairstyle! The team made sure I felt comfortable and left with exactly what I wanted.',
-            avatarUrl: '/about/IMG_5073.jpeg',
-          },
-          {
-            id: 't3',
-            name: 'Amanda L.',
-            date: '17.04.2024',
-            text: 'Visited for the first time and was blown away by the results! Fabulous service!',
-            avatarUrl: '/about/IMG_5074.jpeg',
-          },
-        ]}
-      />
-
+        </section>
+      </div>
       <SiteFooter />
     </main>
   );

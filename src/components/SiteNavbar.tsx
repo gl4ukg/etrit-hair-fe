@@ -90,8 +90,11 @@ export default function SiteNavbar({ locale }: Props) {
           <Link href="/gallery" className="nav-link-3d text-white/70 no-underline hover:text-white">
             Gallery
           </Link>
-          <Link href="/shop" className="nav-link-3d text-white/70 no-underline hover:text-white">
-            Shop
+          <Link
+            href="/haircare"
+            className="nav-link-3d text-white/70 no-underline hover:text-white"
+          >
+            Haircare
           </Link>
         </div>
 
@@ -134,6 +137,13 @@ export default function SiteNavbar({ locale }: Props) {
           >
             <nav className="flex flex-col gap-4 text-[12px] tracking-[0.2em] uppercase">
               <Link
+                href="/"
+                className="text-white/90 no-underline hover:text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                Home
+              </Link>{' '}
+              <Link
                 href="/about"
                 className="text-white/90 no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
@@ -155,11 +165,11 @@ export default function SiteNavbar({ locale }: Props) {
                 Gallery
               </Link>
               <Link
-                href="/shop"
+                href="/haircare"
                 className="text-white/90 no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Shop
+                Haircare
               </Link>
             </nav>
           </div>

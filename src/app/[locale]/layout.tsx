@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { hasLocale } from 'next-intl';
 import { routing } from '../../i18n/routing';
 import { notFound } from 'next/navigation';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import '../globals.css';
 import { Inter, Cormorant_Garamond } from 'next/font/google';
 import type { Metadata } from 'next';

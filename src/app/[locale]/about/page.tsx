@@ -91,7 +91,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="relative h-[60vh] overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950">
           <div className="min-h-screen bg-gradient-to-br from-black via-gray-500/50 to-black"></div>
 
-          {/* <ParallaxImage src="/purple-bg.webp" alt="Founders" speed={0.2} /> */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
 
           <div className="absolute bottom-0 left-1/2 z-10 flex h-full w-full max-w-6xl -translate-x-1/2 flex-col justify-end px-4 pb-16">
@@ -180,18 +179,22 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section> */}
 
       <section className="bg-zinc-950 py-16">
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="mx-auto flex max-w-6xl flex-row justify-between px-4">
           <FadeInLeft delay={0}>
-            <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+            <div className="mb-8 flex flex-col justify-between gap-4">
               <p className="text-xs font-semibold tracking-[0.25em] text-emerald-600 uppercase">
                 Highlights
               </p>
               <p className="text-xs text-zinc-400">A few moments from inside the salon.</p>
             </div>
           </FadeInLeft>
-
-          <HighlightsCarousel />
+          <FadeInLeft delay={0.1}>
+            <button className="cursor-pointer rounded-lg border border-emerald-600 px-4 py-2 text-sm text-emerald-600 transition-colors hover:bg-emerald-600 hover:text-white">
+              View All Highlights
+            </button>
+          </FadeInLeft>
         </div>
+        <HighlightsCarousel />
       </section>
 
       <section className="bg-zinc-950 py-24">

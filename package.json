@@ -17,6 +17,8 @@
     "nodemailer": "^7.0.7",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^12.0.3",
     "yet-another-react-lightbox": "^3.25.0",
     "zod": "^4.1.12"
@@ -27,6 +29,7 @@
     "@types/nodemailer": "^7.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-slick": "^0.23.13",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "sharp": "^0.34.5",
