@@ -28,47 +28,46 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
         }
       >
         {/* Front */}
-        <div
-          className={
-            'absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br ' +
-            'from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5' +
-            'opacity-100 transition-opacity duration-700 [backface-visibility:hidden]' +
-            (flipped ? 'opacity-0' : '')
-          }
-        >
-          <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
-            <span>{tab.label}</span>
-          </h3>
-          <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
-          <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
-        </div>
-
-        {/* Back */}
-        <div
-          className={
-            'absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center ' +
-            'rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5' +
-            'text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden]' +
-            (flipped ? 'opacity-100' : '')
-          }
-        >
-          <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
-            <span>{tab.label}</span>
-          </h3>
-          <ul className="mt-3 space-y-2 text-zinc-200">
-            {tab.items.map((item) => (
-              <li key={item.name} className="flex items-center justify-between gap-2">
-                <span className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                  <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
-                    {item.name}
+        {!flipped ? (
+          <div
+            className={
+              'absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br ' +
+              'from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5' +
+              'opacity-100 transition-opacity duration-700 [backface-visibility:hidden]'
+            }
+          >
+            <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
+              <span>{tab.label}</span>
+            </h3>
+            <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
+            <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
+          </div>
+        ) : (
+          <div
+            className={
+              'absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center ' +
+              'rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5' +
+              'text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden]'
+            }
+          >
+            <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
+              <span>{tab.label}</span>
+            </h3>
+            <ul className="mt-3 space-y-2 text-zinc-200">
+              {tab.items.map((item) => (
+                <li key={item.name} className="flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                    <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
+                      {item.name}
+                    </span>
                   </span>
-                </span>
-                <span className="text-xs text-zinc-100">€{item.price}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+                  <span className="text-xs text-zinc-100">€{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
