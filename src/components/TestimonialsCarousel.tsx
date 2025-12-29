@@ -31,7 +31,7 @@ export default function TestimonialsCarousel({ reviews }: { reviews: Testimonial
           key={`${review.author_name}-${review.relative_time_description}-${review.text.slice(0, 16)}`}
           className="flex h-full"
         >
-          <article className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800/60 bg-zinc-900/70 p-5 text-sm text-zinc-200 shadow-[0_18px_60px_rgba(0,0,0,0.65)]">
+          <article className="relative flex h-[250px] w-full flex-col overflow-hidden rounded-2xl border border-zinc-800/60 bg-zinc-900/70 p-5 text-sm text-zinc-200 shadow-[0_18px_60px_rgba(0,0,0,0.65)]">
             <div className="mb-4 flex items-center gap-3">
               <div className="relative h-9 w-9 overflow-hidden rounded-full bg-zinc-800">
                 {review.profile_photo_url ? (
