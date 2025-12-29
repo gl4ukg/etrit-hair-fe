@@ -75,7 +75,7 @@ export default function Home() {
                 {t('nav.shop.label')}
               </span>
               <Link
-                href="/shop"
+                href="/haircare"
                 className="mt-1 block text-5xl font-[100] transition-colors hover:text-gray-300"
               >
                 {t('nav.shop.title')}

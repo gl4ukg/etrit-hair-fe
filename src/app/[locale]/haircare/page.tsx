@@ -75,7 +75,7 @@ export default async function ShopPage({ params }: { params: Promise<{ locale: '
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((p, index) => (
             <FadeInLeft key={p.id} delay={index * 0.1}>
-              <Link href={`/shop/${p.id}`} className="no-underline">
+              <Link href={`/haircare/${p.id}`} className="no-underline">
                 <article className="overflow-hidden rounded-lg border border-white/10 bg-white/5">
                   <div className="relative aspect-square bg-white">
                     <Image src={p.image} alt={p.title} fill className="object-contain p-6" />

@@ -6,7 +6,7 @@ export default function SiteFooter() {
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Gallery', href: '/gallery' },
-    { label: 'Shop', href: '/shop' },
+    { label: 'Haircare', href: '/haircare' },
   ];
 
   return (
