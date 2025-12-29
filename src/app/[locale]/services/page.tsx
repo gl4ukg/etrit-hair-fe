@@ -1,5 +1,6 @@
 import SiteNavbar from '../../../components/SiteNavbar';
 import SiteFooter from '../../../components/SiteFooter';
+import { ServiceCardMobile } from '../../../components/ServiceCardMobile';
 import {
   ScissorsIcon,
   PaintBrushIcon,
@@ -80,43 +81,17 @@ export default async function ServicesPage({
               </Link>
             </div>
             <div className="mt-10 flex flex-col gap-8 lg:hidden">
-              {tabs.map((tab) => {
-                const Icon = tab.icon;
-                return (
-                  <div key={tab.key} className="group [perspective:1400px]">
-                    <div className="relative h-40 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] hover:-translate-y-1 hover:[transform:rotateY(180deg)] hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] sm:h-44">
-                      <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
-                        <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
-                          {/* <Icon className="h-5 w-5" /> */}
-                          <span>{tab.label}</span>
-                        </h3>
-                        <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
-                        <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
-                      </div>
-
-                      <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs [backface-visibility:hidden]">
-                        <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
-                          {/* <Icon className="h-5 w-5" /> */}
-                          <span>{tab.label}</span>
-                        </h3>
-                        <ul className="mt-3 space-y-2 text-zinc-200">
-                          {tab.items.map((item) => (
-                            <li key={item.name} className="flex items-center justify-between gap-2">
-                              <span className="flex items-center gap-2">
-                                <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                                <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
-                                  {item.name}
-                                </span>
-                              </span>
-                              <span className="text-xs text-zinc-100">€{item.price}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {tabs.map((tab) => (
+                <ServiceCardMobile
+                  key={tab.key}
+                  tab={{
+                    key: tab.key,
+                    label: tab.label,
+                    description: tab.description,
+                    items: tab.items,
+                  }}
+                />
+              ))}
             </div>
 
             <div className="mt-10 hidden justify-start lg:flex lg:justify-end 2xl:justify-start">
@@ -128,8 +103,8 @@ export default async function ServicesPage({
                       key={tab.key}
                       className="group flex max-w-[360px] min-w-[320px] items-center [perspective:1400px] last:mr-10"
                     >
-                      <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] hover:-translate-y-1 hover:[transform:rotateY(180deg)] hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
-                        <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
+                      <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-all duration-700 ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] hover:-translate-y-1 hover:[transform:rotateY(180deg)] hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
+                        <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 opacity-100 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-0">
                           <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
                             {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
@@ -138,7 +113,7 @@ export default async function ServicesPage({
                           <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
                         </div>
 
-                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs [backface-visibility:hidden]">
+                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-100">
                           <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
                             {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
