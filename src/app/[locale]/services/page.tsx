@@ -128,7 +128,7 @@ export default async function ServicesPage({
                       key={tab.key}
                       className="group flex max-w-[360px] min-w-[320px] items-center [perspective:1400px] last:mr-10"
                     >
-                      <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:-translate-y-1 group-hover:[transform:rotateY(180deg)] group-hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
+                      <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out [transform-style:preserve-3d] hover:-translate-y-1 hover:[transform:rotateY(180deg)] hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
                         <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 [backface-visibility:hidden]">
                           <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
                             {/* <Icon className="h-5 w-5" /> */}
