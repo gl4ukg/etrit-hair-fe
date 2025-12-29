@@ -85,6 +85,7 @@ export default function Home() {
         </nav>
 
         <ul className="font- flex space-x-4">
+          {/* languages */}
           <li>
             <Link href="en">{t('language.en')}</Link>
           </li>
