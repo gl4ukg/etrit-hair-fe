@@ -18,7 +18,7 @@ const tabs = [
     items: [
       { name: 'Short Length', price: '20' },
       { name: 'Medium Length', price: '20 - 25' },
-      { name: 'Long Length', price: '23 - 30' },
+      { name: 'Long Length', price: '25 - 30' },
     ],
   },
   {
