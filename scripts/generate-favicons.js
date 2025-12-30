@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const sizes = [16, 32, 192, 512];
-const inputFile = path.join(__dirname, '../public/faviconn.jpg');
+const inputFile = path.join(__dirname, '../public/faviconn.png');
 const publicDir = path.join(__dirname, '../public');
 const appDir = path.join(__dirname, '../src/app');
 
