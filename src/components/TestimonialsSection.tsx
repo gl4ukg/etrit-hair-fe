@@ -19,7 +19,7 @@ export default function TestimonialsSection({ reviews }: { reviews: Testimonial[
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-xs font-semibold tracking-[0.25em] text-emerald-600 uppercase">
+            <p className="text-xs font-semibold tracking-[0.25em] text-white uppercase">
               Testimonials
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">

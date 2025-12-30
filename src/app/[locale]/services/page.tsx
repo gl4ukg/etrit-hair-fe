@@ -40,7 +40,7 @@ const tabs = [
     items: [
       { name: 'Olaplex Treatment', price: '50' },
       { name: 'K18 Repair Treatment', price: '55' },
-      { name: 'Nashi Argan Mast Treatment', price: '40' },
+      { name: 'Nashi Argan Mask Treatment', price: '40' },
     ],
   },
 ] as const;
@@ -62,12 +62,12 @@ export default async function ServicesPage({
           <div className="mt-8 space-y-10 text-left text-white min-[769px]:mt-0">
             <div className="space-y-3">
               <h1 className="pt-6 text-[34px] leading-tight font-light text-white sm:pt-10 sm:text-[48px] lg:pt-16 lg:text-[68px]">
-                Precision. experience. <br />
-                results.
+                Precision. Experience. <br />
+                Results.
               </h1>
               <p className="max-w-md text-sm font-light text-zinc-300 min-[769px]:text-lg sm:text-base">
-                Women&apos;s cuts and color focused on balance, shape, and longevity. Explore a
-                service menu designed to enhance your natural beauty and lifestyle.
+                Cuts and color focused on balance, shape, and longevity. Explore a service menu
+                designed to enhance your natural beauty and lifestyle.
               </p>
             </div>
 

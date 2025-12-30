@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const sizes = [16, 32, 192, 512];
-const inputFile = path.join(__dirname, '../public/logo.png');
+const inputFile = path.join(__dirname, '../public/faviconn.jpg');
 const publicDir = path.join(__dirname, '../public');
 const appDir = path.join(__dirname, '../src/app');
 
@@ -14,7 +14,7 @@ async function generateFavicons() {
       await sharp(inputFile)
         .resize(size, size, {
           fit: 'contain',
-          background: { r: 255, g: 255, b: 255, alpha: 0 }
+          background: { r: 255, g: 255, b: 255, alpha: 0 },
         })
         .png()
         .toFile(path.join(publicDir, `favicon-${size}x${size}.png`));
@@ -25,7 +25,7 @@ async function generateFavicons() {
     await sharp(inputFile)
       .resize(180, 180, {
         fit: 'contain',
-        background: { r: 255, g: 255, b: 255, alpha: 0 }
+        background: { r: 255, g: 255, b: 255, alpha: 0 },
       })
       .png()
       .toFile(path.join(publicDir, 'apple-touch-icon.png'));
@@ -35,7 +35,7 @@ async function generateFavicons() {
     await sharp(inputFile)
       .resize(32, 32, {
         fit: 'contain',
-        background: { r: 255, g: 255, b: 255, alpha: 0 }
+        background: { r: 255, g: 255, b: 255, alpha: 0 },
       })
       .png()
       .toFile(path.join(appDir, 'favicon.ico'));
@@ -50,23 +50,20 @@ async function generateFavicons() {
         {
           src: '/favicon-192x192.png',
           sizes: '192x192',
-          type: 'image/png'
+          type: 'image/png',
         },
         {
           src: '/favicon-512x512.png',
           sizes: '512x512',
-          type: 'image/png'
-        }
+          type: 'image/png',
+        },
       ],
       theme_color: '#ffffff',
       background_color: '#ffffff',
-      display: 'standalone'
+      display: 'standalone',
     };
 
-    fs.writeFileSync(
-      path.join(publicDir, 'site.webmanifest'),
-      JSON.stringify(manifest, null, 2)
-    );
+    fs.writeFileSync(path.join(publicDir, 'site.webmanifest'), JSON.stringify(manifest, null, 2));
     console.log('Generated site.webmanifest');
 
     console.log('\nAll favicons generated successfully!');

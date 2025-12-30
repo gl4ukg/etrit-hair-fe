@@ -19,7 +19,7 @@ export default function SiteFooter() {
               <p className="text-lg font-semibold tracking-[0.25em] text-white/40 uppercase">
                 Stay connected®
               </p>
-              <p className="mt-3 text-2xl font-semibold text-emerald-600 sm:text-4xl">
+              <p className="mt-3 text-2xl font-semibold text-white sm:text-4xl">
                 <a href="mailto:info@etrithair.com" className="no-underline hover:text-emerald-400">
                   info@etrithair.com
                 </a>

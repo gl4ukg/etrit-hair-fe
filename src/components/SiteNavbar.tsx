@@ -39,7 +39,7 @@ export default function SiteNavbar({ locale }: Props) {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur">
-      <nav className="max-w-10xl mx-auto flex h-14 w-full items-center justify-between px-6 text-white lg:px-8 2xl:max-w-7xl">
+      <nav className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 text-white 2xl:max-w-7xl">
         <div className="flex items-center gap-6">
           <Link href="/">
             <Image
@@ -75,25 +75,19 @@ export default function SiteNavbar({ locale }: Props) {
         </div>
 
         <div className="hidden items-center gap-10 text-[12px] tracking-[0.2em] uppercase md:flex">
-          <Link href="/" className="nav-link-3d text-white/70 no-underline hover:text-white">
+          <Link href="/" className="nav-link-3d text-white no-underline hover:text-white">
             Home
           </Link>
-          <Link href="/about" className="nav-link-3d text-white/70 no-underline hover:text-white">
+          <Link href="/about" className="nav-link-3d text-white no-underline hover:text-white">
             About
           </Link>
-          <Link
-            href="/services"
-            className="nav-link-3d text-white/70 no-underline hover:text-white"
-          >
+          <Link href="/services" className="nav-link-3d text-white no-underline hover:text-white">
             Services
           </Link>
-          <Link href="/gallery" className="nav-link-3d text-white/70 no-underline hover:text-white">
+          <Link href="/gallery" className="nav-link-3d text-white no-underline hover:text-white">
             Gallery
           </Link>
-          <Link
-            href="/haircare"
-            className="nav-link-3d text-white/70 no-underline hover:text-white"
-          >
+          <Link href="/haircare" className="nav-link-3d text-white no-underline hover:text-white">
             Haircare
           </Link>
         </div>
@@ -138,35 +132,35 @@ export default function SiteNavbar({ locale }: Props) {
             <nav className="flex flex-col gap-4 text-[12px] tracking-[0.2em] uppercase">
               <Link
                 href="/"
-                className="text-white/90 no-underline hover:text-white"
+                className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Home
               </Link>{' '}
               <Link
                 href="/about"
-                className="text-white/90 no-underline hover:text-white"
+                className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/services"
-                className="text-white/90 no-underline hover:text-white"
+                className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/gallery"
-                className="text-white/90 no-underline hover:text-white"
+                className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Gallery
               </Link>
               <Link
                 href="/haircare"
-                className="text-white/90 no-underline hover:text-white"
+                className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Haircare

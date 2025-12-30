@@ -50,35 +50,35 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       position: 'Founder & Creative Director',
       description:
         'Leads the salon with a sharp eye for detail and a calm, structured approach. Dedicated to technique, consistency, and creating an elevated experience for every client.',
-      image: '/staff/member-1.jpg',
+      image: '/staff/etrit.jpeg',
     },
     {
       name: 'Ema',
       position: 'Stylist',
       description:
         'Bright, fast, and effortlessly fun. She brings good energy to every client, keeps the mood light, and delivers clean, precise work every single time.',
-      image: '/staff/member-2.jpg',
+      image: '/staff/ema.jpeg',
     },
     {
       name: 'Adea',
       position: 'Stylist',
       description:
         'Warm, friendly, and always smiling. She brings a natural charm to the salon, keeps clients relaxed, and delivers clean, consistent work every time.',
-      image: '/staff/member-3.jpg',
+      image: '/staff/adea.jpeg',
     },
     {
       name: 'Aida',
       position: 'Stylist',
       description:
         'Steady, gentle, and detail-driven. She works with focus, brings a soft presence to the salon, and always delivers clean, polished results.',
-      image: '/staff/member-4.jpg',
+      image: '/staff/aida.jpeg',
     },
     {
       name: 'Rrona',
       position: 'Social Media & Appointments',
       description:
         "Organized, responsive, and creative. She manages bookings with ease and keeps the salon's online presence clean, clear, and up to date.",
-      image: '/staff/member-5.jpg',
+      image: '/staff/rrona.png',
     },
   ];
 
@@ -88,12 +88,19 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <SiteNavbar locale={locale} />
 
       <section className="relative">
-        <div className="relative h-[60vh] overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950">
-          <div className="min-h-screen bg-gradient-to-br from-black via-gray-500/50 to-black"></div>
+        <div className="relative h-[80vh] overflow-hidden bg-black">
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src="/about/about.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
 
-          <div className="absolute bottom-0 left-1/2 z-10 flex h-full w-full max-w-6xl -translate-x-1/2 flex-col justify-end px-4 pb-16">
+          <div className="absolute bottom-10 left-1/2 z-10 flex h-full w-full max-w-6xl -translate-x-1/2 flex-col justify-end px-4 pb-16">
             {/* <TextReveal className="mb-4 text-sm text-zinc-300" delay={0.2}>
               &copy;2025
             </TextReveal> */}
@@ -182,14 +189,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto flex max-w-6xl flex-row justify-between px-4">
           <FadeInLeft delay={0}>
             <div className="mb-8 flex flex-col justify-between gap-4">
-              <p className="text-xs font-semibold tracking-[0.25em] text-emerald-600 uppercase">
+              <p className="text-xs font-semibold tracking-[0.25em] text-white uppercase">
                 Highlights
               </p>
               <p className="text-xs text-zinc-400">A few moments from inside the salon.</p>
             </div>
           </FadeInLeft>
           <FadeInLeft delay={0.1}>
-            <button className="cursor-pointer rounded-lg border border-emerald-600 px-4 py-2 text-sm text-emerald-600 transition-colors hover:bg-emerald-600 hover:text-white">
+            <button className="cursor-pointer rounded-lg border border-emerald-600 px-4 py-2 text-sm text-white transition-colors hover:bg-emerald-600 hover:text-white">
               View All Highlights
             </button>
           </FadeInLeft>
@@ -209,7 +216,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="rounded-3xl border border-emerald-700/10 bg-zinc-900/70 px-6 py-12 md:px-10">
             <FadeInLeft delay={0.1}>
               <div className="mb-12 text-center">
-                <p className="text-right text-xs tracking-[0.25em] text-emerald-600 uppercase">
+                <p className="text-right text-xs tracking-[0.25em] text-white uppercase">
                   ©2025 • Etrit Hair Studio
                 </p>
                 <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
@@ -310,7 +317,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             {staff.map((item, index) => (
               <FadeInLeft key={item.name} delay={0.2 + index * 0.1}>
                 <div className="group relative overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700 md:rounded-2xl">
-                  <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900">
                     <Image
                       src={item.image}
                       alt="Staff member"

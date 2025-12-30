@@ -33,13 +33,13 @@ export default function Home() {
           <FadeInLeft delay={0.1}>
             <div className="flex flex-col items-start">
               <span className="text-[10px] tracking-[0.2em] text-white/50 uppercase">
-                {t('nav.about.label')}
+                {t('nav.about.title')}
               </span>
               <Link
                 href="/about"
                 className="mt-1 block text-5xl font-[100] transition-colors hover:text-gray-300"
               >
-                {t('nav.about.title')}
+                {t('nav.about.label')}
               </Link>
             </div>
           </FadeInLeft>
