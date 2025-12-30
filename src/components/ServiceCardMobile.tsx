@@ -35,10 +35,10 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
               'transition-opacity duration-500'
             }
           >
-            <h3 className="flex items-center gap-2 text-2xl leading-tight font-semibold text-white">
+            <h3 className="flex items-center gap-2 text-2xl leading-tight font-normal text-white">
               <span>{tab.label}</span>
             </h3>
-            <p className="mt-2 text-sm text-zinc-300">{tab.description}</p>
+            <p className="mt-2 text-sm font-light text-zinc-300">{tab.description}</p>
             <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
           </div>
         ) : (
@@ -49,7 +49,7 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
               'text-xs transition-opacity duration-500'
             }
           >
-            <h3 className="flex items-center gap-2 text-2xl font-semibold text-white">
+            <h3 className="flex items-center gap-2 text-2xl font-normal text-white">
               <span>{tab.label}</span>
             </h3>
             <ul className="mt-3 space-y-2 text-zinc-200">
@@ -57,7 +57,7 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
                 <li key={item.name} className="flex items-center justify-between gap-2">
                   <span className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                    <span className="text-[11px] tracking-[0.16em] text-zinc-300 uppercase">
+                    <span className="text-[11px] font-light tracking-[0.16em] text-zinc-300 uppercase">
                       {item.name}
                     </span>
                   </span>
