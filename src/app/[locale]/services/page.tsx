@@ -74,7 +74,7 @@ export default async function ServicesPage({
             <div className="flex flex-wrap gap-3 sm:gap-4">
               {/* <button className="rounded-full bg-zinc-100 px-6 py-2 text-sm font-medium text-black shadow-sm transition-colors hover:bg-white">
               </button> */}
-              <Link href="/booking">
+              <Link href="tel:+38345680679">
                 <button className="cursor-pointer rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
                   Book Appointment
                 </button>
