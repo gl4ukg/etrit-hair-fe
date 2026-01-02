@@ -6,7 +6,7 @@ import Slider, { Settings } from 'react-slick';
 
 const images = [
   {
-    src: '/gallery/449532733_788644236714097_475633129053053685_n.jpg',
+    src: '/gallery/444481390_435890342638514_5123149415779823275_n.jpg',
     alt: 'Color work in the salon',
   },
   {
@@ -18,15 +18,16 @@ const images = [
     alt: 'Finished look at Etrit Hair',
   },
   {
-    src: '/gallery/449532733_788644236714097_475633129053053685_n.jpg',
-    alt: 'Color work in the salon',
+    src: '/gallery/IMG_1235 (1).jpeg',
+    alt: 'Finished look at Etrit Hair',
   },
   {
-    src: '/gallery/518797080_18523723021062559_5146039805755827029_n.jpg',
-    alt: 'Styling detail in the salon',
+    src: '/gallery/IMG_1237.jpeg',
+    alt: 'Finished look at Etrit Hair',
   },
+
   {
-    src: '/gallery/530908293_18529022932062559_3750644558349443916_n.jpg',
+    src: '/gallery/343278753_1208569573130063_7615236875637932797_n.jpg',
     alt: 'Finished look at Etrit Hair',
   },
 ];

@@ -288,9 +288,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <section className="bg-zinc-950">
+      {/* <section className="bg-zinc-950">
         <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
-      </section>
+      </section> */}
 
       <section className="bg-zinc-950 py-24">
         <div className="mx-auto max-w-6xl px-4">
@@ -316,23 +316,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="grid gap-6 md:grid-cols-3 md:gap-8">
             {staff.map((item, index) => (
               <FadeInLeft key={item.name} delay={0.2 + index * 0.1}>
-                <div className="group relative overflow-hidden rounded-xl border border-zinc-800/50 bg-zinc-900/40 transition-all hover:border-zinc-700 md:rounded-2xl">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900">
-                    <Image
-                      src={item.image}
-                      alt="Staff member"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-4 md:p-6">
-                    <div className="mb-2 flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-700" />
-                      <span className="text-xs font-medium text-zinc-400">{item.position}</span>
-                    </div>
-                    <h3 className="text-base font-semibold text-white md:text-lg">{item.name}</h3>
-                    <p className="mt-2 text-xs text-zinc-400 md:text-sm">{item.description}</p>
-                  </div>
+                <div className="card min-h-[250px] rounded-lg border border-zinc-800 bg-zinc-900/40 p-4">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={80}
+                    height={80}
+                    className="h-16 w-16 rounded-full object-cover"
+                  />
+                  <h3 className="mt-3 text-lg font-semibold text-white">{item.name}</h3>
+                  <p className="text-sm text-zinc-400">{item.position}</p>
+                  <p className="mt-2 text-sm text-zinc-300">{item.description}</p>
                 </div>
               </FadeInLeft>
             ))}
