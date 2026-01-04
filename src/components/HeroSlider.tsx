@@ -8,12 +8,12 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const images = [
-  'https://157-230-117-143.sslip.io/media/etrit-hair/header/one.jpeg',
-  'https://157-230-117-143.sslip.io/media/etrit-hair/header/two.jpeg',
-  'https://157-230-117-143.sslip.io/media/etrit-hair/header/three.jpeg',
-  'https://157-230-117-143.sslip.io/media/etrit-hair/header/four.jpeg',
-  'https://157-230-117-143.sslip.io/media/etrit-hair/header/five.jpeg',
-  'https://157-230-117-143.sslip.io/media/etrit-hair/header/six.jpeg',
+  'https://157-230-117-143.sslip.io/media/etrit-hair/header/one.webp',
+  'https://157-230-117-143.sslip.io/media/etrit-hair/header/two.webp',
+  'https://157-230-117-143.sslip.io/media/etrit-hair/header/three.webp',
+  'https://157-230-117-143.sslip.io/media/etrit-hair/header/four.webp',
+  'https://157-230-117-143.sslip.io/media/etrit-hair/header/five.webp',
+  'https://157-230-117-143.sslip.io/media/etrit-hair/header/six.webp',
 ];
 
 export default function HeroSlider() {

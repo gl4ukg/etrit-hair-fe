@@ -50,35 +50,35 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       position: 'Founder & Creative Director',
       description:
         'Leads the salon with a sharp eye for detail and a calm, structured approach. Dedicated to technique, consistency, and creating an elevated experience for every client.',
-      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/etrit.jpeg',
+      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/etrit.webp',
     },
     {
       name: 'Ema',
       position: 'Stylist',
       description:
         'Bright, fast, and effortlessly fun. She brings good energy to every client, keeps the mood light, and delivers clean, precise work every single time.',
-      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/ema.jpeg',
+      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/ema.webp',
     },
     {
       name: 'Adea',
       position: 'Stylist',
       description:
         'Warm, friendly, and always smiling. She brings a natural charm to the salon, keeps clients relaxed, and delivers clean, consistent work every time.',
-      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/adea.jpeg',
+      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/adea.webp',
     },
     {
       name: 'Aida',
       position: 'Stylist',
       description:
         'Steady, gentle, and detail-driven. She works with focus, brings a soft presence to the salon, and always delivers clean, polished results.',
-      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/aida.jpeg',
+      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/aida.webp',
     },
     {
       name: 'Rrona',
       position: 'Social Media & Appointments',
       description:
         "Organized, responsive, and creative. She manages bookings with ease and keeps the salon's online presence clean, clear, and up to date.",
-      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/rrona.png',
+      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/rrona.webp',
     },
   ];
 
@@ -91,7 +91,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="relative h-[80vh] overflow-hidden bg-black">
           <video
             className="absolute inset-0 h-full w-full object-cover"
-            src="https://157-230-117-143.sslip.io/media/etrit-hair/about/about.mp4"
+            src="https://157-230-117-143.sslip.io/media/etrit-hair/about/about_hero.mp4"
             autoPlay
             loop
             muted
@@ -183,7 +183,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
       {/* 
       <section className="bg-zinc-950">
-        <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
+        <ParallaxImage src="/about/IMG_5071.webp" alt="Detail of haircut" speed={0.3} />
       </section> */}
 
       <section className="bg-zinc-950 py-16">
@@ -290,7 +290,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* <section className="bg-zinc-950">
-        <ParallaxImage src="/about/IMG_5071.jpeg" alt="Detail of haircut" speed={0.3} />
+        <ParallaxImage src="/about/IMG_5071.webp" alt="Detail of haircut" speed={0.3} />
       </section> */}
 
       <section className="bg-zinc-950 py-24">
