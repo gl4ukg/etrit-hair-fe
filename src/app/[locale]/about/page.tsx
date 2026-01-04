@@ -91,12 +91,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="relative h-[80vh] overflow-hidden bg-black">
           <video
             className="absolute inset-0 h-full w-full object-cover"
-            src="https://157-230-117-143.sslip.io/media/etrit-hair/about/about_hero.mp4"
+            src="https://157-230-117-143.sslip.io/media/etrit-hair/about/about.mp4"
             autoPlay
             loop
             muted
             playsInline
+            poster="https://157-230-117-143.sslip.io/media/etrit-hair/about/about_header.webp"
             preload="metadata"
+            title="Etrit Hair Salon - About Us"
           />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
