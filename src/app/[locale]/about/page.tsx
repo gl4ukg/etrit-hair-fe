@@ -84,7 +84,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
-      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-emerald-700 via-emerald-500 to-emerald-700" />
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-white via-white/70 to-white" />
       <SiteNavbar locale={locale} />
 
       <section className="relative">
@@ -109,7 +109,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </TextReveal> */}
 
             <div className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-white uppercase">
-              <span className="h-[1px] w-10 bg-gradient-to-r from-emerald-700/60 to-emerald-500/60" />
+              <span className="h-[1px] w-10 bg-gradient-to-r from-white/70 to-white/40" />
               <TextReveal delay={0.25}>About</TextReveal>
             </div>
 
@@ -135,7 +135,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="md:w-1/4">
             <FadeInLeft delay={0}>
               <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-200">
-                <span className="h-2 w-2 rounded-full bg-emerald-700" />
+                <span className="h-2 w-2 rounded-full bg-white" />
                 Since 2019
               </div>
             </FadeInLeft>
@@ -152,7 +152,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <FadeInLeft delay={0.2}>
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
                 <p className="text-sm font-semibold text-zinc-200">
-                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-emerald-700 to-emerald-500" />
+                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-white to-white/40" />
                   Our Story
                 </p>
                 <p className="text-sm leading-relaxed text-zinc-300">
@@ -168,7 +168,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <FadeInLeft delay={0.3}>
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
                 <p className="text-sm font-semibold text-zinc-200">
-                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-400" />
+                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-white to-white/40" />
                   What We Do
                 </p>
                 <p className="text-sm leading-relaxed text-zinc-300">
@@ -199,7 +199,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </div>
           </FadeInLeft>
           <FadeInLeft delay={0.1}>
-            <button className="cursor-pointer rounded-lg border border-emerald-600 px-4 py-2 text-sm text-white transition-colors hover:bg-emerald-600 hover:text-white">
+            <button className="cursor-pointer rounded-lg border border-white px-4 py-2 text-sm text-white transition-colors hover:bg-white hover:text-zinc-900">
               View All Highlights
             </button>
           </FadeInLeft>
@@ -211,12 +211,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-6xl px-4">
           <FadeInLeft delay={0}>
             <div className="mb-4 flex items-center gap-2 text-xs text-zinc-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-700" />
+              <span className="h-2 w-2 rounded-full bg-white" />
               Our Philosophy & Team
             </div>
           </FadeInLeft>
 
-          <div className="rounded-3xl border border-emerald-700/10 bg-zinc-900/70 px-6 py-12 md:px-10">
+          <div className="rounded-3xl border border-white/10 bg-zinc-900/70 px-6 py-12 md:px-10">
             <FadeInLeft delay={0.1}>
               <div className="mb-12 text-center">
                 <p className="text-right text-xs tracking-[0.25em] text-white uppercase">
@@ -238,7 +238,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
                   <div className="mb-4 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-emerald-700" />
+                      <span className="h-2 w-2 rounded-full bg-white" />
                       <span className="font-semibold tracking-wide">OUR PHILOSOPHY</span>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <article className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6 text-sm leading-relaxed text-zinc-300">
                   <div className="mb-4 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-emerald-600" />
+                      <span className="h-2 w-2 rounded-full bg-white" />
                       <span className="font-semibold tracking-wide">WHY CHOOSE US</span>
                     </div>
                   </div>
@@ -299,7 +299,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mx-auto max-w-6xl px-4">
           <FadeInLeft delay={0.1}>
             <div className="mb-12 flex items-center gap-2 text-xs text-zinc-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-700" />
+              <span className="h-2 w-2 rounded-full bg-white" />
               Meet Our Team
             </div>
           </FadeInLeft>

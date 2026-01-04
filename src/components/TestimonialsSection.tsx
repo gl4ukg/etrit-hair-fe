@@ -27,7 +27,7 @@ export default function TestimonialsSection({ reviews }: { reviews: Testimonial[
             </h2>
           </div>
           <div className="text-xs text-zinc-400 md:text-sm">
-            <p className="font-medium text-emerald-400">Verified Google Reviews</p>
+            <p className="font-medium">Verified Google Reviews</p>
             <p>Real experiences from clients who visited the salon.</p>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function TestimonialsSection({ reviews }: { reviews: Testimonial[
             href="https://www.google.com/search?sca_esv=e2fb2748a0591637&sxsrf=AE3TifNUlqL9id1p4jq9Wje4Ksv1ENRIrA:1765491094972&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E2UZg50m6gOWfOuqC-5jaRfupdWVTgAa2TGLBJHFzVx9NNzkQFcFTPtrG9L0R5Gm5Im2wQDwCpnva4wfRb8VFaPjtBsI&q=Etrit+Hair+Reviews&sa=X&ved=2ahUKEwjnpsfsxraRAxVeXUEAHUDTLDkQ0bkNegQILhAD&biw=1512&bih=786&dpr=2"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-700/70 bg-zinc-900/70 px-4 py-2 text-[10px] font-medium tracking-[0.2em] text-zinc-200 uppercase transition hover:border-emerald-400/70 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-zinc-700/70 bg-zinc-900/70 px-4 py-2 text-[10px] font-medium tracking-[0.2em] text-zinc-200 uppercase transition hover:border-white hover:text-white"
           >
             View all on Google
           </a>

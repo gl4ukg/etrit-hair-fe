@@ -105,7 +105,7 @@ export default async function ServicesPage({
                     >
                       <div className="relative h-44 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white shadow-[0_18px_45px_rgba(0,0,0,0.8)] transition-all duration-700 ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] hover:-translate-y-1 hover:[transform:rotateY(180deg)] hover:shadow-[0_22px_55px_rgba(0,0,0,0.9)] lg:h-48">
                         <div className="absolute inset-0 flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent px-5 py-5 opacity-100 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-0">
-                          <h3 className="flex items-center gap-2 text-2xl leading-tight font-normal text-white">
+                          <h3 className="flex items-center gap-2 text-2xl leading-tight font-light text-white">
                             {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
                           </h3>
@@ -113,8 +113,8 @@ export default async function ServicesPage({
                           <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
                         </div>
 
-                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5 text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-100">
-                          <h3 className="flex items-center gap-2 text-2xl font-normal text-white">
+                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-white via-zinc-950 to-black px-5 py-5 text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-100">
+                          <h3 className="flex items-center gap-2 text-2xl font-light text-white">
                             {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
                           </h3>

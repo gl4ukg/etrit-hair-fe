@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Slider, { Settings } from 'react-slick';
 
@@ -35,7 +35,7 @@ const images = [
 export default function HighlightsCarousel() {
   const [current, setCurrent] = useState(1);
 
-  const settings: Settings = {
+  const desktopSettings: Settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
@@ -48,22 +48,69 @@ export default function HighlightsCarousel() {
     draggable: true,
     swipeToSlide: true,
     touchThreshold: 8,
-
     initialSlide: 1,
     beforeChange: (_old, next) => setCurrent(next),
-
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3, centerPadding: '40px' } },
-      { breakpoint: 768, settings: { slidesToShow: 1, centerPadding: '70px' } },
-      { breakpoint: 480, settings: { slidesToShow: 1, centerPadding: '40px' } },
-    ],
   };
 
+  const tabletScreenSettings: Settings = {
+    className: 'simple',
+    centerMode: false,
+    infinite: true,
+    centerPadding: '0px',
+    slidesToShow: 3,
+    speed: 500,
+    arrows: false,
+    swipe: true,
+    touchMove: true,
+    draggable: true,
+    swipeToSlide: true,
+    touchThreshold: 8,
+    initialSlide: 1,
+    beforeChange: (_old, next) => setCurrent(next),
+  };
+
+  const phoneScreenSettings: Settings = {
+    className: 'simple',
+    centerMode: false,
+    infinite: true,
+    centerPadding: '0px',
+    slidesToShow: 1,
+    speed: 500,
+    arrows: false,
+    swipe: true,
+    touchMove: true,
+    draggable: true,
+    swipeToSlide: true,
+    touchThreshold: 8,
+    initialSlide: 1,
+    beforeChange: (_old, next) => setCurrent(next),
+  };
+
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      if (typeof window !== 'undefined') {
+        const width = window.innerWidth;
+        setIsDesktop(width >= 1025);
+        setIsTablet(width >= 768 && width < 1025);
+      }
+    };
+
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
   return (
-    <div className="relative mx-auto my-16 max-w-full overflow-hidden">
-      <Slider {...settings} className="highlights-slider">
+    <div className="relative mx-auto max-w-full overflow-hidden lg:my-16">
+      <Slider
+        {...(isDesktop ? desktopSettings : isTablet ? tabletScreenSettings : phoneScreenSettings)}
+        className="highlights-slider mt-8 md:mt-0"
+      >
         {images.map((image) => (
-          <div key={image.src} className="px-2 md:px-3">
+          <div key={image.src} className="px-4 md:px-3">
             <div
               className="highlight-card relative aspect-[5/6] overflow-hidden rounded-2xl bg-zinc-900 shadow-lg shadow-black/50 transition-all duration-700 ease-in-out"
               aria-label={image.alt}
@@ -83,27 +130,30 @@ export default function HighlightsCarousel() {
       </Slider>
 
       <style jsx global>{`
-        .highlights-slider .slick-slide {
-          opacity: 0.6;
-          filter: blur(1px);
-          transform: translateY(0.75rem) scale(0.96);
-          transition: all 0.7s ease-in-out;
-        }
-
-        .highlights-slider .slick-center {
-          opacity: 1;
-          filter: none;
-          transform: translateY(0) scale(1);
-          z-index: 20;
-        }
-
-        .highlights-slider .slick-list {
-          overflow: visible;
-        }
-
         .highlights-slider .slick-track {
           display: flex;
           align-items: stretch;
+        }
+
+        /* Desktop: center-mode visual effect */
+        @media (min-width: 1025px) {
+          .highlights-slider .slick-slide {
+            opacity: 0.6;
+            filter: blur(1px);
+            transform: translateY(0.75rem) scale(0.96);
+            transition: all 0.7s ease-in-out;
+          }
+
+          .highlights-slider .slick-center {
+            opacity: 1;
+            filter: none;
+            transform: translateY(0) scale(1);
+            z-index: 20;
+          }
+
+          .highlights-slider .slick-list {
+            overflow: visible;
+          }
         }
       `}</style>
     </div>

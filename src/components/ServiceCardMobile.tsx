@@ -45,7 +45,7 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
           <div
             className={
               'absolute inset-0 flex h-full w-full flex-col justify-center rounded-3xl ' +
-              'bg-gradient-to-br from-emerald-500/12 via-zinc-950 to-black px-5 py-5' +
+              'bg-gradient-to-br from-white via-zinc-950 to-black px-5 py-5' +
               'text-xs transition-opacity duration-500'
             }
           >

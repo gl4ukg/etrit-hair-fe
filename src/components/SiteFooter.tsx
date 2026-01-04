@@ -20,7 +20,7 @@ export default function SiteFooter() {
                 Stay connected®
               </p>
               <p className="mt-3 text-2xl font-semibold text-white sm:text-4xl">
-                <a href="mailto:info@etrithair.com" className="no-underline hover:text-emerald-400">
+                <a href="mailto:info@etrithair.com" className="no-underline hover:text-white">
                   info@etrithair.com
                 </a>
               </p>
