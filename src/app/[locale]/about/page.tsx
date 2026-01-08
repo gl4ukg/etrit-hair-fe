@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       position: 'Founder & Creative Director',
       description:
         'Leads the salon with a sharp eye for detail and a calm, structured approach. Dedicated to technique, consistency, and creating an elevated experience for every client.',
-      image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/etrit.webp',
+      image: '/etrit.jpg',
     },
     {
       name: 'Ema',
