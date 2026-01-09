@@ -14,6 +14,10 @@ export default function GalleryGrid({ sources }: GalleryGridProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = sources.map((src) => ({ src }));
+  const objectPositionOverrides: Record<string, string> = {
+    'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/562700203_18541155376062559_6543167450642810001_n.webp':
+      '0px -60px',
+  };
 
   const handleImageClick = (index: number) => {
     setCurrentIndex(index);
@@ -24,10 +28,7 @@ export default function GalleryGrid({ sources }: GalleryGridProps) {
     <>
       <div className="columns-1 gap-6 [column-fill:_balance] sm:columns-2 lg:columns-3">
         {sources.map((src, idx) => (
-          <div
-            key={idx}
-            className="mb-6 break-inside-avoid overflow-hidden rounded-lg bg-black/20"
-          >
+          <div key={idx} className="mb-6 break-inside-avoid overflow-hidden rounded-lg bg-black/20">
             <div
               className={
                 idx % 5 === 0
@@ -46,6 +47,7 @@ export default function GalleryGrid({ sources }: GalleryGridProps) {
                 alt={`Gallery ${idx + 1}`}
                 onClick={() => handleImageClick(idx)}
                 className="relative h-full w-full"
+                objectPosition={objectPositionOverrides[src]}
               />
             </div>
           </div>

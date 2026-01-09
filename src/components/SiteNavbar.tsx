@@ -2,12 +2,14 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '../i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   locale: 'en' | 'sq';
 };
 
 export default function SiteNavbar({ locale }: Props) {
+  const t = useTranslations('HomePage');
   const [mobileOpen, setMobileOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -76,19 +78,19 @@ export default function SiteNavbar({ locale }: Props) {
 
         <div className="hidden items-center gap-10 text-[12px] tracking-[0.2em] uppercase md:flex">
           <Link href="/" className="nav-link-3d text-white no-underline hover:text-white">
-            Home
+            {t('nav.home.title')}
           </Link>
           <Link href="/about" className="nav-link-3d text-white no-underline hover:text-white">
-            About
+            {t('nav.about.label')}
           </Link>
           <Link href="/services" className="nav-link-3d text-white no-underline hover:text-white">
-            Services
+            {t('nav.services.title')}
           </Link>
           <Link href="/gallery" className="nav-link-3d text-white no-underline hover:text-white">
-            Gallery
+            {t('nav.gallery.title')}
           </Link>
           <Link href="/haircare" className="nav-link-3d text-white no-underline hover:text-white">
-            Haircare
+            {t('nav.shop.title')}
           </Link>
         </div>
 
@@ -135,35 +137,35 @@ export default function SiteNavbar({ locale }: Props) {
                 className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Home
+                {t('nav.home.title')}
               </Link>{' '}
               <Link
                 href="/about"
                 className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                About
+                {t('nav.about.label')}
               </Link>
               <Link
                 href="/services"
                 className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Services
+                {t('nav.services.title')}
               </Link>
               <Link
                 href="/gallery"
                 className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Gallery
+                {t('nav.gallery.title')}
               </Link>
               <Link
                 href="/haircare"
                 className="text-white no-underline hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Haircare
+                {t('nav.shop.title')}
               </Link>
             </nav>
           </div>

@@ -2,6 +2,10 @@
   "HomePage": {
     "title": "Përshëndetje botë!",
     "nav": {
+      "home": {
+        "label": "Ballina",
+        "title": "Ballina"
+      },
       "about": {
         "label": "Rreth nesh",
         "title": "Salloni"

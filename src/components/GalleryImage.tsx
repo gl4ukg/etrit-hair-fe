@@ -9,9 +9,16 @@ interface GalleryImageProps {
   alt: string;
   onClick: () => void;
   className?: string;
+  objectPosition?: string;
 }
 
-export default function GalleryImage({ src, alt, onClick, className }: GalleryImageProps) {
+export default function GalleryImage({
+  src,
+  alt,
+  onClick,
+  className,
+  objectPosition,
+}: GalleryImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -26,7 +33,8 @@ export default function GalleryImage({ src, alt, onClick, className }: GalleryIm
         alt={alt}
         fill
         loading="lazy"
-        className={`object-cover cursor-pointer transition-all duration-300 hover:scale-105 ${
+        style={objectPosition ? { objectPosition } : undefined}
+        className={`cursor-pointer object-cover transition-all duration-300 hover:scale-105 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
         onLoad={() => setIsLoading(false)}
