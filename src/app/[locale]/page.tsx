@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import { Link } from '../../i18n/navigation';
 import HeroSlider from '@/components/HeroSlider';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import FadeInLeft from '@/components/FadeInLeft';
 import FadeIn from '@/components/FadeIn';
 
 export default function Home() {
   const t = useTranslations('HomePage');
-
+  const activeLocale = useLocale();
   return (
     <div className="relative h-screen w-full overflow-hidden bg-[#181818]">
       <div className="absolute inset-0 opacity-20">
@@ -87,10 +87,28 @@ export default function Home() {
         <ul className="ul-list flex space-x-4">
           {/* languages */}
           <li>
-            <Link href="en">{t('language.en')}</Link>
+            <Link
+              href="en"
+              className={
+                activeLocale === 'en'
+                  ? 'text-white'
+                  : 'text-[#b0b0b0] transition-colors hover:text-white'
+              }
+            >
+              {t('language.en')}
+            </Link>
           </li>
           <li>
-            <Link href="sq">{t('language.sq')}</Link>
+            <Link
+              href="sq"
+              className={
+                activeLocale === 'sq'
+                  ? 'text-white'
+                  : 'text-[#b0b0b0] transition-colors hover:text-white'
+              }
+            >
+              {t('language.sq')}
+            </Link>
           </li>
         </ul>
       </aside>

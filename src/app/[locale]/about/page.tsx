@@ -108,12 +108,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               &copy;2025
             </TextReveal> */}
 
-            <div className="inline-flex items-center gap-3 text-xs font-medium tracking-[0.25em] text-white uppercase">
+            <div className="hidden items-center gap-3 text-xs font-medium tracking-[0.25em] text-white uppercase md:inline-flex">
               <span className="h-[1px] w-10 bg-gradient-to-r from-white/70 to-white/40" />
               <TextReveal delay={0.25}>About</TextReveal>
             </div>
 
-            <div className="flex items-end justify-between">
+            <div className="flex hidden items-end justify-between md:inline-flex">
               <TextReveal
                 className="mt-2 text-[80px] font-semibold tracking-tight text-white"
                 delay={0.1}

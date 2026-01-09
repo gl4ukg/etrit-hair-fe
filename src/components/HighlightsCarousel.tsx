@@ -8,27 +8,33 @@ const images = [
   {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/444481390_435890342638514_5123149415779823275_n.jpg',
     alt: 'Color work in the salon',
+    className: 'object-cover',
   },
   {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/518797080_18523723021062559_5146039805755827029_n.jpg',
     alt: 'Styling detail in the salon',
+    className: 'object-cover',
   },
   {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/530908293_18529022932062559_3750644558349443916_n.jpg',
     alt: 'Finished look at Etrit Hair',
+    className: 'object-cover',
   },
   {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/IMG_1235 (1).jpeg',
     alt: 'Finished look at Etrit Hair',
+    className: 'object-cover',
   },
   {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/IMG_1237.jpeg',
     alt: 'Finished look at Etrit Hair',
+    className: 'object-cover object-top',
   },
 
   {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/343278753_1208569573130063_7615236875637932797_n.jpg',
     alt: 'Finished look at Etrit Hair',
+    className: 'object-cover',
   },
 ];
 
@@ -120,7 +126,7 @@ export default function HighlightsCarousel() {
                 alt={image.alt}
                 fill
                 sizes="(max-width: 768px) 70vw, 33vw"
-                className="object-cover"
+                className={image.className}
                 priority={current === images.findIndex((i) => i.src === image.src)}
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
