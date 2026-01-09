@@ -26,12 +26,6 @@ const images = [
     className: 'object-cover',
   },
   {
-    src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/IMG_1237.jpeg',
-    alt: 'Finished look at Etrit Hair',
-    className: 'object-cover object-top',
-  },
-
-  {
     src: 'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/343278753_1208569573130063_7615236875637932797_n.jpg',
     alt: 'Finished look at Etrit Hair',
     className: 'object-cover',

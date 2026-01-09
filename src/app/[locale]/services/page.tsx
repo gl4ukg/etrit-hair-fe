@@ -57,7 +57,10 @@ export default async function ServicesPage({
       <SiteNavbar locale={locale} />
       <div className="lg:max-w-8xl w-full px-4 pt-12 pb-10 lg:ml-auto">
         <section className="grid gap-0 min-[769px]:grid-cols-[minmax(0,1.3fr)_minmax(0,2fr)]">
-          <div className="h-[360px] w-full rounded-3xl border border-white/5 bg-[url('/services.jpg')] bg-contain bg-center bg-no-repeat shadow-[0_24px_80px_rgba(0,0,0,0.9)] sm:h-[480px] lg:h-[700px]" />
+          <div className="relative h-[360px] w-full overflow-hidden rounded-3xl border border-white/5 bg-[url('/services.jpg')] bg-contain bg-center bg-no-repeat shadow-[0_24px_80px_rgba(0,0,0,0.9)] sm:h-[480px] lg:h-[700px]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.75)_100%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_85%,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.0)_55%)]" />
+          </div>
 
           <div className="mt-8 space-y-10 text-left text-white min-[769px]:mt-0">
             <div className="space-y-3">
