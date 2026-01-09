@@ -8,42 +8,7 @@ import {
   ArrowRightCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Link } from '@/i18n/navigation';
-
-const tabs = [
-  {
-    key: 'haircuts',
-    label: 'Haircuts',
-    icon: ScissorsIcon,
-    description: 'Clean, structured cuts with movement and softness.',
-    items: [
-      { name: 'Short Length', price: '20' },
-      { name: 'Medium Length', price: '20 - 25' },
-      { name: 'Long Length', price: '25 - 30' },
-    ],
-  },
-  {
-    key: 'haircolor',
-    label: 'Hair Color',
-    icon: PaintBrushIcon,
-    description: 'Balayage, highlights, brunettes and blondes.',
-    items: [
-      { name: 'Short Length', price: '140 - 160' },
-      { name: 'Medium Length', price: '160 - 200' },
-      { name: 'Long Length', price: '200 - 300' },
-    ],
-  },
-  {
-    key: 'haircare',
-    label: 'Hair Care',
-    icon: SparklesIcon,
-    description: 'Treatments that restore strength, moisture and shine.',
-    items: [
-      { name: 'Olaplex Treatment', price: '50' },
-      { name: 'K18 Repair Treatment', price: '55' },
-      { name: 'Nashi Argan Mask Treatment', price: '40' },
-    ],
-  },
-] as const;
+import { getTranslations } from 'next-intl/server';
 
 export default async function ServicesPage({
   params,
@@ -51,6 +16,43 @@ export default async function ServicesPage({
   params: Promise<{ locale: 'en' | 'sq' }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ServicesPage' });
+
+  const tabsLocalized = [
+    {
+      key: 'haircuts',
+      label: t('tabs.haircuts.label'),
+      icon: ScissorsIcon,
+      description: t('tabs.haircuts.description'),
+      items: [
+        { name: t('tabs.haircuts.items.short'), price: '20' },
+        { name: t('tabs.haircuts.items.medium'), price: '20 - 25' },
+        { name: t('tabs.haircuts.items.long'), price: '25 - 30' },
+      ],
+    },
+    {
+      key: 'haircolor',
+      label: t('tabs.haircolor.label'),
+      icon: PaintBrushIcon,
+      description: t('tabs.haircolor.description'),
+      items: [
+        { name: t('tabs.haircolor.items.short'), price: '140 - 160' },
+        { name: t('tabs.haircolor.items.medium'), price: '160 - 200' },
+        { name: t('tabs.haircolor.items.long'), price: '200 - 300' },
+      ],
+    },
+    {
+      key: 'haircare',
+      label: t('tabs.haircare.label'),
+      icon: SparklesIcon,
+      description: t('tabs.haircare.description'),
+      items: [
+        { name: t('tabs.haircare.items.olaplex'), price: '50' },
+        { name: t('tabs.haircare.items.k18'), price: '55' },
+        { name: t('tabs.haircare.items.nashi'), price: '40' },
+      ],
+    },
+  ] as const;
 
   return (
     <main className="text-foreground min-h-screen w-full bg-black">
@@ -65,12 +67,11 @@ export default async function ServicesPage({
           <div className="mt-8 space-y-10 text-left text-white min-[769px]:mt-0">
             <div className="space-y-3">
               <h1 className="pt-6 text-[34px] leading-tight font-light text-white sm:pt-10 sm:text-[48px] lg:pt-16 lg:text-[68px]">
-                Precision. Experience. <br />
-                Results.
+                {t('hero.titleLine1')} <br />
+                {t('hero.titleLine2')}
               </h1>
               <p className="max-w-md text-sm font-light text-zinc-300 min-[769px]:text-lg sm:text-base">
-                Cuts and color focused on balance, shape, and longevity. Explore a service menu
-                designed to enhance your natural beauty and lifestyle.
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -79,12 +80,12 @@ export default async function ServicesPage({
               </button> */}
               <Link href="tel:+38345680679">
                 <button className="cursor-pointer rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
-                  Book Appointment
+                  {t('hero.cta')}
                 </button>
               </Link>
             </div>
             <div className="mt-10 flex flex-col gap-8 lg:hidden">
-              {tabs.map((tab) => (
+              {tabsLocalized.map((tab) => (
                 <ServiceCardMobile
                   key={tab.key}
                   tab={{
@@ -99,7 +100,7 @@ export default async function ServicesPage({
 
             <div className="mt-10 hidden justify-start lg:flex lg:justify-end 2xl:justify-start">
               <div className="flex h-[220px] max-w-full gap-4 overflow-x-auto pr-2 pb-2 [scrollbar-width:none] sm:gap-5 sm:pr-4 [&::-webkit-scrollbar]:hidden">
-                {tabs.map((tab) => {
+                {tabsLocalized.map((tab) => {
                   const Icon = tab.icon;
                   return (
                     <div

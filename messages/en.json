@@ -27,5 +27,153 @@
       "en": "EN",
       "sq": "SQ"
     }
+  },
+  "AboutPage": {
+    "hero": {
+      "kicker": "About"
+    },
+    "intro": {
+      "badge": "Since 2019",
+      "headline": "Built on a passion for creativity and connection. Here, it's not just about your hair—it's about how you feel when you walk out the door.®"
+    },
+    "story": {
+      "title": "Our Story",
+      "body": "Etrit Hair was founded after years of experience working in the beauty industry. With over a decade of professional hairstyling experience, I wanted to create a salon where every detail—from color to cut—reflects intention, quality, and genuine care. We opened our doors in 2019 with a vision to blend creativity with purpose, building a space where my passion for beauty could come to life."
+    },
+    "whatWeDo": {
+      "title": "What We Do",
+      "body": "We offer a refined range of services designed exclusively for female clients, including balayage, ombre, bleach and lightening services, expert hair coloring, precision haircuts, and signature blow-dry styling. Every service is tailored with attention to detail, ensuring results that feel natural, fresh, and uniquely yours."
+    },
+    "highlights": {
+      "title": "Highlights",
+      "subtitle": "A few moments from inside the salon.",
+      "cta": "View All Highlights"
+    },
+    "philosophy": {
+      "kicker": "Our Philosophy & Team",
+      "stamp": "©2025 • Etrit Hair Studio",
+      "title": "OUR APPROACH",
+      "description": "Hair is personal. That's why we take time to listen, understand your vision, and create a look that complements your style and personality. For us, beauty is a balance of technique, creativity, and trust.",
+      "cards": {
+        "philosophy": {
+          "title": "OUR PHILOSOPHY",
+          "body": "What I love most about this work is the combination of creativity and connection. There's something special about helping clients see themselves in a new light—about turning ideas into color, shape, and style. Hair is personal, and every appointment is an opportunity to create something unique. I enjoy listening, understanding your vision, and crafting a look that feels authentically you."
+        },
+        "why": {
+          "title": "WHY CHOOSE US",
+          "body": "Clients choose Etrit Hair for our comfortable atmosphere, high-level expertise, personalized service, and the genuine warmth we bring to every appointment. We believe your salon visit should feel like a break from the outside world—a cozy, minimal, and inviting space that's warm, friendly, and full of good energy. Behind every great result is a supportive and dedicated team that shares the same passion for quality, professionalism, and hospitality."
+        }
+      }
+    },
+    "team": {
+      "kicker": "Meet Our Team",
+      "title": "The People Behind Your Experience",
+      "subtitle": "Our dedicated team shares the same passion for quality, professionalism, and hospitality—ensuring you're in the best hands.",
+      "staff": {
+        "etrit": {
+          "position": "Founder & Creative Director",
+          "description": "Leads the salon with a sharp eye for detail and a calm, structured approach. Dedicated to technique, consistency, and creating an elevated experience for every client."
+        },
+        "ema": {
+          "position": "Stylist",
+          "description": "Bright, fast, and effortlessly fun. She brings good energy to every client, keeps the mood light, and delivers clean, precise work every single time."
+        },
+        "adea": {
+          "position": "Stylist",
+          "description": "Warm, friendly, and always smiling. She brings a natural charm to the salon, keeps clients relaxed, and delivers clean, consistent work every time."
+        },
+        "aida": {
+          "position": "Stylist",
+          "description": "Steady, gentle, and detail-driven. She works with focus, brings a soft presence to the salon, and always delivers clean, polished results."
+        },
+        "rrona": {
+          "position": "Social Media & Appointments",
+          "description": "Organized, responsive, and creative. She manages bookings with ease and keeps the salon's online presence clean, clear, and up to date."
+        }
+      }
+    }
+  },
+  "HaircarePage": {
+    "hero": {
+      "kicker": "Care",
+      "title": "HairCare.",
+      "subtitle": "HairCare is here to support clarity before and after your visit."
+    },
+    "before": {
+      "title": "Before your appointment",
+      "consultation": {
+        "title": "Consultation",
+        "body": "Every visit begins with a consultation. This allows us to understand your hair, its condition, and what approach will work best before any service begins."
+      },
+      "time": {
+        "title": "Time",
+        "body": "Quality work takes time. Appointments typically last between 2-6 hours, depending on the service and your hair needs. We recommend planning your day with this in mind."
+      },
+      "pricing": {
+        "title": "Pricing",
+        "body": "Prices shown online are indicative. Final pricing is determined during the consultation and depends on hair length, density, condition, and time required."
+      },
+      "note": "Appointments are designed to offer a calm and focused experience. For this reason, we kindly ask companions to wait outside the studio or nearby."
+    },
+    "after": {
+      "title": "After your appointment",
+      "intro": {
+        "quote": "The result you leave with is only the beginning.",
+        "body": "Hair evolves over time, and how it is cared for after your visit plays an important role in maintaining tone, texture, and balance. The guidelines below are intended to help preserve the quality of your hair between appointments."
+      },
+      "care": {
+        "title": "Care & Maintenance",
+        "items": {
+          "i1": "Avoid washing the hair for the first 48-72 hours.",
+          "i2": "Limit heat styling where possible.",
+          "i3": "Use sulfate-free, color-safe shampoos.",
+          "i4": "Apply a hydrating mask regularly to maintain moisture, strength, and elasticity.",
+          "i5": "Avoid chlorine exposure and protect hair before swimming whenever possible.",
+          "i6": "Silver or toning shampoos should only be used if specifically recommended."
+        }
+      },
+      "productCare": {
+        "title": "Product care",
+        "body": "Haircare recommendations are provided through our website to ensure consistency.",
+        "brands": "K18, Olaplex, Nashi Argan"
+      }
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "titleLine1": "Precision. Experience.",
+      "titleLine2": "Results.",
+      "subtitle": "Cuts and color focused on balance, shape, and longevity. Explore a service menu designed to enhance your natural beauty and lifestyle.",
+      "cta": "Book Appointment"
+    },
+    "tabs": {
+      "haircuts": {
+        "label": "Haircuts",
+        "description": "Clean, structured cuts with movement and softness.",
+        "items": {
+          "short": "Short Length",
+          "medium": "Medium Length",
+          "long": "Long Length"
+        }
+      },
+      "haircolor": {
+        "label": "Hair Color",
+        "description": "Balayage, highlights, brunettes and blondes.",
+        "items": {
+          "short": "Short Length",
+          "medium": "Medium Length",
+          "long": "Long Length"
+        }
+      },
+      "haircare": {
+        "label": "Hair Care",
+        "description": "Treatments that restore strength, moisture and shine.",
+        "items": {
+          "olaplex": "Olaplex Treatment",
+          "k18": "K18 Repair Treatment",
+          "nashi": "Nashi Argan Mask Treatment"
+        }
+      }
+    }
   }
 }

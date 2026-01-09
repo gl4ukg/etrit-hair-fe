@@ -6,6 +6,7 @@ import TextReveal from '@/components/TextReveal';
 import FadeInLeft from '@/components/FadeInLeft';
 import HighlightsCarousel from '@/components/HighlightsCarousel';
 import TestimonialsSection, { Testimonial } from '@/components/TestimonialsSection';
+import { getTranslations } from 'next-intl/server';
 
 async function fetchGoogleReviews(): Promise<Testimonial[]> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
@@ -41,43 +42,39 @@ async function fetchGoogleReviews(): Promise<Testimonial[]> {
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: 'en' | 'sq' }> }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'AboutPage' });
   const googleReviews = await fetchGoogleReviews();
   console.log(googleReviews, 'googleReviews');
 
   const staff = [
     {
       name: 'Etrit Tullumi',
-      position: 'Founder & Creative Director',
-      description:
-        'Leads the salon with a sharp eye for detail and a calm, structured approach. Dedicated to technique, consistency, and creating an elevated experience for every client.',
+      position: t('team.staff.etrit.position'),
+      description: t('team.staff.etrit.description'),
       image: '/etrit.jpg',
     },
     {
       name: 'Ema',
-      position: 'Stylist',
-      description:
-        'Bright, fast, and effortlessly fun. She brings good energy to every client, keeps the mood light, and delivers clean, precise work every single time.',
+      position: t('team.staff.ema.position'),
+      description: t('team.staff.ema.description'),
       image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/ema.webp',
     },
     {
       name: 'Adea',
-      position: 'Stylist',
-      description:
-        'Warm, friendly, and always smiling. She brings a natural charm to the salon, keeps clients relaxed, and delivers clean, consistent work every time.',
+      position: t('team.staff.adea.position'),
+      description: t('team.staff.adea.description'),
       image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/adea.webp',
     },
     {
       name: 'Aida',
-      position: 'Stylist',
-      description:
-        'Steady, gentle, and detail-driven. She works with focus, brings a soft presence to the salon, and always delivers clean, polished results.',
+      position: t('team.staff.aida.position'),
+      description: t('team.staff.aida.description'),
       image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/aida.webp',
     },
     {
       name: 'Rrona',
-      position: 'Social Media & Appointments',
-      description:
-        "Organized, responsive, and creative. She manages bookings with ease and keeps the salon's online presence clean, clear, and up to date.",
+      position: t('team.staff.rrona.position'),
+      description: t('team.staff.rrona.description'),
       image: 'https://157-230-117-143.sslip.io/media/etrit-hair/staff/rrona.webp',
     },
   ];
@@ -87,7 +84,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-white via-white/70 to-white" />
       <SiteNavbar locale={locale} />
 
-      <section className="relative">
+      {/* <section className="relative">
         <div className="relative h-[80vh] overflow-hidden bg-black">
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -104,13 +101,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
 
           <div className="absolute bottom-10 left-1/2 z-10 flex h-full w-full max-w-6xl -translate-x-1/2 flex-col justify-end px-4 pb-16">
-            {/* <TextReveal className="mb-4 text-sm text-zinc-300" delay={0.2}>
-              &copy;2025
-            </TextReveal> */}
-
             <div className="hidden items-center gap-3 text-xs font-medium tracking-[0.25em] text-white uppercase md:inline-flex">
               <span className="h-[1px] w-10 bg-gradient-to-r from-white/70 to-white/40" />
-              <TextReveal delay={0.25}>About</TextReveal>
+              <TextReveal delay={0.25}>{t('hero.kicker')}</TextReveal>
             </div>
 
             <div className="flex hidden items-end justify-between md:inline-flex">
@@ -120,15 +113,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               >
                 Etrit Hair
               </TextReveal>
-
-              {/* <TextReveal className="mt-6 max-w-xl text-sm text-zinc-300" delay={0.3}>
-                A focused, minimal salon in Prishtina dedicated to detail, calm, and making every
-                client feel seen.
-              </TextReveal> */}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="relative bg-white/90 py-24 text-zinc-950">
         <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:flex-row">
@@ -136,7 +124,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <FadeInLeft delay={0}>
               <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-xs font-medium text-zinc-950">
                 <span className="h-2 w-2 rounded-full bg-zinc-950" />
-                Since 2019
+                {t('intro.badge')}
               </div>
             </FadeInLeft>
           </div>
@@ -144,8 +132,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="space-y-12 md:w-3/4">
             <FadeInLeft delay={0.1}>
               <h2 className="text-center text-3xl leading-tight font-semibold md:text-left md:text-5xl">
-                Built on a passion for creativity and connection. Here, it&apos;s not just about
-                your hair—it&apos;s about how you feel when you walk out the door.®
+                {t('intro.headline')}
               </h2>
             </FadeInLeft>
 
@@ -153,15 +140,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
                 <p className="text-sm font-semibold text-zinc-950">
                   <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-zinc-950 to-zinc-950/40" />
-                  Our Story
+                  {t('story.title')}
                 </p>
-                <p className="text-sm leading-relaxed text-zinc-700">
-                  Etrit Hair was founded after years of experience working in the beauty industry.
-                  With over a decade of professional hairstyling experience, I wanted to create a
-                  salon where every detail—from color to cut—reflects intention, quality, and
-                  genuine care. We opened our doors in 2019 with a vision to blend creativity with
-                  purpose, building a space where my passion for beauty could come to life.
-                </p>
+                <p className="text-sm leading-relaxed text-zinc-700">{t('story.body')}</p>
               </div>
             </FadeInLeft>
 
@@ -169,15 +150,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
                 <p className="text-sm font-semibold text-zinc-950">
                   <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-zinc-950 to-zinc-950/40" />
-                  What We Do
+                  {t('whatWeDo.title')}
                 </p>
-                <p className="text-sm leading-relaxed text-zinc-700">
-                  We offer a refined range of services designed exclusively for female clients,
-                  including balayage, ombre, bleach and lightening services, expert hair coloring,
-                  precision haircuts, and signature blow-dry styling. Every service is tailored with
-                  attention to detail, ensuring results that feel natural, fresh, and uniquely
-                  yours.
-                </p>
+                <p className="text-sm leading-relaxed text-zinc-700">{t('whatWeDo.body')}</p>
               </div>
             </FadeInLeft>
           </div>
@@ -193,14 +168,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <FadeInLeft delay={0}>
             <div className="mb-8 flex flex-col justify-between gap-4">
               <p className="text-xs font-semibold tracking-[0.25em] text-white uppercase">
-                Highlights
+                {t('highlights.title')}
               </p>
-              <p className="text-xs text-zinc-400">A few moments from inside the salon.</p>
+              <p className="text-xs text-zinc-400">{t('highlights.subtitle')}</p>
             </div>
           </FadeInLeft>
           <FadeInLeft delay={0.1}>
             <button className="cursor-pointer rounded-lg border border-white px-4 py-2 text-sm text-white transition-colors hover:bg-white hover:text-zinc-900">
-              View All Highlights
+              {t('highlights.cta')}
             </button>
           </FadeInLeft>
         </div>
@@ -212,7 +187,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <FadeInLeft delay={0}>
             <div className="mb-4 flex items-center gap-2 text-xs text-zinc-300">
               <span className="h-2 w-2 rounded-full bg-white" />
-              Our Philosophy & Team
+              {t('philosophy.kicker')}
             </div>
           </FadeInLeft>
 
@@ -220,15 +195,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <FadeInLeft delay={0.1}>
               <div className="mb-12 text-center">
                 <p className="text-right text-xs tracking-[0.25em] text-white uppercase">
-                  ©2025 • Etrit Hair Studio
+                  {t('philosophy.stamp')}
                 </p>
                 <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
-                  OUR APPROACH
+                  {t('philosophy.title')}
                 </h2>
                 <p className="mx-auto mt-4 max-w-xl text-sm text-zinc-300">
-                  Hair is personal. That&apos;s why we take time to listen, understand your vision,
-                  and create a look that complements your style and personality. For us, beauty is a
-                  balance of technique, creativity, and trust.
+                  {t('philosophy.description')}
                 </p>
               </div>
             </FadeInLeft>
@@ -239,17 +212,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   <div className="mb-4 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
                       <span className="h-2 w-2 rounded-full bg-white" />
-                      <span className="font-semibold tracking-wide">OUR PHILOSOPHY</span>
+                      <span className="font-semibold tracking-wide">
+                        {t('philosophy.cards.philosophy.title')}
+                      </span>
                     </div>
                   </div>
-                  <p>
-                    What I love most about this work is the combination of creativity and
-                    connection. There&apos;s something special about helping clients see themselves
-                    in a new light—about turning ideas into color, shape, and style. Hair is
-                    personal, and every appointment is an opportunity to create something unique. I
-                    enjoy listening, understanding your vision, and crafting a look that feels
-                    authentically you.
-                  </p>
+                  <p>{t('philosophy.cards.philosophy.body')}</p>
                 </article>
               </FadeInLeft>
 
@@ -258,17 +226,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   <div className="mb-4 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
                       <span className="h-2 w-2 rounded-full bg-white" />
-                      <span className="font-semibold tracking-wide">WHY CHOOSE US</span>
+                      <span className="font-semibold tracking-wide">
+                        {t('philosophy.cards.why.title')}
+                      </span>
                     </div>
                   </div>
-                  <p>
-                    Clients choose Etrit Hair for our comfortable atmosphere, high-level expertise,
-                    personalized service, and the genuine warmth we bring to every appointment. We
-                    believe your salon visit should feel like a break from the outside world—a cozy,
-                    minimal, and inviting space that&apos;s warm, friendly, and full of good energy.
-                    Behind every great result is a supportive and dedicated team that shares the
-                    same passion for quality, professionalism, and hospitality.
-                  </p>
+                  <p>{t('philosophy.cards.why.body')}</p>
                 </article>
               </FadeInLeft>
               {/* <FadeInLeft delay={0.4}>
@@ -300,18 +263,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <FadeInLeft delay={0.1}>
             <div className="mb-12 flex items-center gap-2 text-xs text-zinc-300">
               <span className="h-2 w-2 rounded-full bg-white" />
-              Meet Our Team
+              {t('team.kicker')}
             </div>
           </FadeInLeft>
 
           <FadeInLeft delay={0.1}>
             <div className="mb-16 text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
-                The People Behind Your Experience
+                {t('team.title')}
               </h2>
               <p className="mt-4 max-w-2xl text-sm text-zinc-300 md:text-base">
-                Our dedicated team shares the same passion for quality, professionalism, and
-                hospitality—ensuring you&apos;re in the best hands.
+                {t('team.subtitle')}
               </p>
             </div>
           </FadeInLeft>

@@ -2,6 +2,7 @@ import React from 'react';
 import SiteNavbar from '../../../components/SiteNavbar';
 import SiteFooter from '../../../components/SiteFooter';
 import FadeInLeft from '@/components/FadeInLeft';
+import { getTranslations } from 'next-intl/server';
 
 export default async function HaircarePage({
   params,
@@ -9,6 +10,7 @@ export default async function HaircarePage({
   params: Promise<{ locale: 'en' | 'sq' }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HaircarePage' });
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
@@ -18,12 +20,14 @@ export default async function HaircarePage({
         <div className="mx-auto w-full max-w-6xl px-4">
           <FadeInLeft delay={0.05}>
             <header className="max-w-3xl">
-              <p className="text-[12px] tracking-[0.25em] text-zinc-400 uppercase">Care</p>
+              <p className="text-[12px] tracking-[0.25em] text-zinc-400 uppercase">
+                {t('hero.kicker')}
+              </p>
               <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-                HairCare.
+                {t('hero.title')}
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-zinc-300 sm:text-base">
-                HairCare is here to support clarity before and after your visit.
+                {t('hero.subtitle')}
               </p>
             </header>
           </FadeInLeft>
@@ -34,90 +38,62 @@ export default async function HaircarePage({
             <FadeInLeft delay={0.1}>
               <section className="space-y-8 text-sm leading-relaxed text-zinc-300">
                 <h2 className="text-xs font-semibold tracking-[0.25em] text-zinc-400 uppercase">
-                  Before your appointment
+                  {t('before.title')}
                 </h2>
 
                 <div className="space-y-5">
                   <div>
-                    <p className="text-sm font-semibold text-white">Consultation</p>
-                    <p className="mt-1 text-sm text-zinc-300">
-                      Every visit begins with a consultation. This allows us to understand your
-                      hair, its condition, and what approach will work best before any service
-                      begins.
+                    <p className="text-sm font-semibold text-white">
+                      {t('before.consultation.title')}
                     </p>
+                    <p className="mt-1 text-sm text-zinc-300">{t('before.consultation.body')}</p>
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold text-white">Time</p>
-                    <p className="mt-1 text-sm text-zinc-300">
-                      Quality work takes time. Appointments typically last between 2-6 hours,
-                      depending on the service and your hair needs. We recommend planning your day
-                      with this in mind.
-                    </p>
+                    <p className="text-sm font-semibold text-white">{t('before.time.title')}</p>
+                    <p className="mt-1 text-sm text-zinc-300">{t('before.time.body')}</p>
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold text-white">Pricing</p>
-                    <p className="mt-1 text-sm text-zinc-300">
-                      Prices shown online are indicative. Final pricing is determined during the
-                      consultation and depends on hair length, density, condition, and time
-                      required.
-                    </p>
+                    <p className="text-sm font-semibold text-white">{t('before.pricing.title')}</p>
+                    <p className="mt-1 text-sm text-zinc-300">{t('before.pricing.body')}</p>
                   </div>
                 </div>
 
-                <p className="mt-4 text-xs text-zinc-400 sm:text-sm">
-                  Appointments are designed to offer a calm and focused experience. For this reason,
-                  we kindly ask companions to wait outside the studio or nearby.
-                </p>
+                <p className="mt-4 text-xs text-zinc-400 sm:text-sm">{t('before.note')}</p>
               </section>
             </FadeInLeft>
 
             <FadeInLeft delay={0.2}>
               <section className="space-y-8 text-sm leading-relaxed text-zinc-300">
                 <h2 className="text-xs font-semibold tracking-[0.25em] text-zinc-400 uppercase">
-                  After your appointment
+                  {t('after.title')}
                 </h2>
 
                 <div className="space-y-5">
                   <div>
-                    <p className="text-sm text-white italic">
-                      The result you leave with is only the beginning.
-                    </p>
-                    <p className="mt-1 text-sm text-zinc-300">
-                      Hair evolves over time, and how it is cared for after your visit plays an
-                      important role in maintaining tone, texture, and balance. The guidelines below
-                      are intended to help preserve the quality of your hair between appointments.
-                    </p>
+                    <p className="text-sm text-white italic">{t('after.intro.quote')}</p>
+                    <p className="mt-1 text-sm text-zinc-300">{t('after.intro.body')}</p>
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold text-white">Care &amp; Maintenance</p>
+                    <p className="text-sm font-semibold text-white">{t('after.care.title')}</p>
                     <ul className="mt-2 space-y-1 text-sm text-zinc-300">
-                      <li>Avoid washing the hair for the first 48-72 hours.</li>
-                      <li>Limit heat styling where possible.</li>
-                      <li>Use sulfate-free, color-safe shampoos.</li>
-                      <li>
-                        Apply a hydrating mask regularly to maintain moisture, strength, and
-                        elasticity.
-                      </li>
-                      <li>
-                        Avoid chlorine exposure and protect hair before swimming whenever possible.
-                      </li>
-                      <li>
-                        Silver or toning shampoos should only be used if specifically recommended.
-                      </li>
+                      <li>{t('after.care.items.i1')}</li>
+                      <li>{t('after.care.items.i2')}</li>
+                      <li>{t('after.care.items.i3')}</li>
+                      <li>{t('after.care.items.i4')}</li>
+                      <li>{t('after.care.items.i5')}</li>
+                      <li>{t('after.care.items.i6')}</li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="pt-4">
-                  <p className="text-sm font-semibold text-white">Product care</p>
-                  <p className="mt-1 text-sm text-zinc-300">
-                    Haircare recommendations are provided through our website to ensure consistency.
-                  </p>
+                  <p className="text-sm font-semibold text-white">{t('after.productCare.title')}</p>
+                  <p className="mt-1 text-sm text-zinc-300">{t('after.productCare.body')}</p>
                   <p className="mt-3 text-2xl font-medium text-zinc-100">
-                    K18, Olaplex, Nashi Argan
+                    {t('after.productCare.brands')}
                   </p>
                 </div>
               </section>

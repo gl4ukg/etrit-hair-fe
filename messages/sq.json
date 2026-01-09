@@ -27,5 +27,153 @@
       "en": "EN",
       "sq": "SQ"
     }
+  },
+  "AboutPage": {
+    "hero": {
+      "kicker": "Rreth nesh"
+    },
+    "intro": {
+      "badge": "Që nga 2019",
+      "headline": "E ndërtuar mbi pasionin për kreativitet dhe lidhje. Këtu nuk ka të bëjë vetëm me flokët—por me mënyrën si ndihesh kur del nga dera.®"
+    },
+    "story": {
+      "title": "Historia jonë",
+      "body": "Etrit Hair u themelua pas vitesh përvojë në industrinë e bukurisë. Me mbi një dekadë eksperiencë profesionale në stilimin e flokëve, desha të krijoj një sallon ku çdo detaj—nga ngjyra te prerja—të reflektojë qëllim, cilësi dhe kujdes të vërtetë. Ne hapëm dyert në vitin 2019 me një vizion për të bashkuar kreativitetin me qëllimin, duke ndërtuar një hapësirë ku pasioni im për bukurinë të marrë jetë."
+    },
+    "whatWeDo": {
+      "title": "Çfarë bëjmë",
+      "body": "Ofrojmë një gamë të rafinuar shërbimesh të dizajnuara ekskluzivisht për klientet femra, përfshirë balayage, ombre, shërbime zbardhimi dhe ndriçimi, ngjyrosje profesionale, prerje precize dhe stilim me blow-dry. Çdo shërbim personalizohet me vëmendje ndaj detajeve, për rezultate që duken natyrale, të freskëta dhe unike për ty."
+    },
+    "highlights": {
+      "title": "Momente",
+      "subtitle": "Disa momente nga brenda sallonit.",
+      "cta": "Shiko të gjitha momentet"
+    },
+    "philosophy": {
+      "kicker": "Filozofia & Ekipi",
+      "stamp": "©2025 • Etrit Hair Studio",
+      "title": "QASJA JONË",
+      "description": "Flokët janë personale. Prandaj marrim kohë të dëgjojmë, të kuptojmë vizionin tënd dhe të krijojmë një pamje që i përshtatet stilit dhe personalitetit tënd. Për ne, bukuria është balancë e teknikës, kreativitetit dhe besimit.",
+      "cards": {
+        "philosophy": {
+          "title": "FILOZOFIA JONË",
+          "body": "Ajo që e dua më shumë në këtë punë është kombinimi i kreativitetit dhe lidhjes. Ka diçka të veçantë kur i ndihmon klientet ta shohin veten në një dritë të re—kur idetë shndërrohen në ngjyrë, formë dhe stil. Flokët janë personale dhe çdo takim është një mundësi për të krijuar diçka unike. Më pëlqen të dëgjoj, të kuptoj vizionin tënd dhe të krijoj një pamje që ndihet vërtet si ti."
+        },
+        "why": {
+          "title": "PSE TË NA ZGJEDHËSH",
+          "body": "Klientet zgjedhin Etrit Hair për atmosferën e rehatshme, ekspertizën e lartë, shërbimin e personalizuar dhe ngrohtësinë e sinqertë që sjellim në çdo takim. Besojmë që vizita në sallon duhet të ndihet si një pauzë nga jashtë—një hapësirë e ngrohtë, minimaliste dhe mikpritëse, plot energji të mirë. Pas çdo rezultati të shkëlqyer qëndron një ekip mbështetës dhe i përkushtuar që ndan të njëjtin pasion për cilësi, profesionalizëm dhe mikpritje."
+        }
+      }
+    },
+    "team": {
+      "kicker": "Njihu me ekipin",
+      "title": "Njerëzit pas përvojës tënde",
+      "subtitle": "Ekipi ynë i përkushtuar ndan të njëjtin pasion për cilësi, profesionalizëm dhe mikpritje—duke siguruar që je në duart më të mira.",
+      "staff": {
+        "etrit": {
+          "position": "Themelues & Drejtor Kreativ",
+          "description": "E udhëheq sallonin me sy të mprehtë për detaje dhe qasje të qetë e të strukturuar. I përkushtuar ndaj teknikës, qëndrueshmërisë dhe krijimit të një përvoje të nivelit të lartë për çdo kliente."
+        },
+        "ema": {
+          "position": "Stiliste",
+          "description": "E ndritshme, e shpejtë dhe gjithmonë me energji pozitive. E mban atmosferën të lehtë dhe dorëzon punë të pastër e precize çdo herë."
+        },
+        "adea": {
+          "position": "Stiliste",
+          "description": "E ngrohtë, miqësore dhe gjithmonë me buzëqeshje. Sjell qetësi te klientet dhe ofron rezultate të pastra e të qëndrueshme çdo herë."
+        },
+        "aida": {
+          "position": "Stiliste",
+          "description": "E qetë, e kujdesshme dhe e fokusuar në detaje. Punon me përqendrim dhe sjell gjithmonë rezultate të pastra dhe të rafinuara."
+        },
+        "rrona": {
+          "position": "Rrjete Sociale & Termine",
+          "description": "E organizuar, e shpejtë në përgjigje dhe kreative. Menaxhon rezervimet me lehtësi dhe mban prezencën online të sallonit të pastër, të qartë dhe të përditësuar."
+        }
+      }
+    }
+  },
+  "HaircarePage": {
+    "hero": {
+      "kicker": "Kujdes",
+      "title": "Kujdesi për Flokët.",
+      "subtitle": "Kujdesi për Flokët është këtu për të sjellë qartësi para dhe pas vizitës tënde."
+    },
+    "before": {
+      "title": "Para terminit",
+      "consultation": {
+        "title": "Konsultimi",
+        "body": "Çdo vizitë fillon me një konsultim. Kjo na ndihmon të kuptojmë flokun tënd, gjendjen e tij dhe qasjen më të përshtatshme para se të fillojë shërbimi."
+      },
+      "time": {
+        "title": "Koha",
+        "body": "Puna cilësore kërkon kohë. Terminet zakonisht zgjasin 2-6 orë, varësisht nga shërbimi dhe nevojat e flokut. Të rekomandojmë ta planifikosh ditën me këtë në mendje."
+      },
+      "pricing": {
+        "title": "Çmimet",
+        "body": "Çmimet e paraqitura online janë orientuese. Çmimi final përcaktohet gjatë konsultimit dhe varet nga gjatësia, dendësia, gjendja e flokut dhe koha e nevojshme."
+      },
+      "note": "Terminet janë të dizajnuara për një përvojë të qetë dhe të fokusuar. Për këtë arsye, ju lutemi që shoqëruesit të presin jashtë studios ose afër saj."
+    },
+    "after": {
+      "title": "Pas terminit",
+      "intro": {
+        "quote": "Rezultati me të cilin del është vetëm fillimi.",
+        "body": "Floku ndryshon me kalimin e kohës dhe kujdesi pas vizitës luan rol të rëndësishëm në ruajtjen e tonit, teksturës dhe balancës. Udhëzimet më poshtë janë krijuar për të ruajtur cilësinë e flokut ndërmjet termineve."
+      },
+      "care": {
+        "title": "Kujdes & Mirëmbajtje",
+        "items": {
+          "i1": "Shmang larjen e flokëve për 48-72 orët e para.",
+          "i2": "Kufizo stilimin me nxehtësi sa herë që është e mundur.",
+          "i3": "Përdor shampo pa sulfate dhe të sigurta për ngjyrën.",
+          "i4": "Apliko rregullisht një maskë hidratuese për të ruajtur lagështinë, forcën dhe elasticitetin.",
+          "i5": "Shmang klorin dhe mbroji flokët para notit sa herë që mundesh.",
+          "i6": "Shampot silver/toning përdori vetëm nëse rekomandohen specifikisht."
+        }
+      },
+      "productCare": {
+        "title": "Kujdesi për produktet",
+        "body": "Rekomandimet për haircare ofrohen përmes faqes sonë për të siguruar qëndrueshmëri.",
+        "brands": "K18, Olaplex, Nashi Argan"
+      }
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "titleLine1": "Precizion. Eksperiencë.",
+      "titleLine2": "Rezultate.",
+      "subtitle": "Prerje dhe ngjyrosje të fokusuara në balancë, formë dhe qëndrueshmëri. Eksploro menynë e shërbimeve të dizajnuar për të theksuar bukurinë tënde natyrale dhe stilin e jetës.",
+      "cta": "Rezervo termin"
+    },
+    "tabs": {
+      "haircuts": {
+        "label": "Prerje",
+        "description": "Prerje të pastra e të strukturuara me lëvizje dhe butësi.",
+        "items": {
+          "short": "Gjatësi e shkurtër",
+          "medium": "Gjatësi mesatare",
+          "long": "Gjatësi e gjatë"
+        }
+      },
+      "haircolor": {
+        "label": "Ngjyrosje",
+        "description": "Balayage, highlights, brune dhe bionde.",
+        "items": {
+          "short": "Gjatësi e shkurtër",
+          "medium": "Gjatësi mesatare",
+          "long": "Gjatësi e gjatë"
+        }
+      },
+      "haircare": {
+        "label": "Trajtime",
+        "description": "Trajtime që rikthejnë forcën, lagështinë dhe shkëlqimin.",
+        "items": {
+          "olaplex": "Trajtim Olaplex",
+          "k18": "Trajtim Riparues K18",
+          "nashi": "Trajtim me maskë Nashi Argan"
+        }
+      }
+    }
   }
 }
