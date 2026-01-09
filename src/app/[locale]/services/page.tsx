@@ -57,7 +57,7 @@ export default async function ServicesPage({
       <SiteNavbar locale={locale} />
       <div className="lg:max-w-8xl w-full px-4 pt-12 pb-10 lg:ml-auto">
         <section className="grid gap-0 min-[769px]:grid-cols-[minmax(0,1.3fr)_minmax(0,2fr)]">
-          <div className="relative h-[360px] w-full overflow-hidden rounded-3xl border border-white/5 bg-[url('/services.jpg')] bg-contain bg-center bg-no-repeat shadow-[0_24px_80px_rgba(0,0,0,0.9)] sm:h-[480px] lg:h-[700px]">
+          <div className="relative h-[360px] w-full overflow-hidden rounded-3xl bg-[url('/services.jpg')] bg-[length:62%] bg-center bg-no-repeat sm:h-[480px] lg:h-[700px] lg:bg-[length:101%]">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.75)_100%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_85%,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.0)_55%)]" />
           </div>
@@ -116,7 +116,7 @@ export default async function ServicesPage({
                           <ArrowRightCircleIcon className="mt-2 ml-auto h-6 w-6" />
                         </div>
 
-                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl bg-gradient-to-br from-white via-zinc-950 to-black px-5 py-5 text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-100">
+                        <div className="absolute inset-0 flex h-full w-full [transform:rotateY(180deg)] flex-col justify-center rounded-3xl px-5 py-5 text-xs opacity-0 transition-opacity duration-700 [backface-visibility:hidden] group-hover:opacity-100">
                           <h3 className="flex items-center gap-2 text-2xl font-light text-white">
                             {/* <Icon className="h-5 w-5" /> */}
                             <span>{tab.label}</span>
