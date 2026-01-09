@@ -72,3 +72,12 @@ body {
 .swiper-pagination-bullet-active {
   background: #009966 !important;
 }
+
+.ul-list {
+  position: relative;
+  bottom: auto;
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    bottom: 50px;
+  }
+}

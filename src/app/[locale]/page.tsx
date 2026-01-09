@@ -84,7 +84,7 @@ export default function Home() {
           </FadeInLeft>
         </nav>
 
-        <ul className="font- flex space-x-4">
+        <ul className="ul-list flex space-x-4">
           {/* languages */}
           <li>
             <Link href="en">{t('language.en')}</Link>
