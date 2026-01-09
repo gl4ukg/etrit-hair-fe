@@ -15,7 +15,7 @@ export default function TestimonialsSection({ reviews }: { reviews: Testimonial[
   }
 
   return (
-    <section className="bg-zinc-950 py-24">
+    <section className="bg-zinc-950 pt-24 pb-10">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>

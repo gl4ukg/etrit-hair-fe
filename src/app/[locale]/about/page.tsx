@@ -130,12 +130,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <section className="relative bg-zinc-950 py-24">
+      <section className="relative bg-white/90 py-24 text-zinc-950">
         <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 md:flex-row">
           <div className="md:w-1/4">
             <FadeInLeft delay={0}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-200">
-                <span className="h-2 w-2 rounded-full bg-white" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-xs font-medium text-zinc-950">
+                <span className="h-2 w-2 rounded-full bg-zinc-950" />
                 Since 2019
               </div>
             </FadeInLeft>
@@ -151,11 +151,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
             <FadeInLeft delay={0.2}>
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
-                <p className="text-sm font-semibold text-zinc-200">
-                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-white to-white/40" />
+                <p className="text-sm font-semibold text-zinc-950">
+                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-zinc-950 to-zinc-950/40" />
                   Our Story
                 </p>
-                <p className="text-sm leading-relaxed text-zinc-300">
+                <p className="text-sm leading-relaxed text-zinc-700">
                   Etrit Hair was founded after years of experience working in the beauty industry.
                   With over a decade of professional hairstyling experience, I wanted to create a
                   salon where every detail—from color to cut—reflects intention, quality, and
@@ -167,11 +167,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
             <FadeInLeft delay={0.3}>
               <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr]">
-                <p className="text-sm font-semibold text-zinc-200">
-                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-white to-white/40" />
+                <p className="text-sm font-semibold text-zinc-950">
+                  <span className="mr-2 inline-block h-1 w-6 rounded-full bg-gradient-to-r from-zinc-950 to-zinc-950/40" />
                   What We Do
                 </p>
-                <p className="text-sm leading-relaxed text-zinc-300">
+                <p className="text-sm leading-relaxed text-zinc-700">
                   We offer a refined range of services designed exclusively for female clients,
                   including balayage, ombre, bleach and lightening services, expert hair coloring,
                   precision haircuts, and signature blow-dry styling. Every service is tailored with
@@ -291,9 +291,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* <section className="bg-zinc-950">
-        <ParallaxImage src="/about/IMG_5071.webp" alt="Detail of haircut" speed={0.3} />
-      </section> */}
+      <section className="bg-zinc-950">
+        <ParallaxImage src="/section-bg.jpg" alt="Detail of haircut" speed={0.3} />
+      </section>
 
       <section className="bg-zinc-950 py-24">
         <div className="mx-auto max-w-6xl px-4">
