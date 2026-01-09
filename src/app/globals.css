@@ -78,6 +78,6 @@ body {
   bottom: auto;
   @media only screen and (max-width: 768px) {
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
   }
 }
