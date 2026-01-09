@@ -97,7 +97,13 @@
     "hero": {
       "kicker": "Care",
       "title": "HairCare.",
-      "subtitle": "HairCare is here to support clarity before and after your visit."
+      "subtitle": "HairCare is here to support clarity before and after your visit.",
+      "intro": "HairCare is designed to bring structure, understanding, and continuity to your experience."
+    },
+    "tabs": {
+      "before": "Before",
+      "after": "After",
+      "products": "Products"
     },
     "before": {
       "title": "Before your appointment",

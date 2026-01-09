@@ -97,7 +97,13 @@
     "hero": {
       "kicker": "Kujdes",
       "title": "Kujdesi për Flokët.",
-      "subtitle": "Kujdesi për Flokët është këtu për të sjellë qartësi para dhe pas vizitës tënde."
+      "subtitle": "Kujdesi për Flokët është këtu për të sjellë qartësi para dhe pas vizitës tënde.",
+      "intro": "Kujdesi për Flokët është dizajnuar për të sjellë strukturë, kuptim dhe vazhdimësi në përvojën tënde."
+    },
+    "tabs": {
+      "before": "Para",
+      "after": "Pas",
+      "products": "Produkte"
     },
     "before": {
       "title": "Para terminit",
