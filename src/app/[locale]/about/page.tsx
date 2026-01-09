@@ -7,6 +7,7 @@ import FadeInLeft from '@/components/FadeInLeft';
 import HighlightsCarousel from '@/components/HighlightsCarousel';
 import TestimonialsSection, { Testimonial } from '@/components/TestimonialsSection';
 import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 
 async function fetchGoogleReviews(): Promise<Testimonial[]> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
@@ -175,7 +176,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </FadeInLeft>
           <FadeInLeft delay={0.1}>
             <button className="cursor-pointer rounded-lg border border-white px-4 py-2 text-sm text-white transition-colors hover:bg-white hover:text-zinc-900">
-              {t('highlights.cta')}
+              <Link href="/gallery">{t('highlights.cta')}</Link>
             </button>
           </FadeInLeft>
         </div>
