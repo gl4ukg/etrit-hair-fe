@@ -28,7 +28,7 @@ export default async function HaircarePage({
 
         <div className="relative mx-auto w-full max-w-6xl px-4">
           <FadeInLeft delay={0.05}>
-            <header className="mx-auto max-w-3xl text-center">
+            <header className="mx-auto max-w-3xl text-left">
               <p className="text-[12px] tracking-[0.25em] text-zinc-400 uppercase">
                 {t('hero.kicker')}
               </p>
@@ -75,9 +75,62 @@ export default async function HaircarePage({
                 ],
               }}
               products={{
-                title: t('after.productCare.title'),
-                body: t('after.productCare.body'),
-                brands: t('after.productCare.brands'),
+                heading: t('products.heading'),
+                subheading: t('products.subheading'),
+                brands: {
+                  back: t('products.brands.back'),
+                  items: [
+                    {
+                      key: 'nashi',
+                      title: t('products.brands.items.nashi.title'),
+                      coverImageSrc: '/haircare/nashi-shampoo.png',
+                      products: [
+                        {
+                          imageSrc: '/haircare/nashi-shampoo.png',
+                          title: t('products.brands.items.nashi.products.shampoo.title'),
+                          description: t(
+                            'products.brands.items.nashi.products.shampoo.description',
+                          ),
+                        },
+                        {
+                          imageSrc: '/haircare/Hair-Conditioner-200ml.png',
+                          title: t('products.brands.items.nashi.products.conditioner.title'),
+                          description: t(
+                            'products.brands.items.nashi.products.conditioner.description',
+                          ),
+                        },
+                        {
+                          imageSrc: '/haircare/Hair-Deep-Infusion-150ml-3.png',
+                          title: t('products.brands.items.nashi.products.deepInfusion.title'),
+                          description: t(
+                            'products.brands.items.nashi.products.deepInfusion.description',
+                          ),
+                        },
+                      ],
+                    },
+                    {
+                      key: 'olaplex',
+                      title: t('products.brands.items.olaplex.title'),
+                      coverImageSrc: '/haircare/olaplex-hair-perfector.webp',
+                      products: [
+                        {
+                          imageSrc: '/haircare/olaplex-hair-perfector.webp',
+                          title: t('products.brands.items.olaplex.products.no3.title'),
+                          description: t('products.brands.items.olaplex.products.no3.description'),
+                        },
+                        {
+                          imageSrc: '/haircare/intensivebond.webp',
+                          title: t('products.brands.items.olaplex.products.no0.title'),
+                          description: t('products.brands.items.olaplex.products.no0.description'),
+                        },
+                      ],
+                    },
+                    {
+                      key: 'k18',
+                      title: t('products.brands.items.k18.title'),
+                    },
+                  ],
+                },
               }}
             />
           </FadeInLeft>

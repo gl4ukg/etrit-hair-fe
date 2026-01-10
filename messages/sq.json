@@ -101,9 +101,51 @@
       "intro": "Kujdesi për Flokët është dizajnuar për të sjellë strukturë, kuptim dhe vazhdimësi në përvojën tënde."
     },
     "tabs": {
-      "before": "Para",
+      "before": "Para.",
       "after": "Pas",
       "products": "Produkte"
+    },
+    "products": {
+      "heading": "Produktet që rekomandojmë për kujdes pas ngjyrosjes dhe riparim të flokëve.",
+      "subheading": "Të përzgjedhura për të rritur forcën, ushqimin dhe rezultate afatgjata — të dizajnuara për të gjitha llojet e flokëve.",
+      "brands": {
+        "back": "Kthehu",
+        "items": {
+          "nashi": {
+            "title": "Nashi Argan",
+            "products": {
+              "shampoo": {
+                "title": "Nashi Argan Shampoo",
+                "description": "I përshtatshëm për të gjitha llojet e flokëve, është perfekt për përdorim të përditshëm. I pastron flokët butësisht, duke ruajtur sasinë e ujit të mbajtur natyrshëm në flokë, duke ndihmuar të parandalohen shkaqet e frizz-it te rrënjët dhe duke siguruar hidratim të balancuar. Për më tepër, falë formulës së pasuruar me vaj organik Argan dhe vaj liri, do të ndjesh butësi dhe shkëlqim në çdo larje.\n\nPër një rutinë të plotë në dush, në kombinim me Conditioner, do t’i japësh flokëve ushqimin që ke kërkuar dhe butësi të këndshme në prekje, duke e kthyer tharjen me fen në një ritual të ëmbël bukurie të mbështjellë me aromën e pagabueshme Nashi Argan!"
+              },
+              "conditioner": {
+                "title": "Nashi Argan Conditioner",
+                "description": "Zgjidh Nashi Argan Conditioner nëse flokët janë të padisiplinuar, pa shkëlqim, të dëmtuar nga ngjyrosja ose nëse kërkon më shumë ushqim! Përveç efektit të disiplinimit dhe ç’ngatërrimit, garanton riparim, shkëlqim dhe mbrojtje të ngjyrës, me efekt afatgjatë edhe pas shpëlarjes. Për një butësi të pakrahasueshme!\nPër rezultate më të mira, kombinoje me Shampoo — dy hapa të thjeshtë që sigurojnë më shumë butësi dhe një pamje të shëndetshme në çdo larje."
+              },
+              "deepInfusion": {
+                "title": "Nashi Argan Deep Infusion",
+                "description": "Nashi Argan Deep Infusion është maska profesionale që do ta duash, falë lehtësisë së përdorimit dhe rezultateve të menjëhershme.\nËshtë e dizajnuar të përdoret një herë në javë në vend të Conditioner ose si trajtim intensiv, sidomos gjatë periudhave stresuese. Deep Infusion depërton thellë në flokë, duke ushqyer dhe rikthyer strukturën ideale pa e rënduar. Zgjidhe dhe zbulo teksturën, elasticitetin dhe lehtësinë e stilimit që në përdorimin e parë!\nNëse ke kohë për një prekje të dedikuar mirëqenieje për flokët, përziej disa pika Oil me një sasi të vogël Deep Infusion dhe lëri të veprojnë rreth 20-30 minuta, pastaj shpëlaji me shumë ujë… flokët do të të falënderojnë!"
+              }
+            }
+          },
+          "olaplex": {
+            "title": "Olaplex",
+            "products": {
+              "no3": {
+                "title": "Olaplex No.3\n\nHair Perfector",
+                "description": "Trajtim para larjes i dizajnuar për të riparuar dhe forcuar flokët nga brenda.\nOlaplex No.3 rindërton lidhjet e dëmtuara nga ngjyrosja, shërbimet kimike, nxehtësia dhe dëmtimet nga ambienti."
+              },
+              "no0": {
+                "title": "Olaplex No.0\n\nIntensive Bond Building Treatment",
+                "description": "Trajtim para-trajtues i frymëzuar nga profesionistët, i dizajnuar për të përgatitur flokët për riparim më të thellë.\nOlaplex No.0 vepron si primer, duke ofruar teknologji të përqendruar për ndërtimin e lidhjeve për të forcuar flokët dhe për të rritur efektivitetin e Olaplex No.3.\n\nKur përdoren së bashku me No.3, ndihmon në riparimin e dëmtimeve të rënda, përmirëson rezistencën dhe rikthen forcën e flokëve nga brenda."
+              }
+            }
+          },
+          "k18": {
+            "title": "K18"
+          }
+        }
+      }
     },
     "before": {
       "title": "Para terminit",

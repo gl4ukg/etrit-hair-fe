@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 type Props = {
   tabLabels: {
@@ -21,26 +22,69 @@ type Props = {
     careItems: string[];
   };
   products: {
-    title: string;
-    body: string;
-    brands: string;
+    heading: string;
+    subheading: string;
+    brands: {
+      back: string;
+      items: Array<{
+        key: 'nashi' | 'olaplex' | 'k18';
+        title: string;
+        coverImageSrc?: string;
+        products?: Array<{
+          imageSrc: string;
+          title: string;
+          description: string;
+        }>;
+      }>;
+    };
   };
 };
 
 type TabKey = 'before' | 'after' | 'products';
 
 export default function HaircareTabs({ tabLabels, before, after, products }: Props) {
-  const [activeTab, setActiveTab] = useState<TabKey | null>(null);
+  const [activeTab, setActiveTab] = useState<TabKey>('before');
+  const [activeBrand, setActiveBrand] = useState<'nashi' | 'olaplex' | 'k18' | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
 
-  const toggleTab = (tab: TabKey) => {
-    setActiveTab((current) => (current === tab ? null : tab));
+  const setHash = (tab: TabKey) => {
+    if (typeof window === 'undefined') return;
+    const next = `#${tab}`;
+    if (window.location.hash === next) return;
+    window.history.replaceState(null, '', next);
   };
 
-  const content = useMemo(() => {
-    if (activeTab === null) {
-      return null;
-    }
+  const scrollToPanel = () => {
+    const el = panelRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
+  const selectTab = (tab: TabKey, opts?: { syncHash?: boolean; scroll?: boolean }) => {
+    setActiveTab(tab);
+    if (tab !== 'products') {
+      setActiveBrand(null);
+    }
+    if (opts?.syncHash) setHash(tab);
+    if (opts?.scroll) {
+      requestAnimationFrame(() => scrollToPanel());
+    }
+  };
+
+  useEffect(() => {
+    const fromHash = () => {
+      const raw = window.location.hash.replace('#', '').toLowerCase();
+      if (raw === 'before' || raw === 'after' || raw === 'products') {
+        selectTab(raw as TabKey, { scroll: true });
+      }
+    };
+
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+    return () => window.removeEventListener('hashchange', fromHash);
+  }, []);
+
+  const content = useMemo(() => {
     if (activeTab === 'before') {
       return (
         <div className="space-y-6">
@@ -94,30 +138,107 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
       );
     }
 
+    const brands = products.brands.items;
+    const selected = activeBrand ? brands.find((b) => b.key === activeBrand) : null;
+
+    if (!selected) {
+      return (
+        <div className="space-y-8">
+          <div className="text-center">
+            <h2 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
+              {products.heading}
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300 md:text-base">
+              {products.subheading}
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {brands.map((brand) => (
+              <button
+                key={brand.key}
+                type="button"
+                onClick={() => setActiveBrand(brand.key)}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left shadow-[0_18px_60px_rgba(0,0,0,0.55)] transition hover:border-white/20"
+              >
+                <div className="relative aspect-[4/3] w-full">
+                  {brand.coverImageSrc ? (
+                    <Image
+                      src={brand.coverImageSrc}
+                      alt={brand.title}
+                      fill
+                      className="object-contain p-6 opacity-95 transition duration-300 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-black/20">
+                      <span className="text-3xl font-semibold tracking-tight text-white">
+                        {brand.title}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="border-t border-white/10 px-5 py-4">
+                  <p className="text-lg font-medium text-white">{brand.title}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="space-y-6">
-        <div>
-          <h2 className="text-4xl font-light tracking-tight text-white md:text-5xl">
-            {products.title}
+        <div className="flex items-center justify-between gap-4">
+          <h2 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
+            {selected.title}
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300 md:text-base">
-            {products.body}
-          </p>
+          <button
+            type="button"
+            onClick={() => setActiveBrand(null)}
+            className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] font-medium tracking-[0.2em] text-zinc-200 uppercase transition hover:border-white/20 hover:text-white"
+          >
+            {products.brands.back}
+          </button>
         </div>
 
-        <p className="text-2xl font-medium text-zinc-100 md:text-3xl">{products.brands}</p>
+        {selected.products?.length ? (
+          <div className="space-y-6">
+            {selected.products.map((p) => (
+              <div
+                key={p.title}
+                className="grid gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:grid-cols-[160px_1fr]"
+              >
+                <div className="relative mx-auto aspect-square w-full max-w-[160px] overflow-hidden rounded-xl bg-black/10">
+                  <Image src={p.imageSrc} alt={p.title} fill className="object-contain p-3" />
+                </div>
+                <div>
+                  <p className="text-base font-semibold text-white">{p.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed whitespace-pre-line text-zinc-300">
+                    {p.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm leading-relaxed text-zinc-300">{products.subheading}</p>
+        )}
       </div>
     );
-  }, [activeTab, after, before, products]);
+  }, [activeBrand, activeTab, after, before, products]);
 
   return (
-    <div className="mx-auto mt-20 w-full max-w-4xl">
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_30px_100px_rgba(0,0,0,0.75)]">
+    <div className="mx-auto mt-10 w-full max-w-4xl">
+      <div
+        ref={panelRef}
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-[0_30px_100px_rgba(0,0,0,0.75)]"
+      >
         <div className="grid grid-cols-3 border-b border-white/10">
           <button
             type="button"
-            onClick={() => toggleTab('before')}
-            className={`py-4 text-sm font-medium tracking-[0.25em] uppercase transition-colors ${
+            onClick={() => selectTab('before', { syncHash: true, scroll: true })}
+            className={`py-4 text-sm font-medium transition-colors ${
               activeTab === 'before'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -127,8 +248,8 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           </button>
           <button
             type="button"
-            onClick={() => toggleTab('after')}
-            className={`py-4 text-sm font-medium tracking-[0.25em] uppercase transition-colors ${
+            onClick={() => selectTab('after', { syncHash: true, scroll: true })}
+            className={`py-4 text-sm font-medium transition-colors ${
               activeTab === 'after'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -138,8 +259,8 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           </button>
           <button
             type="button"
-            onClick={() => toggleTab('products')}
-            className={`py-4 text-sm font-medium tracking-[0.25em] uppercase transition-colors ${
+            onClick={() => selectTab('products', { syncHash: true, scroll: true })}
+            className={`py-4 text-sm font-medium transition-colors ${
               activeTab === 'products'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -148,14 +269,12 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
             {tabLabels.products}
           </button>
         </div>
-        {content ? (
-          <div className="relative px-6 pt-10 pb-8 md:px-10">
-            <p className="mb-4 text-center text-[10px] font-semibold tracking-[0.25em] text-zinc-400 uppercase">
-              CARE
-            </p>
-            {content}
-          </div>
-        ) : null}
+        <div className="relative px-6 pt-10 pb-8 md:px-10">
+          <p className="mb-4 text-center text-[10px] font-semibold tracking-[0.25em] text-zinc-400 uppercase">
+            CARE
+          </p>
+          {content}
+        </div>
       </div>
     </div>
   );
