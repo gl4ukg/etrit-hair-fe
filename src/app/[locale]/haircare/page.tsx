@@ -128,6 +128,19 @@ export default async function HaircarePage({
                     {
                       key: 'k18',
                       title: t('products.brands.items.k18.title'),
+                      coverImageSrc: '/haircare/k18hairmask.png',
+                      products: [
+                        {
+                          imageSrc: '/haircare/k18hairmask.png',
+                          title: t('products.brands.items.k18.products.mask.title'),
+                          description: t('products.brands.items.k18.products.mask.description'),
+                        },
+                        {
+                          imageSrc: '/haircare/k18hairoil.png',
+                          title: t('products.brands.items.k18.products.oil.title'),
+                          description: t('products.brands.items.k18.products.oil.description'),
+                        },
+                      ],
                     },
                   ],
                 },

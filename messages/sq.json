@@ -142,7 +142,17 @@
             }
           },
           "k18": {
-            "title": "K18"
+            "title": "K18",
+            "products": {
+              "mask": {
+                "title": "K18 Leave-In Molecular Repair Hair Mask",
+                "description": "K18 Leave-In Molecular Repair Hair Mask është një trajtim i avancuar bioteknologjik, i dizajnuar për të riparuar flokët e dëmtuar në nivel molekular. Ndryshe nga maskat tradicionale që vetëm i zbusin ose i veshin flokët, K18 vepron nga brenda për të rilidhur zinxhirët e keratinës së thyer nga trajtimet kimike, nxehtësia dhe stresi mekanik.\n\nFormula e lehtë, leave-in, rikthen forcën, butësinë dhe elasticitetin brenda pak minutash—pa i rënduar flokët dhe pa pasur nevojë për shpëlarje.\n\nPërfitimet kryesore\n\nRiparon dëmtimet në nivel molekular\n\nRikthen forcën, butësinë & elasticitetin\n\nFormula leave-in (pa shpëlarje)\n\nE lehtë & jo e yndyrshme\n\nE përshtatshme për të gjitha llojet e flokëve, përfshirë flokët e ngjyrosur\n\nSi të përdoret\n\nApliko një sasi të vogël në flokë të pastër, të tharë me peshqir. Shpërndaje në mënyrë të barabartë nga mesi deri te majat. Mos e shpëlaj. Stilo si zakonisht."
+              },
+              "oil": {
+                "title": "K18 Molecular Repair Hair Oil (30 ml)",
+                "description": "K18 Molecular Repair Hair Oil është një vaj i lehtë dhe me performancë të lartë, i krijuar për të forcuar, zbutur dhe mbrojtur flokët duke riparuar dëmtimet në nivel molekular. I fuqizuar nga teknologjia e patentuar biomimetike e K18, vepron thellë në fibrën e flokut për të reduktuar thyerjen, kontrolluar frizz-in dhe rritur shkëlqimin—pa peshë dhe pa yndyrë.\n\nFormula përthithet shpejt dhe ndihmon në përmirësimin e elasticitetit dhe butësisë së flokëve, ndërsa ofron mbrojtje nga nxehtësia dhe faktorët e ambientit, duke e bërë ideale për përdorim të përditshëm dhe stilim.\n\nPërfitimet kryesore\n\nForcon flokët dhe redukton thyerjen\n\nZbut frizz-in dhe fijet e çrregullta\n\nRrit shkëlqimin natyral dhe butësinë\n\nFormula e lehtë, jo e yndyrshme\n\nOfron mbrojtje nga nxehtësia dhe ambienti\n\nE përshtatshme për të gjitha llojet e flokëve, përfshirë flokët e ngjyrosur dhe të dëmtuar\n\nSi të përdoret\nApliko 1–3 pika në flokë të lagur ose të thatë, duke u fokusuar në mes dhe te majat. Stilo sipas dëshirës.\n\nSasia: 30 ml / 1 fl oz"
+              }
+            }
           }
         }
       }

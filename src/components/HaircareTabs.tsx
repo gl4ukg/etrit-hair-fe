@@ -207,10 +207,15 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
             {selected.products.map((p) => (
               <div
                 key={p.title}
-                className="grid gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:grid-cols-[160px_1fr]"
+                className="grid gap-6 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:grid-cols-[220px_1fr] md:p-6"
               >
-                <div className="relative mx-auto aspect-square w-full max-w-[160px] overflow-hidden rounded-xl bg-black/10">
-                  <Image src={p.imageSrc} alt={p.title} fill className="object-contain p-3" />
+                <div className="relative mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-2xl bg-black/10">
+                  <Image
+                    src={p.imageSrc}
+                    alt={p.title}
+                    fill
+                    className="scale-[1.08] object-contain p-4"
+                  />
                 </div>
                 <div>
                   <p className="text-base font-semibold text-white">{p.title}</p>
