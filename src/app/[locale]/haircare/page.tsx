@@ -111,15 +111,15 @@ export default async function HaircarePage({
                     {
                       key: 'olaplex',
                       title: t('products.brands.items.olaplex.title'),
-                      coverImageSrc: '/haircare/olaplex-hair-perfector.webp',
+                      coverImageSrc: '/haircare/olaplex-hair-perfector.png',
                       products: [
                         {
-                          imageSrc: '/haircare/olaplex-hair-perfector.webp',
+                          imageSrc: '/haircare/olaplex-hair-perfector.png',
                           title: t('products.brands.items.olaplex.products.no3.title'),
                           description: t('products.brands.items.olaplex.products.no3.description'),
                         },
                         {
-                          imageSrc: '/haircare/intensivebond.webp',
+                          imageSrc: '/haircare/intensivebond.png',
                           title: t('products.brands.items.olaplex.products.no0.title'),
                           description: t('products.brands.items.olaplex.products.no0.description'),
                         },

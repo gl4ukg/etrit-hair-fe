@@ -161,13 +161,13 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                 onClick={() => setActiveBrand(brand.key)}
                 className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left shadow-[0_18px_60px_rgba(0,0,0,0.55)] transition hover:border-white/20"
               >
-                <div className="relative aspect-[4/3] w-full">
+                <div className="relative aspect-[4/5] w-full">
                   {brand.coverImageSrc ? (
                     <Image
                       src={brand.coverImageSrc}
                       alt={brand.title}
                       fill
-                      className="object-contain p-6 opacity-95 transition duration-300 group-hover:scale-[1.02]"
+                      className="object-contain p-3 opacity-95 transition duration-300 group-hover:scale-[1.03] md:p-4"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-black/20">
