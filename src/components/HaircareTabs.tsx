@@ -60,6 +60,13 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const scrollToPanelOnMobile = () => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      requestAnimationFrame(() => scrollToPanel());
+    }
+  };
+
   const selectTab = (tab: TabKey, opts?: { syncHash?: boolean; scroll?: boolean }) => {
     setActiveTab(tab);
     if (tab !== 'products') {
@@ -158,7 +165,10 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
               <button
                 key={brand.key}
                 type="button"
-                onClick={() => setActiveBrand(brand.key)}
+                onClick={() => {
+                  setActiveBrand(brand.key);
+                  scrollToPanelOnMobile();
+                }}
                 className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left shadow-[0_18px_60px_rgba(0,0,0,0.55)] transition hover:border-white/20"
               >
                 <div className="relative aspect-[4/5] w-full">
@@ -195,7 +205,10 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           </h2>
           <button
             type="button"
-            onClick={() => setActiveBrand(null)}
+            onClick={() => {
+              setActiveBrand(null);
+              scrollToPanelOnMobile();
+            }}
             className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] font-medium tracking-[0.2em] text-zinc-200 uppercase transition hover:border-white/20 hover:text-white"
           >
             {products.brands.back}
