@@ -266,7 +266,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           <button
             type="button"
             onClick={() => selectTab('before', { syncHash: true, scroll: true })}
-            className={`py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
+            className={`cursor-pointer py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
               activeTab === 'before'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -277,7 +277,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           <button
             type="button"
             onClick={() => selectTab('after', { syncHash: true, scroll: true })}
-            className={`py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
+            className={`cursor-pointer py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
               activeTab === 'after'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -288,7 +288,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           <button
             type="button"
             onClick={() => selectTab('products', { syncHash: true, scroll: true })}
-            className={`py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
+            className={`cursor-pointer py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
               activeTab === 'products'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
