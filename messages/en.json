@@ -116,14 +116,17 @@
             "products": {
               "shampoo": {
                 "title": "Nashi Argan Shampoo",
+                "price": "20 euro",
                 "description": "Suitable for all hair types, it is perfect for daily use. Cleanses your hair gently, keeping the amount of water naturally contained in the hair unchanged, helping you to prevent the causes of annoying frizz at the root, ensuring balanced hydration. Furthermore, thanks to its formula enriched with organic Argan Oil and Linseed Oil, you will find new softness and shine with each wash.\n\nFor a complete routine in the shower, combined with Conditioner, you will give your hair the nourishment you were looking for and pleasant softness to the touch, making your blow-dry a sweet beauty ritual wrapped in the unmistakable Nashi Argan fragrance!"
               },
               "conditioner": {
                 "title": "Nashi Argan Conditioner",
+                "price": "20 euro",
                 "description": "Choose Nashi Argan Conditioner in case of an undisciplined, dull hair, damaged by coloring or if you are seeking for more nourishment! In addition to discipline and detangling effect, it guarantees reparation, luminosity and colour protection, with a long lasting effect, even after rinsing. For a matchless softness!\nFor better results, combine it with the Shampoo, two simple gestures that ensure greater softness and a healthy appearance with each wash."
               },
               "deepInfusion": {
                 "title": "Nashi Argan Deep Infusion",
+                "price": "28 euro",
                 "description": "Nashi Argan Deep Infusion is the professional mask that you will fall in love with, thanks to its ease of use and immediate results.\nIt is designed to be used once a week instead of the Conditioner or as an intensive treatment, especially under stressful periods. Deep Infusion penetrates deeply into the hair, nourishing and restoring the ideal hair’s structure without weighing it down. Choose it and discover its texture, elasticity, and ease of styling from the very first use!\nIf you have time for a dedicate touch of well-being to your hair, mix a few drops of Oil with a small amount of Deep Infusion, and leave them to act for about 20-30 minutes, then rinse with plenty of water… your hair will thank you!"
               }
             }
@@ -133,10 +136,12 @@
             "products": {
               "no3": {
                 "title": "Olaplex No.3\n\nHair Perfector",
+                "price": "30 euro",
                 "description": "A pre-wash treatment designed to repair and strengthen hair from within.\nOlaplex No.3 works by rebuilding broken bonds caused by coloring, chemical services, heat, and environmental damage."
               },
               "no0": {
                 "title": "Olaplex No.0\n\nIntensive Bond Building Treatment",
+                "price": "35 euro",
                 "description": "A professional-inspired, pre-treatment designed to prepare hair for deeper repair.\nOlaplex No.0 acts as a primer, delivering concentrated bond-building technology to strengthen hair and enhance the effectiveness of Olaplex No.3.\n\nUsed together with No.3, it helps repair severe damage, improve resilience, and restore hair strength from within."
               }
             }
@@ -146,10 +151,12 @@
             "products": {
               "mask": {
                 "title": "K18 Leave-In Molecular Repair Hair Mask",
+                "price": "72 euro",
                 "description": "K18 Leave-In Molecular Repair Hair Mask is a biotech-powered treatment designed to repair damaged hair at a molecular level. Unlike traditional masks that only smooth or coat the hair, K18 works internally to reconnect broken keratin chains caused by chemical treatments, heat, and mechanical stress.\n\nIts lightweight, leave-in formula restores strength, softness, and elasticity in just minutes—without weighing hair down or requiring rinse-out.\n\nKey Benefits\n\nRepairs damage at the molecular level\n\nRestores strength, softness & elasticity\n\nLeave-in formula (no rinse required)\n\nLightweight & non-greasy\n\nSuitable for all hair types, including color-treated hair\n\nHow to Use\n\nApply a small amount to clean, towel-dried hair. Distribute evenly from mid-lengths to ends. Do not rinse. Style as usual."
               },
               "oil": {
                 "title": "K18 Molecular Repair Hair Oil (30 ml)",
+                "price": "39 euro",
                 "description": "K18 Molecular Repair Hair Oil is a lightweight, high-performance oil designed to strengthen, smooth, and protect hair while repairing damage at the molecular level. Powered by K18’s patented biomimetic technology, it works deep within the hair fiber to reduce breakage, control frizz, and enhance shine—without heaviness or greasiness.\n\nThis fast-absorbing formula helps improve hair elasticity and softness while providing heat and environmental protection, making it ideal for daily use and styling.\n\nKey Benefits\n\nStrengthens hair and reduces breakage\n\nSmooths frizz and flyaways\n\nEnhances natural shine and softness\n\nLightweight, non-greasy formula\n\nProvides heat and environmental protection\n\nSuitable for all hair types, including color-treated and damaged hair\n\nHow to Use\nApply 1–3 drops to damp or dry hair, focusing on mid-lengths and ends. Style as desired.\n\nSize: 30 ml / 1 fl oz"
               }
             }

@@ -88,6 +88,7 @@ export default async function HaircarePage({
                         {
                           imageSrc: '/haircare/nashi-shampoo.png',
                           title: t('products.brands.items.nashi.products.shampoo.title'),
+                          price: t('products.brands.items.nashi.products.shampoo.price'),
                           description: t(
                             'products.brands.items.nashi.products.shampoo.description',
                           ),
@@ -95,6 +96,7 @@ export default async function HaircarePage({
                         {
                           imageSrc: '/haircare/Hair-Conditioner-200ml.png',
                           title: t('products.brands.items.nashi.products.conditioner.title'),
+                          price: t('products.brands.items.nashi.products.conditioner.price'),
                           description: t(
                             'products.brands.items.nashi.products.conditioner.description',
                           ),
@@ -102,6 +104,7 @@ export default async function HaircarePage({
                         {
                           imageSrc: '/haircare/Hair-Deep-Infusion-150ml-3.png',
                           title: t('products.brands.items.nashi.products.deepInfusion.title'),
+                          price: t('products.brands.items.nashi.products.deepInfusion.price'),
                           description: t(
                             'products.brands.items.nashi.products.deepInfusion.description',
                           ),
@@ -116,11 +119,13 @@ export default async function HaircarePage({
                         {
                           imageSrc: '/haircare/olaplex-hair-perfector.png',
                           title: t('products.brands.items.olaplex.products.no3.title'),
+                          price: t('products.brands.items.olaplex.products.no3.price'),
                           description: t('products.brands.items.olaplex.products.no3.description'),
                         },
                         {
                           imageSrc: '/haircare/intensivebond.png',
                           title: t('products.brands.items.olaplex.products.no0.title'),
+                          price: t('products.brands.items.olaplex.products.no0.price'),
                           description: t('products.brands.items.olaplex.products.no0.description'),
                         },
                       ],
@@ -133,11 +138,13 @@ export default async function HaircarePage({
                         {
                           imageSrc: '/haircare/k18hairmask.png',
                           title: t('products.brands.items.k18.products.mask.title'),
+                          price: t('products.brands.items.k18.products.mask.price'),
                           description: t('products.brands.items.k18.products.mask.description'),
                         },
                         {
                           imageSrc: '/haircare/k18hairoil.png',
                           title: t('products.brands.items.k18.products.oil.title'),
+                          price: t('products.brands.items.k18.products.oil.price'),
                           description: t('products.brands.items.k18.products.oil.description'),
                         },
                       ],

@@ -101,7 +101,7 @@
       "intro": "Kujdesi për Flokët është dizajnuar për të sjellë strukturë, kuptim dhe vazhdimësi në përvojën tënde."
     },
     "tabs": {
-      "before": "Para.",
+      "before": "Para",
       "after": "Pas",
       "products": "Produkte"
     },
@@ -116,14 +116,17 @@
             "products": {
               "shampoo": {
                 "title": "Nashi Argan Shampoo",
+                "price": "20 euro",
                 "description": "I përshtatshëm për të gjitha llojet e flokëve, është perfekt për përdorim të përditshëm. I pastron flokët butësisht, duke ruajtur sasinë e ujit të mbajtur natyrshëm në flokë, duke ndihmuar të parandalohen shkaqet e frizz-it te rrënjët dhe duke siguruar hidratim të balancuar. Për më tepër, falë formulës së pasuruar me vaj organik Argan dhe vaj liri, do të ndjesh butësi dhe shkëlqim në çdo larje.\n\nPër një rutinë të plotë në dush, në kombinim me Conditioner, do t’i japësh flokëve ushqimin që ke kërkuar dhe butësi të këndshme në prekje, duke e kthyer tharjen me fen në një ritual të ëmbël bukurie të mbështjellë me aromën e pagabueshme Nashi Argan!"
               },
               "conditioner": {
                 "title": "Nashi Argan Conditioner",
+                "price": "20 euro",
                 "description": "Zgjidh Nashi Argan Conditioner nëse flokët janë të padisiplinuar, pa shkëlqim, të dëmtuar nga ngjyrosja ose nëse kërkon më shumë ushqim! Përveç efektit të disiplinimit dhe ç’ngatërrimit, garanton riparim, shkëlqim dhe mbrojtje të ngjyrës, me efekt afatgjatë edhe pas shpëlarjes. Për një butësi të pakrahasueshme!\nPër rezultate më të mira, kombinoje me Shampoo — dy hapa të thjeshtë që sigurojnë më shumë butësi dhe një pamje të shëndetshme në çdo larje."
               },
               "deepInfusion": {
                 "title": "Nashi Argan Deep Infusion",
+                "price": "28 euro",
                 "description": "Nashi Argan Deep Infusion është maska profesionale që do ta duash, falë lehtësisë së përdorimit dhe rezultateve të menjëhershme.\nËshtë e dizajnuar të përdoret një herë në javë në vend të Conditioner ose si trajtim intensiv, sidomos gjatë periudhave stresuese. Deep Infusion depërton thellë në flokë, duke ushqyer dhe rikthyer strukturën ideale pa e rënduar. Zgjidhe dhe zbulo teksturën, elasticitetin dhe lehtësinë e stilimit që në përdorimin e parë!\nNëse ke kohë për një prekje të dedikuar mirëqenieje për flokët, përziej disa pika Oil me një sasi të vogël Deep Infusion dhe lëri të veprojnë rreth 20-30 minuta, pastaj shpëlaji me shumë ujë… flokët do të të falënderojnë!"
               }
             }
@@ -133,10 +136,12 @@
             "products": {
               "no3": {
                 "title": "Olaplex No.3\n\nHair Perfector",
+                "price": "30 euro",
                 "description": "Trajtim para larjes i dizajnuar për të riparuar dhe forcuar flokët nga brenda.\nOlaplex No.3 rindërton lidhjet e dëmtuara nga ngjyrosja, shërbimet kimike, nxehtësia dhe dëmtimet nga ambienti."
               },
               "no0": {
                 "title": "Olaplex No.0\n\nIntensive Bond Building Treatment",
+                "price": "35 euro",
                 "description": "Trajtim para-trajtues i frymëzuar nga profesionistët, i dizajnuar për të përgatitur flokët për riparim më të thellë.\nOlaplex No.0 vepron si primer, duke ofruar teknologji të përqendruar për ndërtimin e lidhjeve për të forcuar flokët dhe për të rritur efektivitetin e Olaplex No.3.\n\nKur përdoren së bashku me No.3, ndihmon në riparimin e dëmtimeve të rënda, përmirëson rezistencën dhe rikthen forcën e flokëve nga brenda."
               }
             }
@@ -146,10 +151,12 @@
             "products": {
               "mask": {
                 "title": "K18 Leave-In Molecular Repair Hair Mask",
+                "price": "72 euro",
                 "description": "K18 Leave-In Molecular Repair Hair Mask është një trajtim i avancuar bioteknologjik, i dizajnuar për të riparuar flokët e dëmtuar në nivel molekular. Ndryshe nga maskat tradicionale që vetëm i zbusin ose i veshin flokët, K18 vepron nga brenda për të rilidhur zinxhirët e keratinës së thyer nga trajtimet kimike, nxehtësia dhe stresi mekanik.\n\nFormula e lehtë, leave-in, rikthen forcën, butësinë dhe elasticitetin brenda pak minutash—pa i rënduar flokët dhe pa pasur nevojë për shpëlarje.\n\nPërfitimet kryesore\n\nRiparon dëmtimet në nivel molekular\n\nRikthen forcën, butësinë & elasticitetin\n\nFormula leave-in (pa shpëlarje)\n\nE lehtë & jo e yndyrshme\n\nE përshtatshme për të gjitha llojet e flokëve, përfshirë flokët e ngjyrosur\n\nSi të përdoret\n\nApliko një sasi të vogël në flokë të pastër, të tharë me peshqir. Shpërndaje në mënyrë të barabartë nga mesi deri te majat. Mos e shpëlaj. Stilo si zakonisht."
               },
               "oil": {
                 "title": "K18 Molecular Repair Hair Oil (30 ml)",
+                "price": "39 euro",
                 "description": "K18 Molecular Repair Hair Oil është një vaj i lehtë dhe me performancë të lartë, i krijuar për të forcuar, zbutur dhe mbrojtur flokët duke riparuar dëmtimet në nivel molekular. I fuqizuar nga teknologjia e patentuar biomimetike e K18, vepron thellë në fibrën e flokut për të reduktuar thyerjen, kontrolluar frizz-in dhe rritur shkëlqimin—pa peshë dhe pa yndyrë.\n\nFormula përthithet shpejt dhe ndihmon në përmirësimin e elasticitetit dhe butësisë së flokëve, ndërsa ofron mbrojtje nga nxehtësia dhe faktorët e ambientit, duke e bërë ideale për përdorim të përditshëm dhe stilim.\n\nPërfitimet kryesore\n\nForcon flokët dhe redukton thyerjen\n\nZbut frizz-in dhe fijet e çrregullta\n\nRrit shkëlqimin natyral dhe butësinë\n\nFormula e lehtë, jo e yndyrshme\n\nOfron mbrojtje nga nxehtësia dhe ambienti\n\nE përshtatshme për të gjitha llojet e flokëve, përfshirë flokët e ngjyrosur dhe të dëmtuar\n\nSi të përdoret\nApliko 1–3 pika në flokë të lagur ose të thatë, duke u fokusuar në mes dhe te majat. Stilo sipas dëshirës.\n\nSasia: 30 ml / 1 fl oz"
               }
             }

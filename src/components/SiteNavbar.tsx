@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from '../i18n/navigation';
+import { Link, usePathname } from '../i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 type Props = {
@@ -10,6 +10,7 @@ type Props = {
 
 export default function SiteNavbar({ locale }: Props) {
   const t = useTranslations('HomePage');
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -53,6 +54,27 @@ export default function SiteNavbar({ locale }: Props) {
               priority
             />
           </Link>
+
+          <div className="hidden items-center gap-4 text-sm tracking-widest uppercase md:flex">
+            <Link
+              href={pathname || '/'}
+              locale="en"
+              className={`text-[12px] uppercase no-underline hover:no-underline ${
+                locale === 'en' ? 'text-white' : 'text-white/30 hover:text-white'
+              }`}
+            >
+              EN
+            </Link>
+            <Link
+              href={pathname || '/'}
+              locale="sq"
+              className={`text-[12px] uppercase no-underline hover:no-underline ${
+                locale === 'sq' ? 'text-white' : 'text-white/30 hover:text-white'
+              }`}
+            >
+              SQ
+            </Link>
+          </div>
 
           {/* <div className="flex items-center gap-4 text-sm tracking-widest uppercase">
             <Link
@@ -131,6 +153,28 @@ export default function SiteNavbar({ locale }: Props) {
             ref={panelRef}
             className="fixed top-14 right-0 left-0 z-50 mx-4 rounded-md border border-white/10 bg-black/90 p-4 shadow-xl ring-1 ring-white/10"
           >
+            <div className="mb-5 flex items-center gap-4 text-sm tracking-widest uppercase">
+              <Link
+                href={pathname || '/'}
+                locale="en"
+                className={`text-[12px] uppercase no-underline hover:no-underline ${
+                  locale === 'en' ? 'text-white' : 'text-white/30 hover:text-white'
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                EN
+              </Link>
+              <Link
+                href={pathname || '/'}
+                locale="sq"
+                className={`text-[12px] uppercase no-underline hover:no-underline ${
+                  locale === 'sq' ? 'text-white' : 'text-white/30 hover:text-white'
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                SQ
+              </Link>
+            </div>
             <nav className="flex flex-col gap-4 text-[12px] tracking-[0.2em] uppercase">
               <Link
                 href="/"

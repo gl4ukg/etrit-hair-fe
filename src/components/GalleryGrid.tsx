@@ -15,8 +15,7 @@ export default function GalleryGrid({ sources }: GalleryGridProps) {
 
   const slides = sources.map((src) => ({ src }));
   const objectPositionOverrides: Record<string, string> = {
-    'https://157-230-117-143.sslip.io/media/etrit-hair/gallery/562700203_18541155376062559_6543167450642810001_n.webp':
-      '0px -60px',
+    '/hairs/Balayage/562700203_18541155376062559_6543167450642810001_n.jpg': '0px -60px',
   };
 
   const handleImageClick = (index: number) => {

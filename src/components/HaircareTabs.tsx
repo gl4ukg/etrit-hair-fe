@@ -33,6 +33,7 @@ type Props = {
         products?: Array<{
           imageSrc: string;
           title: string;
+          price?: string;
           description: string;
         }>;
       }>;
@@ -241,7 +242,14 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                   />
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-white">{p.title}</p>
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <p className="text-base font-semibold text-white">{p.title}</p>
+                    {p.price ? (
+                      <span className="shrink-0 rounded-full border border-white/20 bg-white/[0.08] px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] text-white shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
+                        {p.price}
+                      </span>
+                    ) : null}
+                  </div>
                   <p className="mt-2 text-sm leading-relaxed whitespace-pre-line text-zinc-300">
                     {p.description}
                   </p>
