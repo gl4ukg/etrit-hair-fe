@@ -55,9 +55,25 @@ export default async function GalleryPage({
     ? (activeCategoryRaw as (typeof categories)[number]['key'])
     : 'all';
 
+  const mixAllCategories = (lists: string[][]) => {
+    const out: string[] = [];
+    const maxLen = Math.max(0, ...lists.map((l) => l.length));
+    for (let i = 0; i < maxLen; i++) {
+      for (const list of lists) {
+        const item = list[i];
+        if (item) out.push(item);
+      }
+    }
+    return out;
+  };
+
   const sources =
     activeCategory === 'all'
-      ? Object.values(sourcesByCategory).flat()
+      ? mixAllCategories([
+          sourcesByCategory.brunette,
+          sourcesByCategory.blonde,
+          sourcesByCategory.balayage,
+        ])
       : sourcesByCategory[activeCategory];
 
   return (
