@@ -49,6 +49,9 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
   const [expandedProducts, setExpandedProducts] = useState<Record<string, boolean>>({});
   const panelRef = useRef<HTMLDivElement | null>(null);
 
+  const learnMoreButtonClass =
+    'w-full rounded-xl border border-white/15 bg-transparent px-4 py-3 text-center text-sm font-medium text-white/90 transition hover:border-white/25 hover:bg-white/[0.04] hover:text-white active:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/25 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50';
+
   const setHash = (tab: TabKey | null) => {
     if (typeof window === 'undefined') return;
     if (!tab) {
@@ -201,6 +204,9 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                 </div>
                 <div className="border-t border-white/10 px-5 py-4">
                   <p className="text-lg font-medium text-white">{brand.title}</p>
+                  <div className="mt-4">
+                    <div className={learnMoreButtonClass}>Learn More</div>
+                  </div>
                 </div>
               </button>
             ))}
@@ -251,40 +257,9 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                       </span>
                     ) : null}
                   </div>
-                  {(() => {
-                    const productKey = `${selected.key}:${p.title}`;
-                    const isExpanded = Boolean(expandedProducts[productKey]);
-                    const normalizedDescription = p.description.replace(/\s+/g, ' ').trim();
-                    const previewLimit = 160;
-                    const preview =
-                      normalizedDescription.length > previewLimit
-                        ? `${normalizedDescription.slice(0, previewLimit)}…`
-                        : normalizedDescription;
-                    const showToggle = normalizedDescription.length > previewLimit;
-
-                    return (
-                      <div className="mt-2">
-                        <p className="text-sm leading-relaxed whitespace-pre-line text-zinc-300">
-                          {isExpanded ? p.description : preview}
-                        </p>
-
-                        {showToggle ? (
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setExpandedProducts((prev) => ({
-                                ...prev,
-                                [productKey]: !Boolean(prev[productKey]),
-                              }))
-                            }
-                            className="mt-4 w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(0,0,0,0.55)] transition hover:border-white/25 hover:bg-white/[0.06]"
-                          >
-                            {isExpanded ? 'Show Less' : 'Learn More'}
-                          </button>
-                        ) : null}
-                      </div>
-                    );
-                  })()}
+                  <p className="mt-2 text-sm leading-relaxed whitespace-pre-line text-zinc-300">
+                    {p.description}
+                  </p>
                 </div>
               </div>
             ))}
