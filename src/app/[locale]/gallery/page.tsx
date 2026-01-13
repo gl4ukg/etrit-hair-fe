@@ -10,7 +10,7 @@ export default async function GalleryPage({
   searchParams,
 }: {
   params: Promise<{ locale: 'en' | 'sq' }>;
-  searchParams?: Promise<{ category?: string }> | { category?: string };
+  searchParams?: Promise<{ category?: string }>;
 }) {
   const { locale } = await params;
 
