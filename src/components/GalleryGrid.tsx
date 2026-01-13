@@ -15,7 +15,14 @@ export default function GalleryGrid({ sources }: GalleryGridProps) {
 
   const slides = sources.map((src) => ({ src }));
   const objectPositionOverrides: Record<string, string> = {
-    '/hairs/Balayage/562700203_18541155376062559_6543167450642810001_n.jpg': '0px -60px',
+    '562700203_18541155376062559_6543167450642810001_n.jpg': '0px -60px',
+  };
+
+  const getObjectPosition = (src: string) => {
+    for (const [key, value] of Object.entries(objectPositionOverrides)) {
+      if (src.endsWith(key)) return value;
+    }
+    return undefined;
   };
 
   const handleImageClick = (index: number) => {
@@ -46,7 +53,7 @@ export default function GalleryGrid({ sources }: GalleryGridProps) {
                 alt={`Gallery ${idx + 1}`}
                 onClick={() => handleImageClick(idx)}
                 className="relative h-full w-full"
-                objectPosition={objectPositionOverrides[src]}
+                objectPosition={getObjectPosition(src)}
               />
             </div>
           </div>
