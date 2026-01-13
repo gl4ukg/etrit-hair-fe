@@ -9,6 +9,7 @@ import { Inter, Cormorant_Garamond } from 'next/font/google';
 import type { Metadata } from 'next';
 import PageTransition from '@/components/PageTransition';
 import ScrollToTop from '@/components/ScrollToTop';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -145,6 +146,7 @@ export default async function RootLayout({ children, params }: Props) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <PageTransition>{children}</PageTransition>
           {/* <ScrollToTop /> */}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
