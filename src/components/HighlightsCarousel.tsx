@@ -70,10 +70,10 @@ export default function HighlightsCarousel() {
   };
 
   const phoneScreenSettings: Settings = {
-    className: 'simple',
-    centerMode: false,
+    className: 'center',
+    centerMode: true,
     infinite: true,
-    centerPadding: '0px',
+    centerPadding: '46px',
     slidesToShow: 1,
     speed: 500,
     arrows: false,
@@ -104,13 +104,13 @@ export default function HighlightsCarousel() {
   }, []);
 
   return (
-    <div className="relative mx-auto max-w-full overflow-hidden lg:my-16">
+    <div className="relative mx-auto max-w-full overflow-visible lg:my-16">
       <Slider
         {...(isDesktop ? desktopSettings : isTablet ? tabletScreenSettings : phoneScreenSettings)}
         className="highlights-slider mt-8 md:mt-0"
       >
         {images.map((image) => (
-          <div key={image.src} className="px-4 md:px-3">
+          <div key={image.src} className="px-2 md:px-3">
             <div
               className="highlight-card relative aspect-[5/6] overflow-hidden rounded-2xl bg-zinc-900 shadow-lg shadow-black/50 transition-all duration-700 ease-in-out"
               aria-label={image.alt}
@@ -153,6 +153,25 @@ export default function HighlightsCarousel() {
 
           .highlights-slider .slick-list {
             overflow: visible;
+          }
+        }
+
+        /* Phone: show left/right peeks so users know it can swipe */
+        @media (max-width: 767px) {
+          .highlights-slider .slick-list {
+            overflow: visible;
+          }
+
+          .highlights-slider .slick-slide {
+            opacity: 0.65;
+            transform: scale(0.92);
+            transition: all 0.6s ease-in-out;
+          }
+
+          .highlights-slider .slick-center {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 20;
           }
         }
       `}</style>

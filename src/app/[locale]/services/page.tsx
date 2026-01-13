@@ -48,7 +48,7 @@ export default async function ServicesPage({
       description: t('tabs.haircare.description'),
       items: [
         { name: t('tabs.haircare.items.olaplex'), price: '50' },
-        { name: t('tabs.haircare.items.k18'), price: '55' },
+        { name: t('tabs.haircare.items.k18'), price: '60' },
         { name: t('tabs.haircare.items.nashi'), price: '40' },
       ],
     },
@@ -59,7 +59,7 @@ export default async function ServicesPage({
       <SiteNavbar locale={locale} />
       <div className="lg:max-w-8xl w-full px-4 pt-12 pb-10 lg:ml-auto">
         <section className="grid gap-0 min-[769px]:grid-cols-[minmax(0,1.3fr)_minmax(0,2fr)]">
-          <div className="relative h-[360px] w-full overflow-hidden rounded-3xl bg-[url('/services.jpg')] bg-[length:62%] bg-center bg-no-repeat sm:h-[480px] lg:h-[700px] lg:bg-[length:101%]">
+          <div className="relative h-[360px] w-full overflow-hidden rounded-3xl bg-[url('/services.jpg')] bg-[length:62%] bg-center bg-no-repeat sm:h-[480px] lg:h-[700px] lg:bg-[length:94%]">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.75)_100%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_85%,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.0)_55%)]" />
           </div>
@@ -78,11 +78,21 @@ export default async function ServicesPage({
             <div className="flex flex-wrap gap-3 sm:gap-4">
               {/* <button className="rounded-full bg-zinc-100 px-6 py-2 text-sm font-medium text-black shadow-sm transition-colors hover:bg-white">
               </button> */}
-              <Link href="tel:+38345680679">
+              <a href="tel:+38345680679" className="block md:hidden">
                 <button className="cursor-pointer rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
                   {t('hero.cta')}
                 </button>
-              </Link>
+              </a>
+              <a
+                href="https://www.instagram.com/etrithair/"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden md:block"
+              >
+                <button className="cursor-pointer rounded-full border border-zinc-500 px-6 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-300 hover:text-white">
+                  {t('hero.cta')}
+                </button>
+              </a>
             </div>
             <div className="mt-10 flex flex-col gap-8 lg:hidden">
               {tabsLocalized.map((tab) => (

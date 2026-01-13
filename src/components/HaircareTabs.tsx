@@ -43,12 +43,17 @@ type Props = {
 type TabKey = 'before' | 'after' | 'products';
 
 export default function HaircareTabs({ tabLabels, before, after, products }: Props) {
-  const [activeTab, setActiveTab] = useState<TabKey>('before');
+  const [activeTab, setActiveTab] = useState<TabKey | null>(null);
   const [activeBrand, setActiveBrand] = useState<'nashi' | 'olaplex' | 'k18' | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
 
-  const setHash = (tab: TabKey) => {
+  const setHash = (tab: TabKey | null) => {
     if (typeof window === 'undefined') return;
+    if (!tab) {
+      if (!window.location.hash) return;
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      return;
+    }
     const next = `#${tab}`;
     if (window.location.hash === next) return;
     window.history.replaceState(null, '', next);
@@ -68,12 +73,16 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
   };
 
   const selectTab = (tab: TabKey, opts?: { syncHash?: boolean; scroll?: boolean }) => {
-    setActiveTab(tab);
-    if (tab !== 'products') {
+    const nextTab = activeTab === tab ? null : tab;
+    setActiveTab(nextTab);
+
+    if (nextTab !== 'products') {
       setActiveBrand(null);
     }
-    if (opts?.syncHash) setHash(tab);
-    if (opts?.scroll) {
+
+    if (opts?.syncHash) setHash(nextTab);
+
+    if (opts?.scroll && nextTab) {
       requestAnimationFrame(() => scrollToPanel());
     }
   };
@@ -82,7 +91,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
     const fromHash = () => {
       const raw = window.location.hash.replace('#', '').toLowerCase();
       if (raw === 'before' || raw === 'after' || raw === 'products') {
-        selectTab(raw as TabKey, { scroll: true });
+        setActiveTab(raw as TabKey);
       }
     };
 
@@ -92,6 +101,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
   }, []);
 
   const content = useMemo(() => {
+    if (!activeTab) return null;
     if (activeTab === 'before') {
       return (
         <div className="space-y-6">
@@ -256,7 +266,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           <button
             type="button"
             onClick={() => selectTab('before', { syncHash: true, scroll: true })}
-            className={`py-4 text-sm font-medium transition-colors ${
+            className={`py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
               activeTab === 'before'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -267,7 +277,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           <button
             type="button"
             onClick={() => selectTab('after', { syncHash: true, scroll: true })}
-            className={`py-4 text-sm font-medium transition-colors ${
+            className={`py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
               activeTab === 'after'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -278,7 +288,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
           <button
             type="button"
             onClick={() => selectTab('products', { syncHash: true, scroll: true })}
-            className={`py-4 text-sm font-medium transition-colors ${
+            className={`py-4 text-sm font-[200] tracking-[0.2em] uppercase transition-colors ${
               activeTab === 'products'
                 ? 'bg-white/[0.06] text-white'
                 : 'text-zinc-400 hover:text-white'
@@ -287,12 +297,14 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
             {tabLabels.products}
           </button>
         </div>
-        <div className="relative px-6 pt-10 pb-8 md:px-10">
-          <p className="mb-4 text-center text-[10px] font-semibold tracking-[0.25em] text-zinc-400 uppercase">
-            CARE
-          </p>
-          {content}
-        </div>
+        {content && (
+          <div className="relative px-6 pt-10 pb-8 md:px-10">
+            <p className="mb-4 text-center text-[10px] font-semibold tracking-[0.25em] text-zinc-400 uppercase">
+              CARE
+            </p>
+            {content}
+          </div>
+        )}
       </div>
     </div>
   );

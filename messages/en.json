@@ -11,7 +11,7 @@
         "title": "Salon"
       },
       "services": {
-        "label": "What I Do",
+        "label": "What We Do",
         "title": "Services"
       },
       "gallery": {
@@ -101,12 +101,12 @@
       "intro": "HairCare is designed to bring structure, understanding, and continuity to your experience."
     },
     "tabs": {
-      "before": "Before.",
+      "before": "Before",
       "after": "After",
       "products": "Products"
     },
     "products": {
-      "heading": "Products we recommend for post-color care and hair repair.",
+      "heading": "Products we recommend for after color care and hair repair.",
       "subheading": "Selected to enhance strength, nourishment and long-lasting results — designed for all hair types.",
       "brands": {
         "back": "Back",

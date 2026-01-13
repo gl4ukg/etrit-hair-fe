@@ -18,21 +18,7 @@ const images = [
   'https://157-230-117-143.sslip.io/media/etrit-hair/header/six.webp',
 ];
 
-const blurDataURL =
-  'data:image/svg+xml;base64,' +
-  btoa(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect width="16" height="16" fill="#181818"/></svg>`,
-  );
-
-function HeroSlide({
-  src,
-  index,
-  onFirstLoaded,
-}: {
-  src: string;
-  index: number;
-  onFirstLoaded: () => void;
-}) {
+function HeroSlide({ src, index }: { src: string; index: number }) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -49,42 +35,29 @@ function HeroSlide({
         className={`object-cover object-center transition-opacity duration-500 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
-        sizes="(min-width: 1024px) 60vw, 100vw"
         priority={index === 0}
-        fetchPriority={index === 0 ? 'high' : 'auto'}
-        placeholder="blur"
-        blurDataURL={blurDataURL}
-        onLoadingComplete={() => {
-          setIsLoading(false);
-          if (index === 0) onFirstLoaded();
-        }}
+        onLoadingComplete={() => setIsLoading(false)}
       />
     </div>
   );
 }
 
 export default function HeroSlider() {
-  const [firstLoaded, setFirstLoaded] = useState(false);
-
   return (
     <Swiper
       modules={[Autoplay, EffectFade]}
       effect="fade"
-      autoplay={
-        firstLoaded
-          ? {
-              delay: 2000,
-              disableOnInteraction: false,
-            }
-          : false
-      }
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
       loop={true}
       speed={1000}
       className="h-full w-full"
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <HeroSlide src={src} index={index} onFirstLoaded={() => setFirstLoaded(true)} />
+          <HeroSlide src={src} index={index} />
         </SwiperSlide>
       ))}
     </Swiper>
