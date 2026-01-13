@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 type Props = {
@@ -44,9 +45,10 @@ type Props = {
 type TabKey = 'before' | 'after' | 'products';
 
 export default function HaircareTabs({ tabLabels, before, after, products }: Props) {
+  const tHero = useTranslations('HaircarePage.hero');
+  const tBrands = useTranslations('HaircarePage.products.brands');
   const [activeTab, setActiveTab] = useState<TabKey | null>(null);
   const [activeBrand, setActiveBrand] = useState<'nashi' | 'olaplex' | 'k18' | null>(null);
-  const [expandedProducts, setExpandedProducts] = useState<Record<string, boolean>>({});
   const panelRef = useRef<HTMLDivElement | null>(null);
 
   const learnMoreButtonClass =
@@ -205,7 +207,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                 <div className="border-t border-white/10 px-5 py-4">
                   <p className="text-lg font-medium text-white">{brand.title}</p>
                   <div className="mt-4">
-                    <div className={learnMoreButtonClass}>Learn More</div>
+                    <div className={learnMoreButtonClass}>{tBrands('learnMore')}</div>
                   </div>
                 </div>
               </button>
@@ -269,7 +271,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
         )}
       </div>
     );
-  }, [activeBrand, activeTab, after, before, expandedProducts, products]);
+  }, [activeBrand, activeTab, after, before, products]);
 
   return (
     <div className="mx-auto mt-10 w-full max-w-4xl">
@@ -315,7 +317,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
         {content && (
           <div className="relative px-6 pt-10 pb-8 md:px-10">
             <p className="mb-4 text-center text-[10px] font-semibold tracking-[0.25em] text-zinc-400 uppercase">
-              CARE
+              {tHero('kicker')}
             </p>
             {content}
           </div>
