@@ -28,14 +28,10 @@ export default async function GalleryPage({
     `${base}/569220065_18544330618062559_118598641141144204_n.jpg`,
     `${base}/572168000_18546652222062559_55269343787934991_n.jpg`,
     `${base}/IMG_1230.jpeg`,
-    `${base}/IMG_1231.jpeg`,
-    `${base}/IMG_1235 (1).jpeg`,
     `${base}/IMG_1235.jpeg`,
-    `${base}/IMG_1236 (1).jpeg`,
     `${base}/IMG_1236.jpeg`,
     `${base}/IMG_1237.jpeg`,
     `${base}/IMG_1238.jpeg`,
-    `${base}/IMG_1240.jpeg`,
   ];
 
   return (
