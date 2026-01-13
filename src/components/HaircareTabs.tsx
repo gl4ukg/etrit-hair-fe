@@ -46,6 +46,7 @@ type TabKey = 'before' | 'after' | 'products';
 export default function HaircareTabs({ tabLabels, before, after, products }: Props) {
   const [activeTab, setActiveTab] = useState<TabKey | null>(null);
   const [activeBrand, setActiveBrand] = useState<'nashi' | 'olaplex' | 'k18' | null>(null);
+  const [expandedProducts, setExpandedProducts] = useState<Record<string, boolean>>({});
   const panelRef = useRef<HTMLDivElement | null>(null);
 
   const setHash = (tab: TabKey | null) => {
@@ -250,9 +251,40 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                       </span>
                     ) : null}
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed whitespace-pre-line text-zinc-300">
-                    {p.description}
-                  </p>
+                  {(() => {
+                    const productKey = `${selected.key}:${p.title}`;
+                    const isExpanded = Boolean(expandedProducts[productKey]);
+                    const normalizedDescription = p.description.replace(/\s+/g, ' ').trim();
+                    const previewLimit = 160;
+                    const preview =
+                      normalizedDescription.length > previewLimit
+                        ? `${normalizedDescription.slice(0, previewLimit)}…`
+                        : normalizedDescription;
+                    const showToggle = normalizedDescription.length > previewLimit;
+
+                    return (
+                      <div className="mt-2">
+                        <p className="text-sm leading-relaxed whitespace-pre-line text-zinc-300">
+                          {isExpanded ? p.description : preview}
+                        </p>
+
+                        {showToggle ? (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setExpandedProducts((prev) => ({
+                                ...prev,
+                                [productKey]: !Boolean(prev[productKey]),
+                              }))
+                            }
+                            className="mt-4 w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(0,0,0,0.55)] transition hover:border-white/25 hover:bg-white/[0.06]"
+                          >
+                            {isExpanded ? 'Show Less' : 'Learn More'}
+                          </button>
+                        ) : null}
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             ))}
@@ -262,7 +294,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
         )}
       </div>
     );
-  }, [activeBrand, activeTab, after, before, products]);
+  }, [activeBrand, activeTab, after, before, expandedProducts, products]);
 
   return (
     <div className="mx-auto mt-10 w-full max-w-4xl">
