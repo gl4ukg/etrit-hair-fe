@@ -70,7 +70,7 @@ export default async function GalleryPage({
   const sources =
     activeCategory === 'all'
       ? mixAllCategories([
-          sourcesByCategory.brunette,
+          sourcesByCategory.brunette.slice(1),
           sourcesByCategory.blonde,
           sourcesByCategory.balayage,
         ])
