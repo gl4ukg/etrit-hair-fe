@@ -179,7 +179,7 @@ export default function HaircareTabs({ tabLabels, before, after, products }: Pro
                   setActiveBrand(brand.key);
                   scrollToPanelOnMobile();
                 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left shadow-[0_18px_60px_rgba(0,0,0,0.55)] transition hover:border-white/20"
+                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left shadow-[0_18px_60px_rgba(0,0,0,0.55)] transition hover:border-white/20"
               >
                 <div className="relative aspect-[4/5] w-full">
                   {brand.coverImageSrc ? (
