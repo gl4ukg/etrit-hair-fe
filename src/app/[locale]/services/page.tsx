@@ -39,6 +39,8 @@ export default async function ServicesPage({
         { name: t('tabs.haircolor.items.short'), price: '140 - 160' },
         { name: t('tabs.haircolor.items.medium'), price: '160 - 200' },
         { name: t('tabs.haircolor.items.long'), price: '200 - 300' },
+        { name: t('Roots'), price: '25 - 40' },
+        { name: t('Full color'), price: '50 - 70' },
       ],
     },
     {
