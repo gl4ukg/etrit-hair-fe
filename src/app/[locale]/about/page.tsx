@@ -81,7 +81,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   ];
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
+    <main className="min-h-screen overflow-hidden bg-zinc-950 text-white">
       <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-[3px] bg-gradient-to-r from-white via-white/70 to-white" />
       <SiteNavbar locale={locale} />
 
