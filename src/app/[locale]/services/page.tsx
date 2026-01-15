@@ -39,8 +39,8 @@ export default async function ServicesPage({
         { name: t('tabs.haircolor.items.short'), price: '140 - 160' },
         { name: t('tabs.haircolor.items.medium'), price: '160 - 200' },
         { name: t('tabs.haircolor.items.long'), price: '200 - 300' },
-        { name: t('Roots'), price: '25 - 40' },
-        { name: t('Full color'), price: '50 - 70' },
+        { name: t('tabs.haircolor.items.roots'), price: '25 - 40' },
+        { name: t('tabs.haircolor.items.fullcolor'), price: '50 - 70' },
       ],
     },
     {
@@ -111,7 +111,7 @@ export default async function ServicesPage({
             </div>
 
             <div className="mt-10 hidden justify-start lg:flex lg:justify-end 2xl:justify-start">
-              <div className="flex h-[220px] max-w-full gap-4 overflow-x-auto pr-2 pb-2 [scrollbar-width:none] sm:gap-5 sm:pr-4 [&::-webkit-scrollbar]:hidden">
+              <div className="flex h-[260px] max-w-full gap-4 overflow-x-auto pr-2 pb-2 [scrollbar-width:none] sm:gap-5 sm:pr-4 [&::-webkit-scrollbar]:hidden">
                 {tabsLocalized.map((tab) => {
                   const Icon = tab.icon;
                   return (
@@ -142,7 +142,7 @@ export default async function ServicesPage({
                               >
                                 <span className="flex items-center gap-2">
                                   <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-                                  <span className="text-[14px] tracking-[0.16em] text-zinc-300 uppercase">
+                                  <span className="text-[12px] tracking-[0.16em] text-zinc-300 uppercase">
                                     {item.name}
                                   </span>
                                 </span>

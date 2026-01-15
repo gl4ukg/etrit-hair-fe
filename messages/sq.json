@@ -173,7 +173,7 @@
       },
       "time": {
         "title": "Koha",
-        "body": "Puna cilësore kërkon kohë. Terminet zakonisht zgjasin 2-6 orë, varësisht nga shërbimi dhe nevojat e flokut. Të rekomandojmë ta planifikosh ditën me këtë në mendje."
+        "body": "Puna cilësore kërkon kohë. Terminet zakonisht zgjasin 1-6 orë, varësisht nga shërbimi dhe nevojat e flokut. Të rekomandojmë ta planifikosh ditën me këtë në mendje."
       },
       "pricing": {
         "title": "Çmimet",
@@ -228,7 +228,9 @@
         "items": {
           "short": "Gjatësi e shkurtër",
           "medium": "Gjatësi mesatare",
-          "long": "Gjatësi e gjatë"
+          "long": "Gjatësi e gjatë",
+          "roots": "Rrënë",
+          "fullcolor": "Ngjyrosje të përgjithshme"
         }
       },
       "haircare": {

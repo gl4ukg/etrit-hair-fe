@@ -228,7 +228,9 @@
         "items": {
           "short": "Short Length",
           "medium": "Medium Length",
-          "long": "Long Length"
+          "long": "Long Length",
+          "roots": "Roots",
+          "fullcolor": "Full Color"
         }
       },
       "haircare": {

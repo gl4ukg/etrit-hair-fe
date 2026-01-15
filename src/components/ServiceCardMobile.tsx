@@ -22,8 +22,8 @@ export function ServiceCardMobile({ tab }: { tab: ServiceTab }) {
     <div className="group [perspective:1400px]" onClick={() => setFlipped((prev) => !prev)}>
       <div
         className={
-          'relative h-40 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white ' +
-          'shadow-[0_18px_45px_rgba(0,0,0,0.8)] sm:h-44'
+          'relative h-48 w-full rounded-3xl border border-white/10 bg-white/[0.02] text-white ' +
+          'shadow-[0_18px_45px_rgba(0,0,0,0.8)] sm:h-46'
         }
       >
         {/* Front */}
